@@ -2,11 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
 
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
   var usernameController = TextEditingController();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+  var formKey=GlobalKey<FormState>();
+  bool isPassword=true;
 
   hexColor (String colorhexcode){
     String colornew = '0xff' + colorhexcode;
@@ -14,8 +21,6 @@ class SignupScreen extends StatelessWidget {
     int colorint = int.parse(colornew);
     return colorint;
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -67,20 +72,78 @@ class SignupScreen extends StatelessWidget {
                        color: Color(hexColor("#264653")),
                     ),
                     width: double.infinity,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 30.0,
+
+
+                    child: Form(                      // validate
+                      key: formKey,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30.0,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.only(top:50.0),
+                              child: TextFormField(
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                                controller: usernameController,
+                                keyboardType: TextInputType.name,
+                                onFieldSubmitted: ( value)
+                                {
+                                  print(value);
+                                },
+                                onChanged: (value)
+                                {
+                                  print(value);
+                                },
+                                // validation
+                                validator:(value)
+                                {
+                                  if(value!.isEmpty)
+                                  {
+                                    return 'user name must not be empty';
+                                  }
+                                  else
+                                    return null;
+
+                                },
+                                decoration: InputDecoration(
+                                  labelText: 'User name',
+                                  labelStyle: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.white,
+                                  ),
+                                  border: OutlineInputBorder(
+                                    borderSide: const BorderSide(width: 3, color: Colors.blue),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  focusedBorder : OutlineInputBorder(
+                                    borderSide: const BorderSide(width: 3, color: Colors.white),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.only(top:50.0),
+
+                          SizedBox(
+                            height: 15.0,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30.0,
+                            ),
                             child: TextFormField(
                               style: TextStyle(
                                 color: Colors.white,
                               ),
-                              controller: usernameController,
-                              keyboardType: TextInputType.name,
+                              controller: emailController,
+                              keyboardType: TextInputType.emailAddress,
                               onFieldSubmitted: ( value)
                               {
                                 print(value);
@@ -89,13 +152,26 @@ class SignupScreen extends StatelessWidget {
                               {
                                 print(value);
                               },
+
+                              // validation
+
+                              validator:(value)
+                              {
+                                if(value!.isEmpty)
+                                {
+                                  return 'email must not be empty';
+                                }
+                                else
+                                  return null;
+
+                              },
                               decoration: InputDecoration(
-                                labelText: 'User name',
+                                labelText: 'Email',
                                 labelStyle: TextStyle(
                                   color: Colors.white,
                                 ),
                                 prefixIcon: Icon(
-                                  Icons.person,
+                                  Icons.email,
                                   color: Colors.white,
                                 ),
                                 border: OutlineInputBorder(
@@ -109,160 +185,146 @@ class SignupScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ),
 
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 30.0,
+                          SizedBox(
+                            height: 15.0,
                           ),
-                          child: TextFormField(
-                            style: TextStyle(
-                              color: Colors.white,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30.0,
                             ),
-                            controller: emailController,
-                            keyboardType: TextInputType.emailAddress,
-                            onFieldSubmitted: ( value)
-                            {
-                              print(value);
-                            },
-                            onChanged: (value)
-                            {
-                              print(value);
-                            },
-                            decoration: InputDecoration(
-                              labelText: 'Email',
-                              labelStyle: TextStyle(
-                                color: Colors.white,
-                              ),
-                              prefixIcon: Icon(
-                                Icons.email,
-                                color: Colors.white,
-                              ),
-                              border: OutlineInputBorder(
-                                borderSide: const BorderSide(width: 3, color: Colors.blue),
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              focusedBorder : OutlineInputBorder(
-                                borderSide: const BorderSide(width: 3, color: Colors.white),
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 30.0,
-                          ),
-                          child: TextFormField(
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                            controller: passwordController,
-                            keyboardType: TextInputType.visiblePassword,
-                            obscureText:true,
-                            onFieldSubmitted: ( value)
-                            {
-                              print(value);
-                            },
-                            onChanged: (value)
-                            {
-                              print(value);
-                            },
-                            decoration: InputDecoration(
-                              labelText: 'Password',
-                              labelStyle: TextStyle(
-                                color: Colors.white,
-                              ),
-                              prefixIcon: Icon(
-                                Icons.lock,
-                                color: Colors.white,
-                              ),
-                              suffixIcon: Icon(
-                                Icons.remove_red_eye,
-                                color: Colors.white,
-                              ),
-                              border: OutlineInputBorder(
-                                borderSide: const BorderSide(width: 3, color: Colors.blue),
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              focusedBorder : OutlineInputBorder(
-                                borderSide: const BorderSide(width: 3, color: Colors.white),
-                                borderRadius: BorderRadius.circular(15),
-
-                              ),
-                            ),
-                          ),
-                        ),
-
-                        SizedBox(
-                          height: 100.0,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 50.0,
-                          ),
-                          child: Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(25.0),
-                            ),
-                            child: MaterialButton(
-                              onPressed:()
-                              {
-                                print(usernameController.text);
-                                print(emailController.text);
-                                print(passwordController.text);
-                              },
-                              child:
-                              Text(
-                                'Sign Up',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(hexColor("#264653")),
-                                ),
-                              ),
-
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 50.0,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'You have an account?',
+                            child: TextFormField(
                               style: TextStyle(
                                 color: Colors.white,
                               ),
-                            ),
-                            TextButton(
-                              onPressed: (){
-                                Navigator.pop(context);
+                              controller: passwordController,
+                              keyboardType: TextInputType.visiblePassword,
+                              obscureText:isPassword,
+                              onFieldSubmitted: ( value)
+                              {
+                                print(value);
+
                               },
-                              child:Text
-                                (
-                                'Login',
-                                style: TextStyle(
-                                  color: Colors.amber,
+                              onChanged: (value)
+                              {
+                                print(value);
+                              },
+
+                              // validation
+
+                              validator:(value)
+                              {
+                                if(value!.isEmpty)
+                                {
+                                  return 'password must not be empty';
+                                }
+                                else
+                                  return null;
+
+                              },
+                              decoration: InputDecoration(
+                                labelText: 'Password',
+                                labelStyle: TextStyle(
+                                  color: Colors.white,
                                 ),
-                              )
-                              , ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 60.0,
-                        )
-                      ],
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  color: Colors.white,
+                                ),
+
+                                // obscure
+
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    isPassword ? Icons.visibility : Icons.visibility_off,
+                                    color: Colors.white,
+                                  ),
+                                  onPressed: ()
+                                  {
+                                    setState(() {
+                                      isPassword = !isPassword;
+
+                                    });
+                                  },
+                                ),
+                                border: OutlineInputBorder(
+                                  borderSide: const BorderSide(width: 3, color: Colors.blue),
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                focusedBorder : OutlineInputBorder(
+                                  borderSide: const BorderSide(width: 3, color: Colors.white),
+                                  borderRadius: BorderRadius.circular(15),
+
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          SizedBox(
+                            height: 100.0,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 50.0,
+                            ),
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(25.0),
+                              ),
+                              child: MaterialButton(
+                                onPressed:()
+                                {
+                                  if(formKey.currentState!.validate()) {
+                                    print(usernameController.text);
+                                    print(emailController.text);
+                                    print(passwordController.text);
+                                  }
+                                },
+                                child:
+                                Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(hexColor("#264653")),
+                                  ),
+                                ),
+
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 50.0,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'You have an account?',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: (){
+                                  Navigator.pop(context);
+                                },
+                                child:Text
+                                  (
+                                  'Login',
+                                  style: TextStyle(
+                                    color: Colors.amber,
+                                  ),
+                                )
+                                , ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 60.0,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
