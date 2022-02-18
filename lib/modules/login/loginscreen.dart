@@ -155,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               {
                                 if(value!.isEmpty)
                                 {
-                                  return 'password must not be empty';
+                                  return 'password must be at least 8 characters ';
                                 }
                                 else
                                   return null;
