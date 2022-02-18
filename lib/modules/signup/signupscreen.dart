@@ -216,7 +216,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               {
                                 if(value!.isEmpty)
                                 {
-                                  return 'password is too short';
+                                  return 'password is too short!';
                                 }
                                 else
                                   return null;
