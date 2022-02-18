@@ -1,4 +1,4 @@
-import 'package:beginning_app/signupscreen.dart';
+import 'package:beginning_app/modules/signup/signupscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class LoginScreen extends StatefulWidget {
@@ -282,7 +282,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ],
                           ),
                           SizedBox(
-                            height: 70.0,
+                            height: 90.0,
                           )
                         ],
                       ),
