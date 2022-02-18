@@ -155,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               {
                                 if(value!.isEmpty)
                                 {
-                                  return 'password must not be empty ';
+                                  return 'password is too short ';
                                 }
                                 else
                                   return null;
