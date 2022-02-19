@@ -1,15 +1,23 @@
-import 'package:beginning_app/modules/password/forgot_password.dart';
 import 'package:beginning_app/modules/signup/signupscreen.dart';
+import 'package:beginning_app/modules/login/loginscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-class LoginScreen extends StatefulWidget {
+import 'package:flutter/services.dart';
 
+class ForgetPassword extends StatefulWidget {
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ForgetPassword> createState() => _ForgetPasswordState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ForgetPasswordState extends State<ForgetPassword> {
+  var usernameController = TextEditingController();
+  var passwordController = TextEditingController();
+  var newpasswordController = TextEditingController();
+  var formKey=GlobalKey<FormState>();
+  bool isPassword=true;
+  bool isnewPassword=true;
+
   hexColor (String colorhexcode){
     String colornew = '0xff' + colorhexcode;
     colornew = colornew.replaceAll('#', '');
@@ -17,22 +25,13 @@ class _LoginScreenState extends State<LoginScreen> {
     return colorint;
   }
 
-  var usernameController = TextEditingController();
-
-  var passwordController = TextEditingController();
-
-  var formKey=GlobalKey<FormState>();
-
-  bool isPassword=true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(
-      //   title:Text(appTitle),
-      //
+      //   backgroundColor: Colors.black54,
       // ),
-      body: SafeArea(
+      body:  SafeArea(
         child: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -48,20 +47,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: 50.0,
                     height: 50.0,),
                 ),
+
                 SizedBox(
                   height: 20.0,
                 ),
+
+
                 Text(
-                  'Welcome back !',
+                  'Please, generate a new password!',
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
+                    color: Color(hexColor("#264653")),
                   ),
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
-
                 Padding(
                   padding: const EdgeInsetsDirectional.only(top:20.0),
                   child: Container(
@@ -74,10 +76,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     width: double.infinity,
 
-                    child: Form(
+
+                    child: Form(                      // validate
                       key: formKey,
                       child: Column(
-
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(
@@ -86,7 +88,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: Padding(
                               padding: const EdgeInsetsDirectional.only(top:50.0),
                               child: TextFormField(
-                                cursorColor: Colors.white,
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
@@ -100,12 +101,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                 {
                                   print(value);
                                 },
+                                // validation
                                 validator:(value)
                                 {
                                   if(value!.isEmpty)
-                                    {
-                                      return 'user name must not be empty';
-                                    }
+                                  {
+                                    return 'user name must not be empty';
+                                  }
                                   else
                                     return null;
 
@@ -131,6 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
+
                           SizedBox(
                             height: 15.0,
                           ),
@@ -139,41 +142,46 @@ class _LoginScreenState extends State<LoginScreen> {
                               horizontal: 30.0,
                             ),
                             child: TextFormField(
-                              cursorColor: Colors.white,
-                              style: TextStyle(color: Colors.white,),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                               controller: passwordController,
                               keyboardType: TextInputType.visiblePassword,
                               obscureText:isPassword,
                               onFieldSubmitted: ( value)
                               {
                                 print(value);
+
                               },
                               onChanged: (value)
                               {
                                 print(value);
                               },
+
+                              // validation
+
                               validator:(value)
                               {
                                 if(value!.isEmpty)
                                 {
-                                  return 'password is too short! ';
+                                  return 'password is too short!';
                                 }
                                 else
                                   return null;
 
                               },
                               decoration: InputDecoration(
-
-                                labelText: 'Password',
+                                labelText: 'New password',
                                 labelStyle: TextStyle(
                                   color: Colors.white,
                                 ),
-
-                                focusColor: Colors.white,
                                 prefixIcon: Icon(
                                   Icons.lock,
                                   color: Colors.white,
                                 ),
+
+                                // obscure
+
                                 suffixIcon: IconButton(
                                   icon: Icon(
                                     isPassword ? Icons.visibility : Icons.visibility_off,
@@ -194,38 +202,89 @@ class _LoginScreenState extends State<LoginScreen> {
                                 focusedBorder : OutlineInputBorder(
                                   borderSide: const BorderSide(width: 3, color: Colors.white),
                                   borderRadius: BorderRadius.circular(15),
+
                                 ),
                               ),
-
                             ),
                           ),
 
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children:[
-                              TextButton(
-                                onPressed: (){
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) =>  ForgetPassword()),
-                                  );
-                                },
-                                child:Text
-                                  (
-                                  'Forgot Password?',
-                                  style: TextStyle(
-                                    fontSize:15.0,
-                                    color: Colors.amber,
-                                  ),
-
-                                )
-                                , ),
-                            ],
+                          SizedBox(
+                            height: 15.0,
                           ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30.0,
+                            ),
+                            child: TextFormField(
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                              controller: newpasswordController,
+                              keyboardType: TextInputType.visiblePassword,
+                              obscureText:isnewPassword,
+                              onFieldSubmitted: ( value)
+                              {
+                                print(value);
+
+                              },
+                              onChanged: (value)
+                              {
+                                print(value);
+                              },
+
+                              // validation
+
+                              validator:(value)
+                              {
+                                if(value!.isEmpty)
+                                {
+                                  return 'password is too short!';
+                                }
+                                else
+                                  return null;
+
+                              },
+                              decoration: InputDecoration(
+                                labelText: 'Repeat new password',
+                                labelStyle: TextStyle(
+                                  color: Colors.white,
+                                ),
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  color: Colors.white,
+                                ),
+
+                                // obscure
+
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    isnewPassword ? Icons.visibility : Icons.visibility_off,
+                                    color: Colors.white,
+                                  ),
+                                  onPressed: ()
+                                  {
+                                    setState(() {
+                                      isnewPassword = !isnewPassword;
+
+                                    });
+                                  },
+                                ),
+                                border: OutlineInputBorder(
+                                  borderSide: const BorderSide(width: 3, color: Colors.blue),
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                focusedBorder : OutlineInputBorder(
+                                  borderSide: const BorderSide(width: 3, color: Colors.white),
+                                  borderRadius: BorderRadius.circular(15),
+
+                                ),
+                              ),
+                            ),
+                          ),
+
                           SizedBox(
                             height: 100.0,
                           ),
-
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 50.0,
@@ -234,62 +293,38 @@ class _LoginScreenState extends State<LoginScreen> {
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(25.0,),
+                                borderRadius: BorderRadius.circular(25.0),
                               ),
                               child: MaterialButton(
                                 onPressed:()
                                 {
-                                  if(formKey.currentState!.validate())
-                                    {
-                                      print(usernameController.text);
-                                      print(passwordController.text);
-                                    }
-
-                             },
-                                child: Text(
-                                  'Login',
+                                  if(formKey.currentState!.validate()) {
+                                    print(usernameController.text);
+                                    print(passwordController.text);
+                                    print(newpasswordController.text);
+                                  }
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) =>  LoginScreen()),
+                                  );
+                                },
+                                child:
+                                Text(
+                                  'Submit',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Color(hexColor("#264653")),
                                   ),
                                 ),
+
                               ),
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 210.0,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'You don\'t have an account?',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: (){
 
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) =>  SignupScreen()),
-                                  );
 
-                                },
-                                child:Text
-                                  (
-                                  'Sign Up',
-                                  style: TextStyle(
-                                    color: Colors.amber,
-                                  ),
-                                )
-                                , ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 87.0,
-                          )
                         ],
                       ),
                     ),

@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:beginning_app/modules/password/forgot_password.dart';
+import 'package:beginning_app/modules/login/loginscreen.dart';
 class SignupScreen extends StatefulWidget {
 
   @override
@@ -321,7 +322,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             ],
                           ),
                           SizedBox(
-                            height: 60.0,
+                            height: 110.0,
                           )
                         ],
                       ),
