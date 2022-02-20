@@ -1,3 +1,5 @@
+import 'package:beginning_app/modules/navigation/collapsingnavigationdrawer.dart';
+//import 'package:beginning_app/modules/navigation/navigationdrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -5,62 +7,98 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
+    hexColor (String colorhexcode){
+      String colornew = '0xff' + colorhexcode;
+      colornew = colornew.replaceAll('#', '');
+      int colorint = int.parse(colornew);
+      return colorint;
+    }
     return Scaffold(
       appBar: AppBar(
-     title: Text(
+        backgroundColor:Color(hexColor("#264653")),
+        leading: IconButton(
+          icon:
+          Icon(Icons.menu,),
+        onPressed: ()
+        {
+
+        },
+        ),
+      title: Text(
          'Home',
-       style: TextStyle(
+        style: TextStyle(
          fontSize: 20.0,
        ),
-     ),
       ),
-      body:Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-                'Welcome home,',
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.black54,
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              'User name',
-              style: TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-        Center(
-          child: Image(image: AssetImage('assets/home-automation(1).png'),
-            width: 70.0,
-            height: 70.0,),
-        ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Container(
-              child: Row(
+      ),
+
+      body:
+      Stack(
+        children: <Widget>
+        [
+
+          Container(
+
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Rooms',
+                    'Welcome home,',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25.0,
+                      fontSize: 20.0,
+                      color: Colors.black54,
                     ),
                   ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text(
+                    'User name',
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Center(
+                    child: Image(image: AssetImage('assets/home-automation(1).png'),
+                      width: 70.0,
+                      height: 70.0,),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Text(
+                          'Rooms',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25.0,
+                          ),
+                        ),
 
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-          ],
-        ),
+
+
+          ),
+
+
+
+          CollapsingNavigationDrawer() ,
+
+
+        ],
+
       ),
     );
   }
