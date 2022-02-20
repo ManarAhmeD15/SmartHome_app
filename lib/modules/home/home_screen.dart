@@ -21,17 +21,17 @@ class HomeScreen extends StatelessWidget {
         leading: IconButton(
           icon:
           Icon(Icons.menu,),
-        onPressed: ()
-        {
+          onPressed: ()
+          {
 
-        },
+          },
         ),
-      title: Text(
-         'Home',
-        style: TextStyle(
-         fontSize: 20.0,
-       ),
-      ),
+        title: Text(
+          'Home',
+          style: TextStyle(
+            fontSize: 20.0,
+          ),
+        ),
       ),
 
       body:
@@ -40,11 +40,11 @@ class HomeScreen extends StatelessWidget {
         [
 
           Container(
-
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.symmetric(vertical:20.0,
+              horizontal: 80.0,),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Welcome home,',
@@ -63,25 +63,76 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  SizedBox(height: 10.0,),
                   Center(
                     child: Image(image: AssetImage('assets/home-automation(1).png'),
                       width: 70.0,
                       height: 70.0,),
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 40.0,
                   ),
-                  Container(
-                    child: Row(
+                  Row(
+                    children: [
+                      Text(
+                        'Rooms',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25.0,
+                        ),
+                      ),
+                      Expanded(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            TextButton(
+                              onPressed: () {},
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(width: 30.0,),
+                                  Text(
+                                    'Edit',
+                                    style: TextStyle(
+                                      fontSize: 7.0,
+                                      color: Colors.grey,),
+                                  ),
+                                  SizedBox(
+                                    width: 2.0,
+                                  ),
+                                  Icon(
+                                    Icons.edit,
+                                    color: Colors.grey,
+                                    size:7.0,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SingleChildScrollView(
+                    child: Column(
                       children: [
-                        Text(
-                          'Rooms',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25.0,
+                        Container(
+                          height: 120.0,
+                          child: ListView.separated(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) => Rooms(),
+                            separatorBuilder: (context, index) => SizedBox(
+                              width: 20,
+                            ),
+                            itemCount: 7,
                           ),
                         ),
-
                       ],
                     ),
                   ),
@@ -105,40 +156,80 @@ class HomeScreen extends StatelessWidget {
 }
 
 
-Widget Rooms() =>  Container(
-  width: 60.0,
-  child: Column(
-    children: [
-      Stack(
-        alignment: AlignmentDirectional.bottomEnd,
-        children: [
-          Padding(
-            padding: const EdgeInsetsDirectional.only(
-              bottom: 3.0,
-              end: 3.0,
+
+
+Widget Rooms() => Container(
+  width: 100.0,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(
+      10.0,
+    ),
+    color: Colors.grey[300],
+  ),
+  child: Padding(
+    padding: const EdgeInsets.symmetric(vertical: 5.0,),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 5.0,
+              ),
+              child: Container(
+                width: 40.0,
+                height: 70.0,
+                child: Image(
+                  image: AssetImage('assets/home-automation(1).png'),
+                  width: 70.0,
+                  height: 70.0,
+                ),
+              ),
             ),
-            child: CircleAvatar(
-              radius: 30.0,
-            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 7.0,
           ),
-          CircleAvatar(
-            radius: 8.0,
-            backgroundColor: Colors.white,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'Bedroom',
+                style: TextStyle(
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                maxLines: 2,
+              ),
+            ],
           ),
-          CircleAvatar(
-            radius: 7.0,
-            backgroundColor: Colors.green,
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 7.0,
           ),
-        ],
-      ),
-      SizedBox(
-        height:6.0 ,
-      ),
-      Text(
-        'Ibrahim L Badwy',
-        maxLines: 2,
-        overflow: TextOverflow.ellipsis,
-      ),
-    ],
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '2 Devices',
+                style: TextStyle(
+                  fontSize: 8.0,
+                  color: Colors.black54,
+                ),
+                maxLines: 2,
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
   ),
 );
