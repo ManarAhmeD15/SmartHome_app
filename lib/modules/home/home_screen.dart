@@ -18,13 +18,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor:Color(hexColor("#264653")),
-        leading: IconButton(
-          icon:
-          Icon(Icons.menu,),
-          onPressed: ()
-          {
-
-          },
+        leading:Icon(
+          Icons.menu,
+          color: Colors.white,
         ),
         title: Text(
           'Home',
@@ -81,7 +77,8 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:80.0,),
+                        padding: const EdgeInsets.only(left:80.0,
+                        right: 130.0),
                         child: Text(
                           'Rooms',
                           style: TextStyle(
@@ -92,29 +89,29 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Expanded(
                         child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                          //crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             TextButton(
                               onPressed: () {},
                               child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
+                                //crossAxisAlignment: CrossAxisAlignment.end,
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   SizedBox(width: 30.0,),
                                   Text(
                                     'Edit',
                                     style: TextStyle(
-                                      fontSize: 7.0,
-                                      color: Colors.grey,),
+                                      fontSize: 12.0,
+                                      color: Colors.black,),
                                   ),
                                   SizedBox(
                                     width: 2.0,
                                   ),
                                   Icon(
                                     Icons.edit,
-                                    color: Colors.grey,
-                                    size:7.0,
+                                    color: Colors.black,
+                                    size:10.0,
                                   ),
                                 ],
                               ),
@@ -132,6 +129,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Container(
                           height: 120.0,
+                          padding: EdgeInsets.only(left: 80.0,),
                           child: ListView.separated(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,

@@ -1,3 +1,4 @@
+import 'package:beginning_app/modules/home/home_screen.dart';
 import 'package:beginning_app/modules/password/forgot_password.dart';
 import 'package:beginning_app/modules/signup/signupscreen.dart';
 import 'package:flutter/cupertino.dart';
@@ -239,11 +240,16 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: MaterialButton(
                                 onPressed:()
                                 {
+
                                   if(formKey.currentState!.validate())
                                     {
                                       print(usernameController.text);
                                       print(passwordController.text);
                                     }
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) =>  HomeScreen())
+                                  );
 
                              },
                                 child: Text(
