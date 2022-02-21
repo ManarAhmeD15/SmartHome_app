@@ -46,13 +46,13 @@ class _CollapsingListTileState extends State<CollapsingListTile> {
 
         width: widthAnimation.value,
 
-        margin: EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
+        margin: EdgeInsets.symmetric(horizontal: 8.0,vertical: 8.0),
         child: Row(
           children: <Widget>
           [
             Icon(widget.icon,
               color:widget.isSelected ? selectedColor : Colors.white,
-              size: 38.0,),
+              size: 35.0,),
             SizedBox(width: sizedBoxAnimation.value),
             (widthAnimation.value >= 220) ? Text(widget.title,style: widget.isSelected ? ListTileSelectedTextStyle : ListTileDefultTextStyle,): Container(),
 

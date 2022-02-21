@@ -17,28 +17,29 @@ class HomeScreen extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:Color(hexColor("#264653")),
-        leading: IconButton(
-          icon:
-          Icon(Icons.menu,),
-          onPressed: ()
-          {
+        leading: Icon(
+          Icons.menu,
+          color: Colors.white,
 
-          },
         ),
+        backgroundColor:Color(hexColor("#264653")),
         title: Text(
+
           'Home',
           style: TextStyle(
             fontSize: 20.0,
-          ),
-        ),
-      ),
 
-      body:
-      Stack(
+          ),
+          //textAlign: TextAlign.left,
+
+        ),
+      elevation: 0.0,),
+
+      body: Stack(
+
+
         children: <Widget>
         [
-
           Container(
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical:20.0,
@@ -78,10 +79,13 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 40.0,
                   ),
+
+
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:80.0,),
+                        padding: const EdgeInsets.only(right:144.0,
+                        left: 80,),
                         child: Text(
                           'Rooms',
                           style: TextStyle(
@@ -90,38 +94,39 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                        Row(
+                          //crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             TextButton(
                               onPressed: () {},
                               child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
+
+                               // crossAxisAlignment: CrossAxisAlignment.end,
                                 mainAxisAlignment: MainAxisAlignment.end,
+
                                 children: [
-                                  SizedBox(width: 30.0,),
+                                  //SizedBox(width: 30.0,),
                                   Text(
                                     'Edit',
                                     style: TextStyle(
-                                      fontSize: 7.0,
-                                      color: Colors.grey,),
+                                      fontSize: 12.0,
+                                      color: Colors.black,),
                                   ),
                                   SizedBox(
                                     width: 2.0,
                                   ),
                                   Icon(
                                     Icons.edit,
-                                    color: Colors.grey,
-                                    size:7.0,
+                                    color: Colors.black,
+                                    size:10.0,
                                   ),
                                 ],
                               ),
                             ),
                           ],
                         ),
-                      ),
+
                     ],
                   ),
                   SizedBox(
@@ -129,8 +134,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                   SingleChildScrollView(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
+
+                          padding: EdgeInsets.only(left: 80.0),
                           height: 120.0,
                           child: ListView.separated(
                             shrinkWrap: true,
