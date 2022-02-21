@@ -98,10 +98,8 @@ class HomeScreen extends StatelessWidget {
                             TextButton(
                               onPressed: () {},
                               child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  SizedBox(width: 30.0,),
+                                  SizedBox(width: 20.0,),
                                   Text(
                                     'Edit',
                                     style: TextStyle(
