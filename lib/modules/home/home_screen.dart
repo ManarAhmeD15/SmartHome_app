@@ -46,21 +46,27 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Welcome home,',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.black54,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal:80.0,),
+                    child: Text(
+                      'Welcome home,',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.black54,
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: 10.0,
                   ),
-                  Text(
-                    'User name',
-                    style: TextStyle(
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal:80.0,),
+                    child: Text(
+                      'User name',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   SizedBox(height: 10.0,),
@@ -74,11 +80,14 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text(
-                        'Rooms',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25.0,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal:80.0,),
+                        child: Text(
+                          'Rooms',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25.0,
+                          ),
                         ),
                       ),
                       Expanded(
