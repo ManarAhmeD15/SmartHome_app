@@ -43,7 +43,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                 Padding(
                   padding: const EdgeInsetsDirectional.only(top:30.0),
 
-                  child: Image(image: AssetImage('assets/home-automation(1).png'),
+                  child: Image(image: AssetImage('assets/smart-home(2).png'),
                     width: 50.0,
                     height: 50.0,),
                 ),

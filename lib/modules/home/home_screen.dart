@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 10.0,),
                   Center(
-                    child: Image(image: AssetImage('assets/home-automation(1).png'),
+                    child: Image(image: AssetImage('assets/smart-home(2).png'),
                       width: 70.0,
                       height: 70.0,),
                   ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'modules/home/home_screen.dart';
 import 'modules/password/forgot_password.dart';
+import 'modules/splash/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
    return MaterialApp(
 
      debugShowCheckedModeBanner: false,
-     home: HomeScreen(),
+     home: SplashScreen(),
    );
   }
 
