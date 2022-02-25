@@ -1,10 +1,25 @@
 import 'package:beginning_app/modules/navigation/collapsingnavigationdrawer.dart';
 //import 'package:beginning_app/modules/navigation/navigationdrawer.dart';
+import 'package:beginning_app/modules/login/loginscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool val1 = true;
+  onChangedFunction1(bool newValue1){
+    setState(() {
+      val1 = newValue1;
+    });
+  }
+
+
 
   @override
   Widget build(BuildContext context)
@@ -22,14 +37,15 @@ class HomeScreen extends StatelessWidget {
           Icons.menu,
           color: Colors.white,
         ),
-        title: Text(
-          'Home',
-          style: TextStyle(
-            fontSize: 20.0,
+        title: Center(
+          child: Text(
+            'Home',
+            style: TextStyle(
+              fontSize: 20.0,
+            ),
           ),
         ),
       ),
-
       body:
       Stack(
         children: <Widget>
@@ -60,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                     child: Text(
                       'User name',
                       style: TextStyle(
-                        fontSize: 25.0,
+                        fontSize: 22.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -83,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                           'Rooms',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 25.0,
+                            fontSize: 22.0,
                           ),
                         ),
                       ),
@@ -143,6 +159,154 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Expanded(
+                    child: Column(
+                      children:[
+                        Padding(
+                          padding: const EdgeInsets.only(right: 25.0),
+                          child: Text(
+                            'Latest worked devices',
+                            style:TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 80.0,),
+                                    child: Container(
+                                      height: 125,
+                                      width: 90,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10.0,),
+                                        color: Colors.grey,
+                                      ),
+
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start ,
+                                          children:[
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Container(
+                                                child: Icon(
+                                                  Icons.person,
+                                                  color: Colors.white,
+                                                ),
+                                                height: 40,
+                                                width: 40,
+                                                decoration: BoxDecoration(
+                                                  color: Colors.teal,
+                                                  borderRadius: BorderRadius.circular(10.0,),
+                                                ),
+
+                                              ),
+
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    'Smoke Detector',
+                                                    style: TextStyle(
+                                                        fontSize: 10.0,
+                                                        color: Colors.white,
+                                                        fontWeight: FontWeight.bold,
+                                                    ),
+                                                    maxLines: 2,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            customSwitch(
+                                              'On', val1, onChangedFunction1
+                                            ),
+                                          ]
+                                      ),
+
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10.0,),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 80.0,),
+                                    child: Container(
+                                      height: 125,
+                                      width: 90,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10.0,),
+                                        color: Colors.grey,
+                                      ),
+
+                                      child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start ,
+                                          children:[
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Container(
+                                                child: Icon(
+                                                  Icons.person,
+                                                  color: Colors.white,
+                                                ),
+                                                height: 40,
+                                                width: 40,
+                                                decoration: BoxDecoration(
+                                                  color: Colors.teal,
+                                                  borderRadius: BorderRadius.circular(10.0,),
+                                                ),
+
+                                              ),
+
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    'Smoke Detector',
+                                                    style: TextStyle(
+                                                      fontSize: 10.0,
+                                                      color: Colors.white,
+                                                      fontWeight: FontWeight.bold,
+                                                    ),
+                                                    maxLines: 2,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            customSwitch('On', val1, onChangedFunction1),
+                                          ]
+                                      ),
+
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                            ],
+                          ),
+                        ),
+
+
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -158,12 +322,42 @@ class HomeScreen extends StatelessWidget {
         ],
 
       ),
+
     );
   }
 }
 
 
-
+Widget customSwitch(String text, bool val, Function onChangedMethod){
+  return Padding(
+      padding: const EdgeInsets.symmetric(vertical:0,),
+          child: Row(
+      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  text, style: TextStyle(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
+                ),
+              ),
+              //Spacer(),
+              CupertinoSwitch(
+                  value: val,
+                  trackColor: Colors.white70,
+                  activeColor: Colors.blueGrey,
+                  onChanged: (newValue)
+              {
+                onChangedMethod(newValue);
+              }
+              )
+            ],
+  ),
+  );
+}
 
 
 
