@@ -23,11 +23,10 @@ class AllRooms extends StatelessWidget {
             ),
             SizedBox(height: 20.0,),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(15.0),
               child: Container(
                 width: double.infinity,
-                height: 80.0,
-
+                height: 90.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0,),
                   color: Colors.grey,
@@ -40,11 +39,17 @@ class AllRooms extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  width: 50.0,
-                                  height: 50.0,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Image(image: AssetImage('assets/bedroom.png'),
+                                      width: 40.0,
+                                      height: 40.0,),
+                                  ),
+                                  width: 60.0,
+                                  height: 60.0,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0,),
-                                    color: Colors.blueAccent,
+                                    color: Colors.black12,
                                   ),
                                 ),
                                 SizedBox(
@@ -70,27 +75,30 @@ class AllRooms extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-
                                   ],
                                 ),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.only(start: 130.0,),
-                                      child: Icon(
-                                          Icons.edit,
-                                        size: 15.0,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.only(bottom: 10.0,),
+                                  child: Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.only(start: 83.0,),
+                                        child:   IconButton(onPressed: (){},
+                                          icon: Icon(
+                                            Icons.edit,
+                                            size: 15.0,
+                                            color: Colors.black45,
+                                          ),),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: 20.0,
-                                    ),
-                                    Icon(
-                                      Icons.delete,
-                                      size: 15.0,
-                                    ),
-                                  ],
+                                      IconButton(onPressed: (){},
+                                        icon: Icon(
+                                          Icons.delete,
+                                          size: 15.0,
+                                          color: Colors.black45,
+                                        ),),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
@@ -100,10 +108,10 @@ class AllRooms extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(15.0),
               child: Container(
                 width: double.infinity,
-                height: 80.0,
+                height: 90.0,
 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0,),
@@ -117,11 +125,17 @@ class AllRooms extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            width: 50.0,
-                            height: 50.0,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image(image: AssetImage('assets/bedroom.png'),
+                                width: 40.0,
+                                height: 40.0,),
+                            ),
+                            width: 60.0,
+                            height: 60.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0,),
-                              color: Colors.blueAccent,
+                              color: Colors.black12,
                             ),
                           ),
                           SizedBox(
@@ -150,24 +164,28 @@ class AllRooms extends StatelessWidget {
 
                             ],
                           ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.only(start: 125.0,),
-                                child: Icon(
-                                  Icons.edit,
-                                  size: 15.0,
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(bottom: 10.0,),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.only(start: 77.0,),
+                                  child:   IconButton(onPressed: (){},
+                                    icon: Icon(
+                                      Icons.edit,
+                                      size: 15.0,
+                                      color: Colors.black45,
+                                    ),),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 20.0,
-                              ),
-                              Icon(
-                                Icons.delete,
-                                size: 15.0,
-                              ),
-                            ],
+                                IconButton(onPressed: (){},
+                                  icon: Icon(
+                                    Icons.delete,
+                                    size: 15.0,
+                                    color: Colors.black45,
+                                  ),),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -177,10 +195,10 @@ class AllRooms extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(15.0),
               child: Container(
                 width: double.infinity,
-                height: 80.0,
+                height: 90.0,
 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0,),
@@ -194,11 +212,17 @@ class AllRooms extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            width: 50.0,
-                            height: 50.0,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image(image: AssetImage('assets/kitchen.png'),
+                                width: 40.0,
+                                height: 40.0,),
+                            ),
+                            width: 60.0,
+                            height: 60.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0,),
-                              color: Colors.blueAccent,
+                              color: Colors.black12,
                             ),
                           ),
                           SizedBox(
@@ -215,7 +239,7 @@ class AllRooms extends StatelessWidget {
                               ),
                               SizedBox(height: 15.0,),
                               Padding(
-                                padding: const EdgeInsetsDirectional.only(end: 25.0,),
+                                padding: const EdgeInsetsDirectional.only(end: 23.0,),
                                 child: Text(
                                   '0 devices',
                                   style: TextStyle(
@@ -227,24 +251,28 @@ class AllRooms extends StatelessWidget {
 
                             ],
                           ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.only(start: 143.0,),
-                                child: Icon(
-                                  Icons.edit,
-                                  size: 15.0,
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(bottom: 10.0,),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.only(start: 97.0,),
+                                  child:   IconButton(onPressed: (){},
+                                    icon: Icon(
+                                      Icons.edit,
+                                      size: 15.0,
+                                      color: Colors.black45,
+                                    ),),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 20.0,
-                              ),
-                              Icon(
-                                Icons.delete,
-                                size: 15.0,
-                              ),
-                            ],
+                                IconButton(onPressed: (){},
+                                  icon: Icon(
+                                    Icons.delete,
+                                    size: 15.0,
+                                    color: Colors.black45,
+                                  ),),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -254,10 +282,10 @@ class AllRooms extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
                 width: double.infinity,
-                height: 80.0,
+                height: 90.0,
 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0,),
@@ -266,16 +294,22 @@ class AllRooms extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(15.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            width: 50.0,
-                            height: 50.0,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image(image: AssetImage('assets/living-room.png'),
+                                width: 40.0,
+                                height: 40.0,),
+                            ),
+                            width: 60.0,
+                            height: 60.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0,),
-                              color: Colors.blueAccent,
+                              color: Colors.black12,
                             ),
                           ),
                           SizedBox(
@@ -304,24 +338,28 @@ class AllRooms extends StatelessWidget {
 
                             ],
                           ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.only(start: 100.0,),
-                                child: Icon(
-                                  Icons.edit,
-                                  size: 15.0,
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(bottom: 10.0,),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.only(start: 62.0,),
+                                  child:   IconButton(onPressed: (){},
+                                    icon: Icon(
+                                      Icons.edit,
+                                      size: 15.0,
+                                      color: Colors.black45,
+                                    ),),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 20.0,
-                              ),
-                              Icon(
-                                Icons.delete,
-                                size: 15.0,
-                              ),
-                            ],
+                                IconButton(onPressed: (){},
+                                  icon: Icon(
+                                    Icons.delete,
+                                    size: 15.0,
+                                    color: Colors.black45,
+                                  ),),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -329,6 +367,28 @@ class AllRooms extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                IconButton(onPressed: (){},
+                    icon: Icon(
+                      Icons.add,
+                    ),),
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(
+                    top: 15.0,
+                  ),
+                  child: Text(
+                    'Add New Room',
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
