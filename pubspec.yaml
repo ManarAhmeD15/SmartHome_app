@@ -71,6 +71,7 @@ flutter:
    - assets/kitchen.png
    - assets/living-room.png
    - assets/dining-room.png
+   - assets/bathroom.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

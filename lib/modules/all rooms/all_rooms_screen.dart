@@ -15,9 +15,9 @@ class AllRooms extends StatelessWidget {
               child: Text(
                   'All Rooms',
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 25.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.yellow,
+                    color: Colors.yellow[500],
                   ),
                 ),
             ),
@@ -29,7 +29,7 @@ class AllRooms extends StatelessWidget {
                 height: 90.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0,),
-                  color: Colors.grey,
+                  color: Colors.white,
                 ),
                 child: Column(
                   children: [
@@ -49,7 +49,7 @@ class AllRooms extends StatelessWidget {
                                   height: 60.0,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0,),
-                                    color: Colors.black12,
+                                    color: Colors.red[100],
                                   ),
                                 ),
                                 SizedBox(
@@ -88,14 +88,14 @@ class AllRooms extends StatelessWidget {
                                           icon: Icon(
                                             Icons.edit,
                                             size: 15.0,
-                                            color: Colors.black45,
+                                            color: Colors.red,
                                           ),),
                                       ),
                                       IconButton(onPressed: (){},
                                         icon: Icon(
                                           Icons.delete,
                                           size: 15.0,
-                                          color: Colors.black45,
+                                          color: Colors.red,
                                         ),),
                                     ],
                                   ),
@@ -115,7 +115,7 @@ class AllRooms extends StatelessWidget {
 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0,),
-                  color: Colors.grey,
+                  color: Colors.white,
                 ),
                 child: Column(
                   children: [
@@ -127,7 +127,7 @@ class AllRooms extends StatelessWidget {
                           Container(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Image(image: AssetImage('assets/bedroom.png'),
+                              child: Image(image: AssetImage('assets/bathroom.png'),
                                 width: 40.0,
                                 height: 40.0,),
                             ),
@@ -135,7 +135,7 @@ class AllRooms extends StatelessWidget {
                             height: 60.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0,),
-                              color: Colors.black12,
+                              color: Colors.lightGreen[100],
                             ),
                           ),
                           SizedBox(
@@ -175,14 +175,14 @@ class AllRooms extends StatelessWidget {
                                     icon: Icon(
                                       Icons.edit,
                                       size: 15.0,
-                                      color: Colors.black45,
+                                      color: Colors.lightGreen,
                                     ),),
                                 ),
                                 IconButton(onPressed: (){},
                                   icon: Icon(
                                     Icons.delete,
                                     size: 15.0,
-                                    color: Colors.black45,
+                                    color: Colors.lightGreen,
                                   ),),
                               ],
                             ),
@@ -202,7 +202,7 @@ class AllRooms extends StatelessWidget {
 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0,),
-                  color: Colors.grey,
+                  color: Colors.white,
                 ),
                 child: Column(
                   children: [
@@ -222,7 +222,7 @@ class AllRooms extends StatelessWidget {
                             height: 60.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0,),
-                              color: Colors.black12,
+                              color: Colors.orange[100],
                             ),
                           ),
                           SizedBox(
@@ -262,14 +262,14 @@ class AllRooms extends StatelessWidget {
                                     icon: Icon(
                                       Icons.edit,
                                       size: 15.0,
-                                      color: Colors.black45,
+                                      color: Colors.orange,
                                     ),),
                                 ),
                                 IconButton(onPressed: (){},
                                   icon: Icon(
                                     Icons.delete,
                                     size: 15.0,
-                                    color: Colors.black45,
+                                    color: Colors.orange,
                                   ),),
                               ],
                             ),
@@ -289,7 +289,7 @@ class AllRooms extends StatelessWidget {
 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0,),
-                  color: Colors.grey,
+                  color: Colors.white,
                 ),
                 child: Column(
                   children: [
@@ -309,7 +309,7 @@ class AllRooms extends StatelessWidget {
                             height: 60.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0,),
-                              color: Colors.black12,
+                              color: Colors.cyan[50],
                             ),
                           ),
                           SizedBox(
@@ -349,14 +349,14 @@ class AllRooms extends StatelessWidget {
                                     icon: Icon(
                                       Icons.edit,
                                       size: 15.0,
-                                      color: Colors.black45,
+                                      color: Colors.cyan,
                                     ),),
                                 ),
                                 IconButton(onPressed: (){},
                                   icon: Icon(
                                     Icons.delete,
                                     size: 15.0,
-                                    color: Colors.black45,
+                                    color: Colors.cyan,
                                   ),),
                               ],
                             ),
