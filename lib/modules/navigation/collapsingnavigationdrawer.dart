@@ -12,10 +12,13 @@ class CollapsingNavigationDrawer extends StatefulWidget {
 }
 
 class _CollapsingNavigationDrawerState extends State<CollapsingNavigationDrawer> with SingleTickerProviderStateMixin{
+
+
   late AnimationController _animationController;
   late Animation<double> widthAnimation;
   double maxWidth=220.0;
   double minWidth =70.0;
+
   bool isCollapsed=false;
   int currentSelectedIndex=0;
 

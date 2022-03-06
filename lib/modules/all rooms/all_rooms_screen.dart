@@ -1,3 +1,4 @@
+import 'package:beginning_app/modules/all%20rooms/add_new_room.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -371,7 +372,10 @@ class AllRooms extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(onPressed: (){},
+                IconButton(onPressed: ()
+                {
+                  Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>  AddNewRoom()),);
+                },
                     icon: Icon(
                       Icons.add,
                     ),),
@@ -396,4 +400,16 @@ class AllRooms extends StatelessWidget {
 
     );
   }
+
+  // _singleChoiceDialog(BuildContext context) => showDialog(
+  //     context: context,
+  //     builder: (context)
+  //     {
+  //       final AddNewRoom = Provider.of
+  //     }
+  //
+  //
+  // )
+
+
 }

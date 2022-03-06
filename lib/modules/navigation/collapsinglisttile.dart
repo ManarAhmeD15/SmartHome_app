@@ -10,7 +10,7 @@ class CollapsingListTile extends StatefulWidget {
   final IconData icon;
   final AnimationController animationController;
   final bool isSelected;
-  final Function onTap;
+ final Function onTap;
 
 
   CollapsingListTile({Key? key, required this.title,required this.icon,required this.animationController,this.isSelected=false, required this.onTap}) : super(key: key);
