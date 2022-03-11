@@ -39,18 +39,20 @@ class AllRooms extends StatelessWidget {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Container(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image(image: AssetImage('assets/bedroom.png'),
-                                      width: 40.0,
-                                      height: 40.0,),
-                                  ),
-                                  width: 60.0,
-                                  height: 60.0,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.0,),
-                                    color: Colors.red[100],
+                                Expanded(
+                                  child: Container(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image(image: AssetImage('assets/bedroom.png'),
+                                        width: 40.0,
+                                        height: 40.0,),
+                                    ),
+                                    width: double.infinity,
+                                    height: 60.0,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10.0,),
+                                      color: Colors.red[100],
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -125,19 +127,21 @@ class AllRooms extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
+                          Expanded (
+                            child : Container(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Image(image: AssetImage('assets/bathroom.png'),
                                 width: 40.0,
                                 height: 40.0,),
                             ),
-                            width: 60.0,
+                            width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0,),
                               color: Colors.lightGreen[100],
                             ),
+                          ),
                           ),
                           SizedBox(
                             width: 10.0,
@@ -212,18 +216,20 @@ class AllRooms extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Image(image: AssetImage('assets/kitchen.png'),
-                                width: 40.0,
-                                height: 40.0,),
-                            ),
-                            width: 60.0,
-                            height: 60.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0,),
-                              color: Colors.orange[100],
+                          Expanded(
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image(image: AssetImage('assets/kitchen.png'),
+                                  width: 40.0,
+                                  height: 40.0,),
+                              ),
+                              width: double.infinity,
+                              height: 60.0,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0,),
+                                color: Colors.orange[100],
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -299,18 +305,20 @@ class AllRooms extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Image(image: AssetImage('assets/living-room.png'),
-                                width: 40.0,
-                                height: 40.0,),
-                            ),
-                            width: 60.0,
-                            height: 60.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0,),
-                              color: Colors.cyan[50],
+                          Expanded(
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image(image: AssetImage('assets/living-room.png'),
+                                  width: 40.0,
+                                  height: 40.0,),
+                              ),
+                              width: double.infinity,
+                              height: 60.0,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0,),
+                                color: Colors.cyan[50],
+                              ),
                             ),
                           ),
                           SizedBox(
