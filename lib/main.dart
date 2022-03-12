@@ -1,6 +1,8 @@
 import 'package:beginning_app/modules/login/loginscreen.dart';
 import 'package:beginning_app/modules/signup/signupscreen.dart';
 import 'package:flutter/material.dart';
+import 'modules/alignment/align.dart';
+import 'modules/all rooms/add_new_device.dart';
 import 'modules/all rooms/add_new_room.dart';
 import 'modules/all rooms/all_rooms_screen.dart';
 import 'modules/home/home_screen.dart';
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
    return MaterialApp(
 
      debugShowCheckedModeBanner: false,
-     home: AllRooms(),
+     home: AddNewDevice(),
    );
   }
 
