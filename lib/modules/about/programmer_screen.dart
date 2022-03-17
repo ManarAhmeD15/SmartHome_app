@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 String tbakhUrl='https://drive.google.com/file/d/1eaxnWE2RF2uw9niiJsUAaKxGru2oJT3K/view?usp=sharing';
-String ebrahimUrl='https://avatars.githubusercontent.com/u/73136678?s=400&u=0926427298f3144abcfbcd6991b0d2922e7bb327&v=4';
+String ibrahimUrl='https://avatars.githubusercontent.com/u/87869566?v=4';
 String manarUrl='https://avatars.githubusercontent.com/u/73136678?v=4';
 String asmaaUrl='https://avatars.githubusercontent.com/u/101802362?v=4';
 String seragUrl='https://drive.google.com/file/d/1OVTB_jw2hNG--tFdqukVneVJKUu8gj-v/view?usp=sharing';
@@ -52,7 +52,7 @@ class ListViewWidget extends StatelessWidget {
           color: Colors.amber,
           tiles:[
             ListTileWidget(urlStr: manarUrl, name: 'Ibrahim Samir El-Tbakh', email: 'eltabakh987@gmail.com'),
-            ListTileWidget(urlStr: manarUrl, name: 'Ibrahim Ahmed El-Badwy ', email: 'ha585115@gmail.com'),
+            ListTileWidget(urlStr: ibrahimUrl, name: 'Ibrahim Ahmed El-Badwy ', email: 'ha585115@gmail.com'),
             ListTileWidget(urlStr: manarUrl, name: 'Manar Ahmed Mohamed ', email: 'mnarahmed@gmail.com'),
             ListTileWidget(urlStr: asmaaUrl, name: 'Asmaa Ahmed Saeed', email: 'asmaa612ahmed@gmail.com'),
             ListTileWidget(urlStr: manarUrl, name: 'Ahmed Medhat Serag', email: 'aserag764@gmail.com'),
