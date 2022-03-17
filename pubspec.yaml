@@ -74,6 +74,20 @@ flutter:
    - assets/bathroom.png
    - assets/study.png
    - assets/kids-room.png
+   - assets/motion.png
+   - assets/alarm.png
+   - assets/gaming.png
+   - assets/fire.png
+   - assets/smoke.png
+   - assets/leak.png
+   - assets/lamp.png
+   - assets/magnetic.png
+   - assets/garage.png
+   - assets/fan.png
+   - assets/fridge.png
+   - assets/ac.png
+   - assets/humidity.png
+   - assets/tv.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
