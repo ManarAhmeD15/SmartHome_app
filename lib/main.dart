@@ -1,7 +1,10 @@
+import 'package:beginning_app/models/programmer_model.dart';
+//import 'package:beginning_app/modules/about/about_screen.dart';
+import 'package:beginning_app/modules/about/programmer_screen.dart';
 import 'package:beginning_app/modules/login/loginscreen.dart';
 import 'package:beginning_app/modules/signup/signupscreen.dart';
 import 'package:flutter/material.dart';
-import 'modules/alignment/align.dart';
+
 import 'modules/all rooms/add_new_device.dart';
 import 'modules/all rooms/add_new_room.dart';
 import 'modules/all rooms/all_rooms_screen.dart';
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
    return MaterialApp(
 
      debugShowCheckedModeBanner: false,
-     home: AddNewDevice(),
+     home: ProgrammerScreen(),
    );
   }
 
