@@ -310,7 +310,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(15.0,),
+                                          borderRadius: BorderRadius.circular(14.0,),
                                           color:  Colors.black12,
                                         ),
                                       ),
