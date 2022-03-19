@@ -105,13 +105,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Expanded(
                         child: Row(
-                          //crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             TextButton(
                               onPressed: () {},
                               child: Row(
-                                //crossAxisAlignment: CrossAxisAlignment.end,
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   SizedBox(width: 30.0,),
@@ -149,7 +147,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: ListView.separated(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) => Rooms(),
+                            itemBuilder: (context, index) => Column(
+                              children: [
+                                Bedroom(),
+                              ],
+                            ),
                             separatorBuilder: (context, index) => SizedBox(
                               width: 20,
                             ),
@@ -332,8 +334,7 @@ Widget customSwitch(String text, bool val, Function onChangedMethod){
   return Padding(
       padding: const EdgeInsets.symmetric(vertical:0,),
           child: Row(
-      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children:[
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -344,7 +345,6 @@ Widget customSwitch(String text, bool val, Function onChangedMethod){
                 ),
                 ),
               ),
-              //Spacer(),
               CupertinoSwitch(
                   value: val,
                   trackColor: Colors.white70,
@@ -360,8 +360,82 @@ Widget customSwitch(String text, bool val, Function onChangedMethod){
 }
 
 
-
-Widget Rooms() => Container(
+Widget Bedroom ()=> Container(
+        width: 100.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            10.0,
+          ),
+          color: Colors.grey[300],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5.0,),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 5.0,
+                    ),
+                    child: Container(
+                      width: 40.0,
+                      height: 70.0,
+                      child: Image(
+                        image: AssetImage('assets/bedroom.png'),
+                        width: 70.0,
+                        height: 70.0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 7.0,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Bedroom',
+                      style: TextStyle(
+                        fontSize: 10.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      maxLines: 2,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 7.0,
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '2 Devices',
+                      style: TextStyle(
+                        fontSize: 8.0,
+                        color: Colors.black54,
+                      ),
+                      maxLines: 2,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+Widget Kitchen ()=> Container(
   width: 100.0,
   decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(
@@ -384,7 +458,7 @@ Widget Rooms() => Container(
                 width: 40.0,
                 height: 70.0,
                 child: Image(
-                  image: AssetImage('assets/home-automation(1).png'),
+                  image: AssetImage('assets/kitchen.png'),
                   width: 70.0,
                   height: 70.0,
                 ),
@@ -436,3 +510,229 @@ Widget Rooms() => Container(
     ),
   ),
 );
+Widget LivingRoom()=> Container(
+  width: 100.0,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(
+      10.0,
+    ),
+    color: Colors.grey[300],
+  ),
+  child: Padding(
+    padding: const EdgeInsets.symmetric(vertical: 5.0,),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 5.0,
+              ),
+              child: Container(
+                width: 40.0,
+                height: 70.0,
+                child: Image(
+                  image: AssetImage('assets/living-room.png'),
+                  width: 70.0,
+                  height: 70.0,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 7.0,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'Bedroom',
+                style: TextStyle(
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                maxLines: 2,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 7.0,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '2 Devices',
+                style: TextStyle(
+                  fontSize: 8.0,
+                  color: Colors.black54,
+                ),
+                maxLines: 2,
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  ),
+);
+Widget StudyingRoom ()=> Container(
+  width: 100.0,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(
+      10.0,
+    ),
+    color: Colors.grey[300],
+  ),
+  child: Padding(
+    padding: const EdgeInsets.symmetric(vertical: 5.0,),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 5.0,
+              ),
+              child: Container(
+                width: 40.0,
+                height: 70.0,
+                child: Image(
+                  image: AssetImage('assets/study.png'),
+                  width: 70.0,
+                  height: 70.0,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 7.0,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'Bedroom',
+                style: TextStyle(
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                maxLines: 2,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 7.0,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '2 Devices',
+                style: TextStyle(
+                  fontSize: 8.0,
+                  color: Colors.black54,
+                ),
+                maxLines: 2,
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  ),
+);
+Widget DiningRoom ()=> Container(
+  width: 100.0,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(
+      10.0,
+    ),
+    color: Colors.grey[300],
+  ),
+  child: Padding(
+    padding: const EdgeInsets.symmetric(vertical: 5.0,),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 5.0,
+              ),
+              child: Container(
+                width: 40.0,
+                height: 70.0,
+                child: Image(
+                  image: AssetImage('assets/dining-room.png'),
+                  width: 70.0,
+                  height: 70.0,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 7.0,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'Bedroom',
+                style: TextStyle(
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                maxLines: 2,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 7.0,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '2 Devices',
+                style: TextStyle(
+                  fontSize: 8.0,
+                  color: Colors.black54,
+                ),
+                maxLines: 2,
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  ),
+);
+
