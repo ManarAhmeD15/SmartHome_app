@@ -7,7 +7,7 @@ String tbakhUrl='https://drive.google.com/file/d/1eaxnWE2RF2uw9niiJsUAaKxGru2oJT
 String ibrahimUrl='https://avatars.githubusercontent.com/u/87869566?v=4';
 String manarUrl='https://avatars.githubusercontent.com/u/73136678?v=4';
 String asmaaUrl='https://avatars.githubusercontent.com/u/101802362?v=4';
-String seragUrl='https://drive.google.com/file/d/1OVTB_jw2hNG--tFdqukVneVJKUu8gj-v/view?usp=sharing';
+String seragUrl='https://t.co/TE5Hk0dRbw';
 String hagerUrl='https://avatars.githubusercontent.com/u/61125543?v=4';
 
 
@@ -55,7 +55,7 @@ class ListViewWidget extends StatelessWidget {
             ListTileWidget(urlStr: ibrahimUrl, name: 'Ibrahim Ahmed El-Badwy ', email: 'ha585115@gmail.com'),
             ListTileWidget(urlStr: manarUrl, name: 'Manar Ahmed Mohamed ', email: 'mnarahmed@gmail.com'),
             ListTileWidget(urlStr: asmaaUrl, name: 'Asmaa Ahmed Saeed', email: 'asmaa612ahmed@gmail.com'),
-            ListTileWidget(urlStr: manarUrl, name: 'Ahmed Medhat Serag', email: 'aserag764@gmail.com'),
+            ListTileWidget(urlStr: seragUrl, name: 'Ahmed Medhat Serag', email: 'aserag764@gmail.com'),
             ListTileWidget(urlStr: hagerUrl, name: 'Hager Mahmoud Maher ', email: 'hagermahmoud2468@gmail.com'),
 
 
