@@ -1,14 +1,11 @@
 import 'package:beginning_app/modules/login/loginscreen.dart';
 import 'package:beginning_app/modules/signup/signupscreen.dart';
 import 'package:flutter/material.dart';
-import 'modules/about/programmer_screen.dart';
-import 'modules/all rooms/add_new_device.dart';
-import 'modules/all rooms/add_new_room.dart';
 import 'modules/all rooms/all_rooms_screen.dart';
 import 'modules/home/home_screen.dart';
 import 'modules/password/forgot_password.dart';
-import 'modules/remote_control/remote_screen.dart';
-import 'modules/splash/splash_screen.dart';
+import 'modules/profile/profile.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -20,7 +17,7 @@ class MyApp extends StatelessWidget {
    return MaterialApp(
 
      debugShowCheckedModeBanner: false,
-     home: RemoteScreen(),
+     home: profile(),
    );
   }
 
