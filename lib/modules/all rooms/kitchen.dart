@@ -226,13 +226,13 @@ class KitchenScreen extends StatelessWidget {
                   Stack(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(15.0),
+                        padding: const EdgeInsets.all(20.0),
                         child: Container(
                           width: 350,
                           height: 300,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(15.0,),
+                            borderRadius: BorderRadius.circular(20.0,),
                           ),
                         ),
                       ),
@@ -245,7 +245,7 @@ class KitchenScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Alarm Clock',
+                                  'Fire detector',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Color(hexColor("#264653")),
