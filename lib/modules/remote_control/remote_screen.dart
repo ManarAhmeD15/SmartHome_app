@@ -81,7 +81,7 @@ class _RemoteScreenState extends State<RemoteScreen> {
                       Text(
                         'Remote Control',
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 24.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.amber,
                         ),
