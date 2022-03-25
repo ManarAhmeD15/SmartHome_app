@@ -1,15 +1,37 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class bedroom extends StatelessWidget {
+class bedroom extends StatefulWidget {
   const bedroom({Key? key}) : super(key: key);
 
+  @override
+  State<bedroom> createState() => _bedroomState();
+}
+
+class _bedroomState extends State<bedroom> {
   hexColor(String colorhexcode) {
     String colornew = '0xff' + colorhexcode;
     colornew = colornew.replaceAll('#', '');
     int colorint = int.parse(colornew);
     return colorint;
   }
+
+  bool val1 = true;
+  bool val2 = true;
+  onChangedFunction1(bool newValue1){
+    setState(() {
+      val1 = newValue1;
+    });
+  }
+  onChangedFunction2(bool newValue2){
+    setState(() {
+      val2 = newValue2;
+    });
+  }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -281,7 +303,112 @@ class bedroom extends StatelessWidget {
                           ],
                         ),
                       ),
+                      Positioned(
+                        top: 100,
+                        left: 30,
+                        child: Stack(
+                          children: [
+                            Container(
+                              width: 300,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.circular(15.0,),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      width: 30,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(20.0,),
+                                      ),
+                                      child: Icon(
+                                        Icons.alarm,
+                                        color: Colors.amber,
+                                        size: 20.0,
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        customSwitch(
+                                            'On', val1, onChangedFunction1
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
 
+
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        top: 170,
+                        left: 30,
+                        child: Stack(
+                          children: [
+                            Container(
+                              width: 300,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.circular(15.0,),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      width: 30,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(20.0,),
+                                      ),
+                                      child: Icon(
+                                        Icons.alarm,
+                                        color: Colors.amber,
+                                        size: 20.0,
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        customSwitch(
+                                            'Off', val2, onChangedFunction2
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+
+
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        left: 150,
+                        top: 335,
+                        child: Stack(
+                          children: [
+                            FloatingActionButton(
+                              backgroundColor: Colors.amber,
+                              onPressed: (){},
+                              child: Icon(
+                                Icons.add,
+                                size: 30.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
 
@@ -294,4 +421,35 @@ class bedroom extends StatelessWidget {
       ),
     );
   }
+}
+
+
+
+Widget customSwitch(String text, bool val, Function onChangedMethod){
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical:0,),
+    child: Row(
+      children:[
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            text, style: TextStyle(
+            fontSize: 12.0,
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          ),
+          ),
+        ),
+        CupertinoSwitch(
+            value: val,
+            trackColor: Colors.white70,
+            activeColor: Colors.blueGrey,
+            onChanged: (newValue)
+            {
+              onChangedMethod(newValue);
+            }
+        )
+      ],
+    ),
+  );
 }
