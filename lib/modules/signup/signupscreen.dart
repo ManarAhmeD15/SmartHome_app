@@ -190,6 +190,9 @@ class _SignupScreenState extends State<SignupScreen> {
                           SizedBox(
                             height: 15.0,
                           ),
+
+
+
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 30.0,
@@ -260,6 +263,9 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                             ),
                           ),
+
+
+
 
                           SizedBox(
                             height: 100.0,
