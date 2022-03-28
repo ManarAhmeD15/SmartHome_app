@@ -1,3 +1,4 @@
+import 'package:beginning_app/modules/about/programmer_screen.dart';
 import 'package:beginning_app/modules/all%20rooms/bedroom/bedroom.dart';
 import 'package:beginning_app/modules/all%20rooms/kitchen/kitchen.dart';
 import 'package:beginning_app/modules/login/loginscreen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
    return MaterialApp(
 
      debugShowCheckedModeBanner: false,
-     home: bedroom(),
+     home: ProgrammerScreen(),
    );
   }
 

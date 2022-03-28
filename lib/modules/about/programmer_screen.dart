@@ -1,131 +1,378 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:beginning_app/modules/home/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-String tbakhUrl='https://drive.google.com/file/d/1eaxnWE2RF2uw9niiJsUAaKxGru2oJT3K/view?usp=sharing';
-String ibrahimUrl='https://avatars.githubusercontent.com/u/87869566?v=4';
-String manarUrl='https://avatars.githubusercontent.com/u/73136678?v=4';
-String asmaaUrl='https://avatars.githubusercontent.com/u/101802362?v=4';
-String seragUrl='https://t.co/TE5Hk0dRbw';
-String hagerUrl='https://avatars.githubusercontent.com/u/61125543?v=4';
-
-
 class ProgrammerScreen extends StatelessWidget{
-  const ProgrammerScreen({Key? key}) : super(key: key);
+  const ProgrammerScreen ({Key? key}) : super(key: key);
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor:Colors.blueGrey[800],
-        title: Center(
-          child: Text('About',
-          style: TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 30.0,
-            color: Colors.white,
-          ),),
+      body:SafeArea(
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.topCenter,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    width: 240.0,
+                    height: 120.0,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(300),
+                        bottomRight: Radius.circular(300),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(
+                        end: 270.0
+                    ),
+                    child:IconButton(
+                      onPressed: ()
+                      {
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => const HomeScreen()),);
+
+
+                      },
+                      icon: Icon(
+                          Icons.arrow_back_ios,
+                          size: 35.0,
+                          color: Colors.blueGrey[800]),
+                    ),
+                  ),
+
+                  //  Padding(
+                  //    padding: const EdgeInsetsDirectional.only(top: 50.0,),
+                  //    child:
+                  Text(
+                    'About',
+                    style: TextStyle(
+                      fontSize: 26.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amber,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(
+              height: 15.0,
+            ),
+
+
+            SingleChildScrollView(
+              //scrollDirection: Axis.vertical
+              child:
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 10.0),
+                child: Column(
+                  children:
+                  [
+                    Padding(
+                      padding: const EdgeInsetsDirectional.all(8.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 25.0,
+                            backgroundImage: const NetworkImage('https://avatars.githubusercontent.com/u/87869566?v=4'),
+                          ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('Ibrahim Ahmed El-Badwy',
+                                  style: TextStyle(
+                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                              ),
+                              Row(
+                                children: [
+                                  Text('ha585115@gmail.com',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      color: Colors.grey,
+                                    ),),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: Text('[Software]',
+                                      style: TextStyle(
+                                        fontSize: 18.0,
+                                        color: Colors.amber,
+                                      ),),
+                                  ),
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Divider(
+                      height: 8.0,
+                      color: Colors.amber[700],
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.all( 8.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 25.0,
+                            backgroundImage: const NetworkImage('https://avatars.githubusercontent.com/u/73136678?v=4'),
+                          ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('Manar Ahmed Mohamed',
+                                  style: TextStyle(
+                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                              ),
+                              Row(
+                                children: [
+                                  Text('mnarahmed@gmail.com',
+                                    style: TextStyle(
+                                      fontSize: 17.0,
+                                      color: Colors.grey,
+                                    ),),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: Text('[Software]',
+                                      style: TextStyle(
+                                        fontSize: 18.0,
+                                        color: Colors.amber,
+                                      ),),
+                                  ),
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+
+                    ),
+                    Divider(
+                      height: 8.0,
+                      color: Colors.amber[700],
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsetsDirectional.all(8.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 25.0,
+                            backgroundImage: const NetworkImage('https://t.co/TE5Hk0dRbw'),
+                          ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('Ahmed Medhat Serag',
+                                  style: TextStyle(
+                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                              ),
+                              Row(
+                                children: [
+                                  Text('aserag764@gmail.com',
+                                    style: TextStyle(
+                                      fontSize: 17.0,
+                                      color: Colors.grey,
+                                    ),),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: Text('[Software]',
+                                      style: TextStyle(
+                                        fontSize: 18.0,
+                                        color: Colors.amber,
+                                      ),),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Divider(
+                      height: 8.0,
+                      color: Colors.amber[700],
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.all(8.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 25.0,
+                            backgroundImage: const NetworkImage('https://avatars.githubusercontent.com/u/101874933?v=4'),
+                          ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('Ibrahem Samir (Team leader)',
+                                  style: TextStyle(
+                                    fontSize: 21.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                              ),
+                              Row(
+                                children: [
+                                  Text('eltabakh987@gmail.com',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.grey,
+                                    ),),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: Text('[Hardware]',
+                                      style: TextStyle(
+                                        fontSize: 18.0,
+                                        color: Colors.amber,
+                                      ),),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Divider(
+                      height: 8.0,
+                      color: Colors.amber[700],
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.all(8.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 25.0,
+                            backgroundImage: const NetworkImage('https://avatars.githubusercontent.com/u/101802362?v=4'),
+                          ),
+                          SizedBox(
+                            width: 16.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('Asmaa Ahmed Saeed',
+                                  style: TextStyle(
+                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                              ),
+                              Row(
+                                children: [
+                                  Text('asmaa612ahmed@gmail.com',
+                                    style: TextStyle(
+                                      fontSize: 15.0,
+                                      color: Colors.grey,
+                                    ),),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 6.0),
+                                    child: Text('[Hardware]',
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        color: Colors.amber,
+                                      ),),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+
+                    ),
+                    Divider(
+                      height: 8.0,
+                      color: Colors.amber[700],
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(top: 8.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 25.0,
+                            backgroundImage: const NetworkImage('https://avatars.githubusercontent.com/u/61125543?v=4'),
+                          ),
+                          SizedBox(
+                            width: 18.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('Hager Mahmoud Maher',
+                                  style: TextStyle(
+                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                              ),
+                              Row(
+                                children: [
+                                  Text('hagermahmoud2468@gmail.com',
+                                    style: TextStyle(
+                                      fontSize: 15.0,
+                                      color: Colors.grey,
+                                    ),),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 2.0,top: 4.0),
+                                    child: Text('[Hardware]',
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        color: Colors.amber,
+                                      ),),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
-      body:Padding(
-        padding: const EdgeInsets.only(top: 20.0),
-        child: ListViewWidget(),
-      ),
+
 
 
     );
   }
 }
-
-class ListViewWidget extends StatelessWidget {
-  const ListViewWidget({Key? key}) : super(key: key);
-
-  //get tiles => ;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: ListTile.divideTiles(
-        context: context,
-          color: Colors.amber,
-          tiles:[
-            ListTileWidget(urlStr: manarUrl, name: 'Ibrahim Samir El-Tbakh', email: 'eltabakh987@gmail.com'),
-            ListTileWidget(urlStr: ibrahimUrl, name: 'Ibrahim Ahmed El-Badwy ', email: 'ha585115@gmail.com'),
-            ListTileWidget(urlStr: manarUrl, name: 'Manar Ahmed Mohamed ', email: 'mnarahmed@gmail.com'),
-            ListTileWidget(urlStr: asmaaUrl, name: 'Asmaa Ahmed Saeed', email: 'asmaa612ahmed@gmail.com'),
-            ListTileWidget(urlStr: seragUrl, name: 'Ahmed Medhat Serag', email: 'aserag764@gmail.com'),
-            ListTileWidget(urlStr: hagerUrl, name: 'Hager Mahmoud Maher ', email: 'hagermahmoud2468@gmail.com'),
-
-
-          ]).toList(),
-
-    );
-  }
-}
-
-
-
-
-class ListTileWidget extends StatelessWidget {
-  final String urlStr;
-  final String name;
-  final String email;
-
-  ListTileWidget(
-      {Key? key, required this.urlStr, required this.name, required this.email})
-      : super(key: key);
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
-        child: ListTile(
-          leading: CircleAvatar(
-            radius: 30.0,
-            backgroundImage: NetworkImage(urlStr),
-
-          ),
-          title: Text(name,style: TextStyle(fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],),),
-          subtitle: Text(email),
-
-
-
-
-        ),
-
-    );
-  }
-
-
-}
-
-
-class BodyWidget extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: ListTile(
-        leading: CircleAvatar(
-          radius: 30.0,
-          backgroundImage: NetworkImage(manarUrl),
-        ),
-        title: Text('Manar Ahmed', style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[600]),),
-        subtitle: Text('mnarahmed@gmail.com'),
-        dense: false,
-      ),
-
-
-    );
-  }
-
-}
-
-
-
-
-
 
