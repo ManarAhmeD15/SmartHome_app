@@ -39,6 +39,18 @@ dependencies:
 
 
 
+  # persist locally data
+  shared_preferences: ^2.0.5
+
+  # pick image
+  image_picker: ^0.7.4
+
+  # store image
+
+  path_provider: ^2.0.1
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

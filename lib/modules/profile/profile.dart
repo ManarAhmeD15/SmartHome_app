@@ -35,10 +35,10 @@ class profile extends StatelessWidget {
                           Navigator.push(context,MaterialPageRoute(builder: (context) => const HomeScreen()),);
                         },
                         icon: Icon(
-                          Icons.arrow_back_ios,
-                          size: 35.0,
-                          color: Colors.blueGrey[800]),
-                        ),
+                            Icons.arrow_back_ios,
+                            size: 35.0,
+                            color: Colors.blueGrey[800]),
+                      ),
 
                     ),
                   ],
@@ -62,9 +62,9 @@ class profile extends StatelessWidget {
                             ),
                             boxShadow: [
                               BoxShadow(
-                                  spreadRadius: 2,
-                                  blurRadius: 10,
-                                  color: Color(hexColor("#264653")),
+                                spreadRadius: 2,
+                                blurRadius: 10,
+                                color: Color(hexColor("#264653")),
 
                               ),
                             ],
@@ -98,13 +98,13 @@ class profile extends StatelessWidget {
                               Icon(
                                 Icons.edit ,
                                 color: Colors.white,
-                              size: 25,),
+                                size: 25,),
                               onPressed:()
                               {
 
 
                               },
-                              ),
+                            ),
                           ))
                     ],
                   ),
@@ -229,7 +229,7 @@ class profile extends StatelessWidget {
                       child: Text(
                         'Edit',
                         style: TextStyle(
-                          fontSize: 20.0,
+                            fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),

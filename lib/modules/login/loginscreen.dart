@@ -1,4 +1,5 @@
 import 'package:beginning_app/modules/password/forgot_password.dart';
+import 'package:beginning_app/modules/profile/user_preferences.dart';
 import 'package:beginning_app/modules/signup/signupscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final user=UserPreferences.getUser();
+
     return Scaffold(
       // appBar: AppBar(
       //   title:Text(appTitle),

@@ -9,6 +9,7 @@ import 'modules/all rooms/all_rooms_screen.dart';
 import 'modules/home/home_screen.dart';
 import 'modules/password/forgot_password.dart';
 import 'modules/profile/profile.dart';
+import 'modules/profile/user_preferences.dart';
 
 
 void main() {
