@@ -12,7 +12,6 @@ import 'modules/password/forgot_password.dart';
 import 'modules/profile/profile.dart';
 import 'modules/profile/user_preferences.dart';
 
-
 void main() {
   runApp(MyApp());
 }

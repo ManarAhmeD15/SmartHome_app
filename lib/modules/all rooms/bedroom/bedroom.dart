@@ -1,11 +1,9 @@
-import 'package:beginning_app/modules/all%20rooms/bedroom/temperature.dart';
 import 'package:beginning_app/modules/all%20rooms/bedroom/alarm.dart';
 import 'package:beginning_app/modules/all%20rooms/add_new_device.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'magnetic.dart';
-import 'motion.dart';
+
 
 class bedroom extends StatefulWidget {
   const bedroom({Key? key}) : super(key: key);
@@ -21,7 +19,7 @@ class _bedroomState extends State<bedroom> {
     int colorint = int.parse(colornew);
     return colorint;
   }
-  var currentIndex;
+
   bool val1 = true;
   bool val2 = true;
   onChangedFunction1(bool newValue1){
@@ -35,16 +33,7 @@ class _bedroomState extends State<bedroom> {
     });
   }
 
-  List<String>titles = [
-    'Temperature',
-    'Motion',
-    'Magnetic'
-  ];
-  List<Widget>screens = const[
-    Temperature(),
-    Motion(),
-    Magnetic(),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
