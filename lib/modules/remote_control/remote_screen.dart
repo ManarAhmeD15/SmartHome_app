@@ -38,12 +38,8 @@ class _RemoteScreenState extends State<RemoteScreen> {
 
     return Scaffold(
       body:
-     // Padding(
-        //padding: const EdgeInsetsDirectional.only(bottom: 180.0),
-        //child:
       SafeArea(
         child: Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 alignment: Alignment.topCenter,
@@ -75,9 +71,6 @@ class _RemoteScreenState extends State<RemoteScreen> {
                         ),
                       ),
                     ),
-                   // Padding(
-                      //padding: const EdgeInsetsDirectional.only(top: 50.0,),
-                      //child:
                       Text(
                         'Remote Control',
                         style: TextStyle(
@@ -86,7 +79,6 @@ class _RemoteScreenState extends State<RemoteScreen> {
                           color: Colors.amber,
                         ),
                       ),
-                    //),
                   ],
                 ),
               ),

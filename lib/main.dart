@@ -6,6 +6,7 @@ import 'package:beginning_app/modules/remote_control/remote_screen.dart';
 import 'package:beginning_app/modules/signup/signupscreen.dart';
 import 'package:flutter/material.dart';
 import 'modules/all rooms/all_rooms_screen.dart';
+import 'modules/all rooms/bedroom/alarm.dart';
 import 'modules/home/home_screen.dart';
 import 'modules/password/forgot_password.dart';
 import 'modules/profile/profile.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
    return MaterialApp(
 
      debugShowCheckedModeBanner: false,
-     home: profile(),
+     home: bedroom(),
    );
   }
 
