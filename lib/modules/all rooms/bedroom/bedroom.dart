@@ -1,9 +1,10 @@
 import 'package:beginning_app/modules/all%20rooms/bedroom/alarm.dart';
-import 'package:beginning_app/modules/all%20rooms/add_new_device.dart';
+import 'package:beginning_app/modules/all%20rooms/bedroom/add_new_device.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 //import 'package:flutter_switch/flutter_switch.dart';
+//import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 
 
 
@@ -390,23 +391,22 @@ class _bedroomState extends State<bedroom> {
                                       ),
                                     ),
 
-                                      Stack(
-                                        alignment: Alignment.bottomLeft,
-                                        children: [
-                                          Switch(
-
-                                            onChanged: (value)
-                                            {
-                                              setState(() {
-                                            selected=value;
-                                          });
-                                              },
-                                            value: selected,
-                                          activeColor: Colors.blueGrey[800],
-                                          ),
-
-                                        ],
-                                      ),
+                                      // Stack(
+                                      //   alignment: Alignment.bottomLeft,
+                                      //   children: [
+                                      //     // LiteRollingSwitch(
+                                      //     //   value: true,
+                                      //     //
+                                      //     // ),
+                                      //
+                                      //     Switch(value: selected, onChanged: (bool value){
+                                      //       setState(() {
+                                      //         selected=value;
+                                      //       });
+                                      //
+                                      //     }),
+                                      //   ],
+                                      // ),
                                   ],
                                   ),
                                   // content: Container(
@@ -479,14 +479,6 @@ class _bedroomState extends State<bedroom> {
                                           ),
 
 
-                                          // FloatingActionButton(
-                                          //   backgroundColor: Colors.amber,
-                                          //   onPressed: (){},
-                                          //   child: Icon(
-                                          //     Icons.add,
-                                          //     size: 30.0,
-                                          //   ),
-                                          // ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),

@@ -1,5 +1,9 @@
+import 'package:beginning_app/modules/all%20rooms/kitchen/add_new_device_kitchen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
+
+import '../bedroom/add_new_device.dart';
 
 class KitchenScreen extends StatelessWidget {
   const KitchenScreen({Key? key}) : super(key: key);
@@ -96,7 +100,12 @@ class KitchenScreen extends StatelessWidget {
                       children: [
                         Container(
                           child: IconButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  AddNewKitchen()),
+                              );
+                            },
                             icon:Icon(
                               Icons.add,
                               size: 30.0,
@@ -124,19 +133,115 @@ class KitchenScreen extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Image(image: AssetImage('assets/leak.png'),
-                              width: 40.0,
-                              height: 40.0,),
-                          ),
-                          width: 50.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0,),
-                            color:  Colors.black12,
-                          ),
+                        Stack(
+                          children: [
+                            Container(
+                              width: 50.0,
+                              height: 50.0,
+                              child: TextButton(
+                                onPressed: (){
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                      title:
+                                      //Center(
+                                        //child:
+                                        Text(
+                                          'Water leak value',
+                                          maxLines: 1,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color:Colors.amber,
+                                            fontSize: 20.0,
+                                          ),
+                                        ),
+                                      //),
+                                      content:
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),
+                                        child: CircularPercentIndicator(
+                                          radius: 50.0,
+                                          lineWidth: 10.0,
+                                          backgroundColor: Colors.grey,
+                                          percent: 0.44,
+                                          progressColor: Color(hexColor("#264653"),),
+                                          animation: true,
+                                          animationDuration: 1500,
+                                          circularStrokeCap: CircularStrokeCap.round,
+                                          // header: Text('Water leak value',
+                                          //   maxLines: 1,
+                                          //   style: TextStyle(
+                                          //     fontWeight: FontWeight.bold,
+                                          //     // color:  Color(hexColor("#264653")),
+                                          //     fontSize: 15.0,
+                                          //   ),
+                                          // ),
+
+                                          center:
+                                          Stack(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional.only(
+                                                  top: 23.0,
+                                                ),
+                                                child: Stack(
+                                                  children: [
+                                                    Text("40%",
+                                                      //maxLines: 1,
+                                                      style: TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                        color:Color(hexColor("#264653")),
+                                                        fontSize: 15.0,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional.only(start:5.0,),
+                                                child: Stack(
+                                                  children: [
+                                                    Image(image: AssetImage('assets/leak.png'),
+                                                      width: 24.0,
+                                                      height: 24.0,),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+
+
+                                        ),
+                                      ),
+                                      // actions: [
+                                      //   Center(
+                                      //     child: FloatingActionButton(
+                                      //       backgroundColor: Colors.amber,
+                                      //       onPressed: (){},
+                                      //       child: Icon(
+                                      //         Icons.add,
+                                      //         size: 30.0,
+                                      //       ),
+                                      //     ),
+                                      //   ),
+                                      // ],
+                                    ),
+                                  );
+                                },
+                                child: Stack(
+                                  children: [
+                                    Image(image: AssetImage('assets/leak.png'),
+                                      width: 30.0,
+                                      height: 30.0,),
+                                  ],
+                                ),
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0,),
+                                color:  Colors.black12,
+                              ),
+                            ),
+                          ],
                         ),
                         Text(
                           'Water leak',
@@ -153,19 +258,115 @@ class KitchenScreen extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Image(image: AssetImage('assets/smoke.png'),
-                              width: 40.0,
-                              height: 40.0,),
-                          ),
-                          width: 50.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0,),
-                            color:  Colors.black12,
-                          ),
+                        Stack(
+                          children: [
+                            Container(
+                              width: 50.0,
+                              height: 50.0,
+                              child: TextButton(
+                                onPressed: (){
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                      title:
+                                      //Center(
+                                      //child:
+                                      Text(
+                                        'Smoke detector value',
+                                        maxLines: 1,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color:Colors.amber,
+                                          fontSize: 20.0,
+                                        ),
+                                      ),
+                                      //),
+                                      content:
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),
+                                        child: CircularPercentIndicator(
+                                          radius: 50.0,
+                                          lineWidth: 10.0,
+                                          backgroundColor: Colors.grey,
+                                          percent: 0.44,
+                                          progressColor: Color(hexColor("#264653"),),
+                                          animation: true,
+                                          animationDuration: 1500,
+                                          circularStrokeCap: CircularStrokeCap.round,
+                                          // header: Text('Water leak value',
+                                          //   maxLines: 1,
+                                          //   style: TextStyle(
+                                          //     fontWeight: FontWeight.bold,
+                                          //     // color:  Color(hexColor("#264653")),
+                                          //     fontSize: 15.0,
+                                          //   ),
+                                          // ),
+
+                                          center:
+                                          Stack(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional.only(
+                                                  top: 23.0,
+                                                ),
+                                                child: Stack(
+                                                  children: [
+                                                    Text("40%",
+                                                      //maxLines: 1,
+                                                      style: TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                        color:Color(hexColor("#264653")),
+                                                        fontSize: 15.0,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional.only(start:2.0,),
+                                                child: Stack(
+                                                  children: [
+                                                    Image(image: AssetImage('assets/smoke.png'),
+                                                      width: 24.0,
+                                                      height: 24.0,),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+
+
+                                        ),
+                                      ),
+                                      // actions: [
+                                      //   Center(
+                                      //     child: FloatingActionButton(
+                                      //       backgroundColor: Colors.amber,
+                                      //       onPressed: (){},
+                                      //       child: Icon(
+                                      //         Icons.add,
+                                      //         size: 30.0,
+                                      //       ),
+                                      //     ),
+                                      //   ),
+                                      // ],
+                                    ),
+                                  );
+                                },
+                                child: Stack(
+                                  children: [
+                                    Image(image: AssetImage('assets/smoke.png'),
+                                      width: 30.0,
+                                      height: 30.0,),
+                                  ],
+                                ),
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0,),
+                                color:  Colors.black12,
+                              ),
+                            ),
+                          ],
                         ),
                         Text(
                           'Smoke detector',
@@ -182,19 +383,115 @@ class KitchenScreen extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Image(image: AssetImage('assets/fire.png'),
-                              width: 40.0,
-                              height: 40.0,),
-                          ),
-                          width: 50.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0,),
-                            color:  Colors.black12,
-                          ),
+                        Stack(
+                          children: [
+                            Container(
+                              width: 50.0,
+                              height: 50.0,
+                              child: TextButton(
+                                onPressed: (){
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                      title:
+                                      //Center(
+                                      //child:
+                                      Text(
+                                        'Fire detector value',
+                                        maxLines: 1,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color:Colors.amber,
+                                          fontSize: 20.0,
+                                        ),
+                                      ),
+                                      //),
+                                      content:
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),
+                                        child: CircularPercentIndicator(
+                                          radius: 50.0,
+                                          lineWidth: 10.0,
+                                          backgroundColor: Colors.grey,
+                                          percent: 0.44,
+                                          progressColor: Color(hexColor("#264653"),),
+                                          animation: true,
+                                          animationDuration: 1500,
+                                          circularStrokeCap: CircularStrokeCap.round,
+                                          // header: Text('Water leak value',
+                                          //   maxLines: 1,
+                                          //   style: TextStyle(
+                                          //     fontWeight: FontWeight.bold,
+                                          //     // color:  Color(hexColor("#264653")),
+                                          //     fontSize: 15.0,
+                                          //   ),
+                                          // ),
+
+                                          center:
+                                          Stack(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional.only(
+                                                  top: 23.0,
+                                                ),
+                                                child: Stack(
+                                                  children: [
+                                                    Text("40%",
+                                                      //maxLines: 1,
+                                                      style: TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                        color:Color(hexColor("#264653")),
+                                                        fontSize: 15.0,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional.only(start:2.0,),
+                                                child: Stack(
+                                                  children: [
+                                                    Image(image: AssetImage('assets/fire.png'),
+                                                      width: 24.0,
+                                                      height: 24.0,),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+
+
+                                        ),
+                                      ),
+                                      // actions: [
+                                      //   Center(
+                                      //     child: FloatingActionButton(
+                                      //       backgroundColor: Colors.amber,
+                                      //       onPressed: (){},
+                                      //       child: Icon(
+                                      //         Icons.add,
+                                      //         size: 30.0,
+                                      //       ),
+                                      //     ),
+                                      //   ),
+                                      // ],
+                                    ),
+                                  );
+                                },
+                                child: Stack(
+                                  children: [
+                                    Image(image: AssetImage('assets/fire.png'),
+                                      width: 30.0,
+                                      height: 30.0,),
+                                  ],
+                                ),
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0,),
+                                color:  Colors.black12,
+                              ),
+                            ),
+                          ],
                         ),
                         Column(
                           children: [

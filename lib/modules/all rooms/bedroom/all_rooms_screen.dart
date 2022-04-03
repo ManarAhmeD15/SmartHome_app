@@ -1,4 +1,4 @@
-import 'package:beginning_app/modules/all%20rooms/add_new_room.dart';
+import 'package:beginning_app/modules/all%20rooms/bedroom/add_new_room.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
