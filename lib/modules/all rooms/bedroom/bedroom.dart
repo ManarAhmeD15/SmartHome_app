@@ -335,54 +335,45 @@ class _bedroomState extends State<bedroom> {
                                                   maxLines: 1,
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.bold,
-                                                   // color:  Color(hexColor("#264653")),
+                                                   color:  Color(hexColor("#264653")),
                                                     fontSize: 15.0,
                                                   ),
                                                 ),
-
                                                 center:
-                                                //Column(
-                                                 // children:[
-                                                  //   Padding(
-                                                  //     padding: const EdgeInsets.only(top: 30.0),
-                                                  //     child: IconButton(
-                                                  //     onPressed: () {},
-                                                  //     icon: Icon(
-                                                  //       Icons.wb_sunny_sharp,
-                                                  //      // size: 20.0,
-                                                  //       color: Colors.amber,
-                                                  //     ),
-                                                  // ),
-                                                  //   ),
-                                                 // Padding(
-                                                   // padding: const EdgeInsets.only(bottom: 30.0),
-                                                   // child:
-                                                    Text("22'C",
-                                                      //maxLines: 1,
-                                                      style: TextStyle(
-                                                        fontWeight: FontWeight.bold,
-                                                       // color:  Color(hexColor("#264653")),
-                                                        fontSize: 15.0,
-                                                     // ),
+                                                    Stack(
+                                                      children: [
+                                                        Padding(
+                                                          padding: const EdgeInsetsDirectional.only(
+                                                            top: 23.0,
+                                                          ),
+                                                          child: Stack(
+                                                            children: [
+                                                              Text("22'C",
+                                                                //maxLines: 1,
+                                                                style: TextStyle(
+                                                                  fontWeight: FontWeight.bold,
+                                                                  color:Color(hexColor("#264653")),
+                                                                  fontSize: 15.0,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsetsDirectional.only(start:5.0,),
+                                                          child: Stack(
+                                                            children: [
+                                                              Image(image: AssetImage('assets/motion.png'),
+                                                                width: 20.0,
+                                                                height: 20.0,),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
-                                                  ),
-                                //],
-                                            //    ),
-
-
                                               ),
                                             ),
                                           ),
-
-
-                                          // FloatingActionButton(
-                                          //   backgroundColor: Colors.amber,
-                                          //   onPressed: (){},
-                                          //   child: Icon(
-                                          //     Icons.add,
-                                          //     size: 30.0,
-                                          //   ),
-                                          // ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
@@ -399,42 +390,42 @@ class _bedroomState extends State<bedroom> {
                                               maxLines: 1,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
-                                                //color:  Color(hexColor("#264653")),
+                                                color:  Color(hexColor("#264653")),
                                                 fontSize: 15.0,
                                               ),
                                             ),
-
                                             center:
-                                            //Column(
-                                              //children:[
-                                                // Padding(
-                                                //   padding: const EdgeInsets.only(top: 30.0),
-                                                //   child: IconButton(
-                                                //     onPressed: () {},
-                                                //     icon: Icon(
-                                                //       Icons.wb_sunny_sharp,
-                                                //       // size: 20.0,
-                                                //       color: Colors.amber,
-                                                //     ),
-                                                //   ),
-                                                // ),
-                                               // Padding(
-                                                  //padding: const EdgeInsets.only(bottom: 30.0),
-
-                                                  //child:
-                                                  Text('40%',
-                                                    //maxLines: 1,
-                                                    style: TextStyle(
-                                                      fontWeight: FontWeight.bold,
-                                                      // color:  Color(hexColor("#264653")),
-                                                      fontSize: 15.0,
-                                                    ),
+                                            Stack(
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional.only(
+                                                    top: 23.0,
                                                   ),
-                                                //),
-                                              //],
-                                           // ),
-
-
+                                                  child: Stack(
+                                                    children: [
+                                                      Text(
+                                                        "50 %",
+                                                        style: TextStyle(
+                                                          fontWeight: FontWeight.bold,
+                                                          color:Color(hexColor("#264653")),
+                                                          fontSize: 15.0,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional.only(start:5.0,),
+                                                  child: Stack(
+                                                    children: [
+                                                      Image(image: AssetImage('assets/motion.png'),
+                                                        width: 20.0,
+                                                        height: 20.0,),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ],
