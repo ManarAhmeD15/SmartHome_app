@@ -3,7 +3,7 @@ import 'package:beginning_app/modules/all%20rooms/add_new_device.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:flutter_switch/flutter_switch.dart';
+//import 'package:flutter_switch/flutter_switch.dart';
 
 
 
@@ -162,14 +162,90 @@ class _bedroomState extends State<bedroom> {
                                       maxLines: 1,
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        color:  Color(hexColor("#264653")),
+                                        color:Color(hexColor("#264653")),
                                         fontSize: 20.0,
                                       ),
                                     ),
                                   ),
-                                  content: Container(
-                                    width: 160.0,
-                                    height: 220.0,
+                                  content:
+                                  Stack(
+                                    children: [
+                                      Container(
+                                        width: 160.0,
+                                        height: 220.0,
+                                      ),
+                                      Positioned(
+                                        left: 15.0,
+                                        top: 10.0,
+                                        child: Container(
+                                          width: 200.0,
+                                          height: 200.0,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(100.0,),
+                                            color: Color(hexColor("#264653")),
+                                          ),
+                                          child: Stack(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional.only(
+                                                  start: 75.0,
+                                                  top: 50.0,
+                                                ),
+                                                child: Column(
+                                                  children: [
+                                                    Container(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child: Image(image: AssetImage('assets/motion.png'),
+                                                        width: 70.0,
+                                                        height: 70.0,
+                                                        color: Colors.white,
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(150.0,),
+                                                        color: Color(hexColor("#264653")),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: 120.0,
+                                                left: 40.0,
+                                                child: Stack(
+                                                  children: [
+                                                    Text(
+                                                      'Movement:',
+                                                      style: TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                        fontSize: 15.0,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: 120.0,
+                                                left: 120.0,
+                                                child: Stack(
+                                                  children: [
+                                                    Text(
+                                                      'Yes',
+                                                      style: TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                        fontSize: 15.0,
+                                                        color: Colors.amber,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   actions: [
                                     Center(
