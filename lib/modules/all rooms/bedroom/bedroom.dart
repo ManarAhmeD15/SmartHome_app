@@ -2,6 +2,7 @@ import 'package:beginning_app/modules/all%20rooms/bedroom/alarm.dart';
 import 'package:beginning_app/modules/all%20rooms/add_new_device.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 
 
@@ -22,6 +23,8 @@ class _bedroomState extends State<bedroom> {
 
   bool val1 = true;
   bool val2 = true;
+
+  double temp_percent=0.22;
   onChangedFunction1(bool newValue1){
     setState(() {
       val1 = newValue1;
@@ -297,7 +300,7 @@ class _bedroomState extends State<bedroom> {
                                 builder: (context) => AlertDialog(
                                   title: Center(
                                     child: Text(
-                                      'Temperature',
+                                      'Temperature & Humidity',
                                       maxLines: 1,
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
@@ -306,20 +309,135 @@ class _bedroomState extends State<bedroom> {
                                       ),
                                     ),
                                   ),
-                                  content: Container(
-                                    width: 160.0,
-                                    height: 220.0,
-                                  ),
+                                  // content: Container(
+                                  //   width: 160.0,
+                                  //   height: 220.0,
+                                  // ),
                                   actions: [
-                                    Center(
-                                      child: FloatingActionButton(
-                                        backgroundColor: Colors.amber,
-                                        onPressed: (){},
-                                        child: Icon(
-                                          Icons.add,
-                                          size: 30.0,
+                                    Row(
+                                      children: [
+                                        Center(
+                                          child:Container(
+
+                                            child:
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),
+                                              child: CircularPercentIndicator(
+                                                radius: 50.0,
+                                                lineWidth: 10.0,
+                                                backgroundColor: Colors.grey,
+                                                percent: temp_percent,
+                                                progressColor: Colors.amber,
+                                                animation: true,
+                                                animationDuration: 1500,
+                                                circularStrokeCap: CircularStrokeCap.round,
+                                                header: Text('Temperature',
+                                                  maxLines: 1,
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                   // color:  Color(hexColor("#264653")),
+                                                    fontSize: 15.0,
+                                                  ),
+                                                ),
+
+                                                center:
+                                                //Column(
+                                                 // children:[
+                                                  //   Padding(
+                                                  //     padding: const EdgeInsets.only(top: 30.0),
+                                                  //     child: IconButton(
+                                                  //     onPressed: () {},
+                                                  //     icon: Icon(
+                                                  //       Icons.wb_sunny_sharp,
+                                                  //      // size: 20.0,
+                                                  //       color: Colors.amber,
+                                                  //     ),
+                                                  // ),
+                                                  //   ),
+                                                 // Padding(
+                                                   // padding: const EdgeInsets.only(bottom: 30.0),
+                                                   // child:
+                                                    Text("22'C",
+                                                      //maxLines: 1,
+                                                      style: TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                       // color:  Color(hexColor("#264653")),
+                                                        fontSize: 15.0,
+                                                     // ),
+                                                    ),
+                                                  ),
+                                //],
+                                            //    ),
+
+
+                                              ),
+                                            ),
+                                          ),
+
+
+                                          // FloatingActionButton(
+                                          //   backgroundColor: Colors.amber,
+                                          //   onPressed: (){},
+                                          //   child: Icon(
+                                          //     Icons.add,
+                                          //     size: 30.0,
+                                          //   ),
+                                          // ),
                                         ),
-                                      ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
+                                          child: CircularPercentIndicator(
+                                            radius: 50.0,
+                                            lineWidth: 10.0,
+                                            backgroundColor: Colors.grey,
+                                            percent: 0.44,
+                                            progressColor: Colors.lightBlueAccent,
+                                            animation: true,
+                                            animationDuration: 1500,
+                                            circularStrokeCap: CircularStrokeCap.round,
+                                            header: Text('Humidity',
+                                              maxLines: 1,
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                //color:  Color(hexColor("#264653")),
+                                                fontSize: 15.0,
+                                              ),
+                                            ),
+
+                                            center:
+                                            //Column(
+                                              //children:[
+                                                // Padding(
+                                                //   padding: const EdgeInsets.only(top: 30.0),
+                                                //   child: IconButton(
+                                                //     onPressed: () {},
+                                                //     icon: Icon(
+                                                //       Icons.wb_sunny_sharp,
+                                                //       // size: 20.0,
+                                                //       color: Colors.amber,
+                                                //     ),
+                                                //   ),
+                                                // ),
+                                               // Padding(
+                                                  //padding: const EdgeInsets.only(bottom: 30.0),
+
+                                                  //child:
+                                                  Text('40%',
+                                                    //maxLines: 1,
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      // color:  Color(hexColor("#264653")),
+                                                      fontSize: 15.0,
+                                                    ),
+                                                  ),
+                                                //),
+                                              //],
+                                           // ),
+
+
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
@@ -341,9 +459,12 @@ class _bedroomState extends State<bedroom> {
                       ],
                     ),
                     Text(
-                      'Temperature',
-                      maxLines: 1,
+                      'Temperature &\nHumidity',
+                     // maxLines: 1,
+
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
+
                         fontWeight: FontWeight.bold,
                         color:  Color(hexColor("#264653")),
                         fontSize: 10.0,
@@ -412,8 +533,8 @@ class _bedroomState extends State<bedroom> {
                     Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Container(
-                        width: 350,
-                        height: 400,
+                        width: 300,
+                        height: 350,
                         decoration: BoxDecoration(
                             color: Colors.white,
                           borderRadius: BorderRadius.circular(15.0,),

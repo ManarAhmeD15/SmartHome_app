@@ -49,6 +49,8 @@ dependencies:
 
   path_provider: ^2.0.1
 
+  percent_indicator: ^4.0.0
+
 
 
 dev_dependencies:
