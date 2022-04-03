@@ -3,6 +3,7 @@ import 'package:beginning_app/modules/all%20rooms/add_new_device.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
 
 
@@ -21,6 +22,7 @@ class _bedroomState extends State<bedroom> {
     return colorint;
   }
 
+  bool selected=false;
   bool val1 = true;
   bool val2 = true;
 
@@ -298,16 +300,38 @@ class _bedroomState extends State<bedroom> {
                               showDialog(
                                 context: context,
                                 builder: (context) => AlertDialog(
-                                  title: Center(
-                                    child: Text(
-                                      'Temperature & Humidity',
-                                      maxLines: 1,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color:  Color(hexColor("#264653")),
-                                        fontSize: 20.0,
+                                  title: Row(
+                                    children:[ Padding(
+                                      padding: const EdgeInsets.only(left: 20.0),
+                                      child: Text(
+                                        'Temperature & Humidity',
+                                        maxLines: 1,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color:  Color(hexColor("#264653")),
+                                          fontSize: 16.0,
+                                        ),
                                       ),
                                     ),
+
+                                      Stack(
+                                        alignment: Alignment.bottomLeft,
+                                        children: [
+                                          Switch(
+
+                                            onChanged: (value)
+                                            {
+                                              setState(() {
+                                            selected=value;
+                                          });
+                                              },
+                                            value: selected,
+                                          activeColor: Colors.blueGrey[800],
+                                          ),
+
+                                        ],
+                                      ),
+                                  ],
                                   ),
                                   // content: Container(
                                   //   width: 160.0,
@@ -335,45 +359,58 @@ class _bedroomState extends State<bedroom> {
                                                   maxLines: 1,
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.bold,
-                                                   color:  Color(hexColor("#264653")),
+                                                   // color:  Color(hexColor("#264653")),
                                                     fontSize: 15.0,
                                                   ),
                                                 ),
+
                                                 center:
-                                                    Stack(
-                                                      children: [
-                                                        Padding(
-                                                          padding: const EdgeInsetsDirectional.only(
-                                                            top: 23.0,
+                                                Stack(
+                                                  children: [
+                                                    Padding(
+                                                      padding: const EdgeInsetsDirectional.only(
+                                                        top: 23.0,
+                                                      ),
+                                                      child: Stack(
+                                                        children: [
+                                                          Text("22'C",
+                                                            //maxLines: 1,
+                                                            style: TextStyle(
+                                                              fontWeight: FontWeight.bold,
+                                                              color:Color(hexColor("#264653")),
+                                                              fontSize: 15.0,
+                                                            ),
                                                           ),
-                                                          child: Stack(
-                                                            children: [
-                                                              Text("22'C",
-                                                                //maxLines: 1,
-                                                                style: TextStyle(
-                                                                  fontWeight: FontWeight.bold,
-                                                                  color:Color(hexColor("#264653")),
-                                                                  fontSize: 15.0,
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding: const EdgeInsetsDirectional.only(start:5.0,),
-                                                          child: Stack(
-                                                            children: [
-                                                              Image(image: AssetImage('assets/motion.png'),
-                                                                width: 20.0,
-                                                                height: 20.0,),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
+                                                    Padding(
+                                                      padding: const EdgeInsetsDirectional.only(start:5.0,),
+                                                      child: Stack(
+                                                        children: [
+                                                          Image(image: AssetImage('assets/hot.png'),
+                                                            width: 20.0,
+                                                            height: 20.0,),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+
+
                                               ),
                                             ),
                                           ),
+
+
+                                          // FloatingActionButton(
+                                          //   backgroundColor: Colors.amber,
+                                          //   onPressed: (){},
+                                          //   child: Icon(
+                                          //     Icons.add,
+                                          //     size: 30.0,
+                                          //   ),
+                                          // ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
@@ -390,10 +427,11 @@ class _bedroomState extends State<bedroom> {
                                               maxLines: 1,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
-                                                color:  Color(hexColor("#264653")),
+                                                //color:  Color(hexColor("#264653")),
                                                 fontSize: 15.0,
                                               ),
                                             ),
+
                                             center:
                                             Stack(
                                               children: [
@@ -403,8 +441,8 @@ class _bedroomState extends State<bedroom> {
                                                   ),
                                                   child: Stack(
                                                     children: [
-                                                      Text(
-                                                        "50 %",
+                                                      Text("40%",
+                                                        //maxLines: 1,
                                                         style: TextStyle(
                                                           fontWeight: FontWeight.bold,
                                                           color:Color(hexColor("#264653")),
@@ -418,7 +456,7 @@ class _bedroomState extends State<bedroom> {
                                                   padding: const EdgeInsetsDirectional.only(start:5.0,),
                                                   child: Stack(
                                                     children: [
-                                                      Image(image: AssetImage('assets/motion.png'),
+                                                      Image(image: AssetImage('assets/humidity2.png'),
                                                         width: 20.0,
                                                         height: 20.0,),
                                                     ],
@@ -426,6 +464,8 @@ class _bedroomState extends State<bedroom> {
                                                 ),
                                               ],
                                             ),
+
+
                                           ),
                                         ),
                                       ],
