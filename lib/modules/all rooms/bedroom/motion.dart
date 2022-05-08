@@ -228,8 +228,8 @@ class _MotionState extends State<Motion> {
               ),
             ),
             Positioned(
-              bottom: 25.0,
-              left: 35.0,
+              bottom: 35.0,
+              left: 55.0,
               child: Stack(
                 children: [
                   Row(
@@ -237,13 +237,47 @@ class _MotionState extends State<Motion> {
                       Switch(
                           value: val1,
                           onChanged: onChangedFunction1,
-
+                        activeColor: Color(hexColor("#264653")),
+                        activeTrackColor: Colors.blueGrey,
                       )
+                    ],
+                  ),
+
+                ],
+              ),
+            ),
+            Positioned(
+              bottom: 50.0,
+              left: 25.0,
+              child: Stack(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'OFF',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.0,
+                          color: Colors.amber,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 65.0,
+                      ),
+                      Text(
+                        'ON',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.0,
+                          color: Colors.amber,
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
             ),
+
             //Device Action//
             Positioned(
               top: 190.0,
