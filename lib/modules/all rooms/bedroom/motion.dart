@@ -239,7 +239,7 @@ class _MotionState extends State<Motion> {
                           onChanged: onChangedFunction1,
                         activeColor: Color(hexColor("#264653")),
                         activeTrackColor: Colors.blueGrey,
-                      )
+                      ),
                     ],
                   ),
 

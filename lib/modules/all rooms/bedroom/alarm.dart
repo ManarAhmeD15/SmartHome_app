@@ -12,16 +12,26 @@ class Alarm extends StatefulWidget {
 
 class _AlarmState extends State<Alarm> {
   @override
-  bool val1 = true;
-  bool val2 = true;
-  onChangedFunction1(bool newValue1){
+  bool val3 = true;
+  onChangedFunction3(bool newValue3) {
     setState(() {
-      val1 = newValue1;
+      val3 = newValue3;
+      if (val3 == true){
+        print('On');
+      }
+      else
+        print('Off');
     });
   }
-  onChangedFunction2(bool newValue2){
+  bool val4 = false;
+  onChangedFunction4(bool newValue4) {
     setState(() {
-      val2 = newValue2;
+      val4 = newValue4;
+      if (val4 == true){
+        print('On');
+      }
+      else
+        print('Off');
     });
   }
 
@@ -134,15 +144,49 @@ class _AlarmState extends State<Alarm> {
                                       borderRadius: BorderRadius.circular(20.0,),
                                     ),
                                     child: Icon(
-                                      Icons.alarm,
+                                      Icons.alarm_off,
                                       color: Colors.amber,
                                       size: 20.0,
                                     ),
                                   ),
+                                  SizedBox(width: 10.0,),
                                   Row(
                                     children: [
-                                      customSwitch(
-                                          'On', val1, onChangedFunction1
+                                      Text(
+                                        'Off',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12.0,
+                                          color: Color(hexColor("#264653")),
+                                        ),
+                                      ),
+                                      Switch(
+                                        value: val3,
+                                        onChanged: onChangedFunction3,
+                                        activeColor: Color(hexColor("#264653")),
+                                        activeTrackColor: Colors.blueGrey,
+                                      ),
+                                      Text(
+                                        'On',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12.0,
+                                          color: Color(hexColor("#264653")),
+                                        ),
+                                      ),
+                                      SizedBox(width: 10.0,),
+                                      Container(
+                                        width: 30,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(20.0,),
+                                        ),
+                                        child: Icon(
+                                          Icons.alarm,
+                                          color: Colors.amber,
+                                          size: 20.0,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -179,15 +223,49 @@ class _AlarmState extends State<Alarm> {
                                       borderRadius: BorderRadius.circular(20.0,),
                                     ),
                                     child: Icon(
-                                      Icons.alarm,
+                                      Icons.alarm_off,
                                       color: Colors.amber,
                                       size: 20.0,
                                     ),
                                   ),
+                                  SizedBox(width: 10.0,),
                                   Row(
                                     children: [
-                                      customSwitch(
-                                          'Off', val2, onChangedFunction2
+                                      Text(
+                                        'Off',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12.0,
+                                          color: Color(hexColor("#264653")),
+                                        ),
+                                      ),
+                                      Switch(
+                                        value: val4,
+                                        onChanged: onChangedFunction4,
+                                        activeColor: Color(hexColor("#264653")),
+                                        activeTrackColor: Colors.blueGrey,
+                                      ),
+                                      Text(
+                                        'On',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12.0,
+                                          color: Color(hexColor("#264653")),
+                                        ),
+                                      ),
+                                      SizedBox(width: 10.0,),
+                                      Container(
+                                        width: 30,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(20.0,),
+                                        ),
+                                        child: Icon(
+                                          Icons.alarm,
+                                          color: Colors.amber,
+                                          size: 20.0,
+                                        ),
                                       ),
                                     ],
                                   ),
