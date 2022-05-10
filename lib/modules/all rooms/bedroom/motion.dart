@@ -212,7 +212,7 @@ class _MotionState extends State<Motion> {
                 ],
               ),
             ),
-            Positioned(
+            /* Positioned(
               bottom: 25.0,
               right: 35.0,
               child: Stack(
@@ -226,10 +226,10 @@ class _MotionState extends State<Motion> {
                   ),
                 ],
               ),
-            ),
+            ),  */
             Positioned(
-              bottom: 35.0,
-              left: 55.0,
+              bottom: 25.0,
+              right: 55.0,
               child: Stack(
                 children: [
                   Row(
@@ -247,8 +247,8 @@ class _MotionState extends State<Motion> {
               ),
             ),
             Positioned(
-              bottom: 50.0,
-              left: 25.0,
+              bottom: 40.0,
+              right: 35.0,
               child: Stack(
                 children: [
                   Row(
@@ -258,18 +258,18 @@ class _MotionState extends State<Motion> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15.0,
-                          color: Colors.amber,
+                          color: Color(hexColor("#264653")),
                         ),
                       ),
                       SizedBox(
-                        width: 65.0,
+                        width: 60.0,
                       ),
                       Text(
                         'ON',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15.0,
-                          color: Colors.amber,
+                          color: Color(hexColor("#264653")),
                         ),
                       ),
                     ],
@@ -277,7 +277,6 @@ class _MotionState extends State<Motion> {
                 ],
               ),
             ),
-
             //Device Action//
             Positioned(
               top: 190.0,
