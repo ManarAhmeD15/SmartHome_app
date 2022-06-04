@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>733385539953-o36qut52h4pmdssducgjb40f1t69m000.apps.googleusercontent.com</string>
+	<string>10709929557-isdv3nmb77kooa00t6q6k98chj5smas5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.733385539953-o36qut52h4pmdssducgjb40f1t69m000</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>733385539953-dt0lktp58208imqfnif5j7e1d61dnfuf.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.10709929557-isdv3nmb77kooa00t6q6k98chj5smas5</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCJWJ-LBeN37Lin04OOZ5gElDeie3drsAI</string>
+	<string>AIzaSyBJNgWvz-T80hm7M-4zSzuduQeE4qXQixI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>733385539953</string>
+	<string>10709929557</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>CFBundleInfoDictionaryVersion</string>
+	<string>com.manar.beginningApp</string>
 	<key>PROJECT_ID</key>
-	<string>smarthome-2-10-99</string>
+	<string>emailpasswordauthen-87229</string>
 	<key>STORAGE_BUCKET</key>
-	<string>smarthome-2-10-99.appspot.com</string>
+	<string>emailpasswordauthen-87229.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:733385539953:ios:3b2850bfc3b28e75ebf6d0</string>
+	<string>1:10709929557:ios:69e07769836b0c17cbcedc</string>
 </dict>
 </plist>

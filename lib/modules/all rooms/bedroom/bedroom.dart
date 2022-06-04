@@ -418,6 +418,7 @@ class _bedroomState extends State<bedroom> {
                                                     ],
                                                   ),
                                                 ),
+                                                
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional.only(start:5.0,),
                                                   child: Stack(

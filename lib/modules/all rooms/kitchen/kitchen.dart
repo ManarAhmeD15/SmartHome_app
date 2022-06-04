@@ -146,8 +146,7 @@ class KitchenScreen extends StatelessWidget {
                                       title:
                                       //Center(
                                         //child:
-                                        Text(
-                                          'Water leak value',
+                                        Text('Water leak value',
                                           maxLines: 1,
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
@@ -164,7 +163,7 @@ class KitchenScreen extends StatelessWidget {
                                           lineWidth: 10.0,
                                           backgroundColor: Colors.grey,
                                           percent: 0.70,
-                                          progressColor: Color(hexColor("#264653"),),
+                                          progressColor: Colors.lightBlueAccent,
                                           animation: true,
                                           animationDuration: 1500,
                                           circularStrokeCap: CircularStrokeCap.round,

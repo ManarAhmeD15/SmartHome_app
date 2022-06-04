@@ -1,14 +1,11 @@
-import 'package:beginning_app/models/signup_user_model.dart';
 import 'package:beginning_app/modules/password/forgot_password.dart';
-//import 'package:beginning_app/modules/profile/user_preferences.dart';
+import 'package:beginning_app/modules/profile/user_preferences.dart';
 import 'package:beginning_app/modules/signup/signupscreen.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../home/home_screen.dart';
 class LoginScreen extends StatefulWidget {
+
+
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -20,21 +17,24 @@ class _LoginScreenState extends State<LoginScreen> {
     int colorint = int.parse(colornew);
     return colorint;
   }
-  var emailController = TextEditingController();
+
   var usernameController = TextEditingController();
+
   var passwordController = TextEditingController();
-   bool isClicked = false;
+
   var formKey=GlobalKey<FormState>();
 
   bool isPassword=true;
 
-  late FirebaseAuth mAuth;
-
   @override
   Widget build(BuildContext context) {
-   // final user=UserPreferences.getUser();
+    final user=UserPreferences.getUser();
 
     return Scaffold(
+      // appBar: AppBar(
+      //   title:Text(appTitle),
+      //
+      // ),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -93,8 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
-                                controller: emailController,
-                                keyboardType: TextInputType.emailAddress,
+                                controller: usernameController,
+                                keyboardType: TextInputType.name,
                                 onFieldSubmitted: ( value)
                                 {
                                   print(value);
@@ -107,19 +107,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                 {
                                   if(value!.isEmpty)
                                     {
-                                      return 'email must not be empty';
+                                      return 'user name must not be empty';
                                     }
                                   else
                                     return null;
 
                                 },
                                 decoration: InputDecoration(
-                                  labelText: 'Email',
+                                  labelText: 'User name',
                                   labelStyle: TextStyle(
                                     color: Colors.white,
                                   ),
                                   prefixIcon: Icon(
-                                    Icons.email,
+                                    Icons.person,
                                     color: Colors.white,
                                   ),
                                   border: OutlineInputBorder(
@@ -240,24 +240,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(25.0,),
                               ),
                               child: MaterialButton(
-                                onPressed:() async {
-                                  if(formKey.currentState!.validate()) {
-                                      setState(() {
-                                        isClicked = true;
-                                      });
-                                      userLogin(
-                                          email: emailController.text,
-                                          password: passwordController.text,
-                                      );
-                                  }
+                                onPressed:()
+                                {
+                                  if(formKey.currentState!.validate())
+                                    {
+                                      print(usernameController.text);
+                                      print(passwordController.text);
+                                    }
 
-                                  {
-
-                                  }
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) =>  HomeScreen()),
-                                  );
                              },
                                 child: Text(
                                   'Login',
@@ -316,47 +306,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-void userCreate({
-  required String name,
-  required String email,
-  required String password,
-  required String uId,
-})
-{
-  SignUpUserModel model = SignUpUserModel(
-      email: email,
-      name: name,
-    password: password,
-      uId: uId,
-  );
-  FirebaseFirestore.instance.
-  collection('users')
-      .doc(uId)
-      .set(model.toMap())
-      .then((value){
-  })
-      .catchError((error){
-    print(error.toString());
-  });
-}
-
-
-void userLogin({
-  required String email,
-  required String password,
-}){
-  FirebaseAuth.instance
-      .signInWithEmailAndPassword(
-      email: email,
-      password: password,)
-      .then((value) {
-        print(value.user?.uid);
-        if (value.user?.uid == true){
-          print('Log in Success');
-  }
-  }).catchError((error){
-    print(error.toString());
-  });
-}
-

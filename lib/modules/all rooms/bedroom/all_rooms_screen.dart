@@ -148,6 +148,8 @@ class AllRooms extends StatelessWidget {
                 ),
               ),
             ),
+
+            /*
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
@@ -237,6 +239,10 @@ class AllRooms extends StatelessWidget {
                 ),
               ),
             ),
+
+            Bathroom
+            */
+
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
@@ -326,6 +332,9 @@ class AllRooms extends StatelessWidget {
                 ),
               ),
             ),
+
+            /*
+
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Container(
@@ -415,6 +424,10 @@ class AllRooms extends StatelessWidget {
                 ),
               ),
             ),
+
+            Living room
+
+            */
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

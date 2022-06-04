@@ -28,6 +28,12 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cloud_firestore: ^2.5.1
+  firebase_auth: ^3.1.0
+  firebase_core: ^1.6.0
+  fluttertoast: ^8.0.8
+
+
   flutter:
     sdk: flutter
 
@@ -37,6 +43,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   lottie: ^1.2.2
   random_color: ^1.0.5
+
 
 
 
@@ -53,10 +60,7 @@ dependencies:
   percent_indicator: ^4.0.0
 
   flutter_switch: ^0.3.2
-  #firebase
-  firebase_core: ^1.16.0
-  firebase_auth: ^3.3.18
-  cloud_firestore: ^3.1.17
+
 
 
 
@@ -118,8 +122,7 @@ flutter:
    - assets/MyFlutterApp.ttf
    - assets/hot.png
    - assets/humidity2.png
-   - assets/disable.png
-   - assets/bell.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
