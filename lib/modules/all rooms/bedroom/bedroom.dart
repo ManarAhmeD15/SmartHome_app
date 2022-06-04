@@ -126,7 +126,7 @@ class _bedroomState extends State<bedroom> {
                           Icons.add,
                           size: 30.0,
                           color: Color(hexColor("#264653")),
-                      ),),
+                        ),),
                       width: 50.0,
                       height: 50.0,
                       decoration: BoxDecoration(
@@ -305,7 +305,7 @@ class _bedroomState extends State<bedroom> {
                                       //     }),
                                       //   ],
                                       // ),
-                                  ],
+                                    ],
                                   ),
                                   // content: Container(
                                   //   width: 160.0,
@@ -333,7 +333,7 @@ class _bedroomState extends State<bedroom> {
                                                   maxLines: 1,
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.bold,
-                                                   // color:  Color(hexColor("#264653")),
+                                                    // color:  Color(hexColor("#264653")),
                                                     fontSize: 15.0,
                                                   ),
                                                 ),
@@ -457,7 +457,7 @@ class _bedroomState extends State<bedroom> {
                     ),
                     Text(
                       'Temperature &\nHumidity',
-                     // maxLines: 1,
+                      // maxLines: 1,
 
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -473,7 +473,7 @@ class _bedroomState extends State<bedroom> {
                 SizedBox(
                   width: 10.0,
                 ),
-               Column(
+                Column(
                   children:[
                     Stack(
                       children: [
@@ -532,7 +532,7 @@ class _bedroomState extends State<bedroom> {
                         width: 300,
                         height: 350,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(15.0,),
                         ),
                       ),
@@ -578,3 +578,8 @@ Widget customSwitch(String text, bool val, Function onChangedMethod){
     ),
   );
 }
+
+
+
+
+

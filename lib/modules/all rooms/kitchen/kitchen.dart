@@ -163,7 +163,7 @@ class KitchenScreen extends StatelessWidget {
                                           radius: 50.0,
                                           lineWidth: 10.0,
                                           backgroundColor: Colors.grey,
-                                          percent: 0.44,
+                                          percent: 0.70,
                                           progressColor: Color(hexColor("#264653"),),
                                           animation: true,
                                           animationDuration: 1500,
@@ -186,7 +186,7 @@ class KitchenScreen extends StatelessWidget {
                                                 ),
                                                 child: Stack(
                                                   children: [
-                                                    Text("40%",
+                                                    Text("70%",
                                                       //maxLines: 1,
                                                       style: TextStyle(
                                                         fontWeight: FontWeight.bold,
@@ -288,7 +288,7 @@ class KitchenScreen extends StatelessWidget {
                                           radius: 50.0,
                                           lineWidth: 10.0,
                                           backgroundColor: Colors.grey,
-                                          percent: 0.44,
+                                          percent: 0.66,
                                           progressColor: Color(hexColor("#264653"),),
                                           animation: true,
                                           animationDuration: 1500,
@@ -311,7 +311,7 @@ class KitchenScreen extends StatelessWidget {
                                                 ),
                                                 child: Stack(
                                                   children: [
-                                                    Text("40%",
+                                                    Text("66%",
                                                       //maxLines: 1,
                                                       style: TextStyle(
                                                         fontWeight: FontWeight.bold,
@@ -413,7 +413,7 @@ class KitchenScreen extends StatelessWidget {
                                           radius: 50.0,
                                           lineWidth: 10.0,
                                           backgroundColor: Colors.grey,
-                                          percent: 0.44,
+                                          percent: 0.50,
                                           progressColor: Color(hexColor("#264653"),),
                                           animation: true,
                                           animationDuration: 1500,
@@ -436,7 +436,7 @@ class KitchenScreen extends StatelessWidget {
                                                 ),
                                                 child: Stack(
                                                   children: [
-                                                    Text("40%",
+                                                    Text("50%",
                                                       //maxLines: 1,
                                                       style: TextStyle(
                                                         fontWeight: FontWeight.bold,

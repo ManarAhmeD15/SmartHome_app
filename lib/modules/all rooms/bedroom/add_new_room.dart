@@ -65,7 +65,7 @@ class _AddNewRoomState extends State<AddNewRoom> {
                   Container(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Image(image: AssetImage('assets/kitchen.png'),
+                      child: Image(image: AssetImage('assets/gaming.png'),
                         width: 20.0,
                         height: 20.0,),
                     ),
@@ -182,6 +182,7 @@ class _AddNewRoomState extends State<AddNewRoom> {
                   setSelectedValue(val!);
                 }
             ),
+
             RadioListTile<int>(
                 value: 4 ,
                 groupValue: selectValue,
@@ -190,48 +191,7 @@ class _AddNewRoomState extends State<AddNewRoom> {
                     Container(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Image(image: AssetImage('assets/kitchen.png'),
-                          width: 20.0,
-                          height: 20.0,),
-                      ),
-                      width: 40.0,
-                      height: 40.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0,),
-                        color: Colors.green[50],
-                      ),
-                    ),
-                    SizedBox(width: 10.0,),
-                    Text(
-                      'Garden',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-                activeColor:Colors.green,
-                selected: true,
-                secondary:IconButton(onPressed: (){},
-                  icon: Icon(
-                    Icons.videogame_asset_outlined,
-                    size: 15.0,
-                    color: Colors.black45,
-                  ),),
-
-                onChanged: (val) {
-                  setSelectedValue(val!);
-                }
-            ),
-            RadioListTile<int>(
-                value: 5 ,
-                groupValue: selectValue,
-                title: Row(
-                  children: [
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image(image: AssetImage('assets/kitchen.png'),
+                        child: Image(image: AssetImage('assets/garage.png'),
                           width: 20.0,
                           height: 20.0,),
                       ),
@@ -265,7 +225,7 @@ class _AddNewRoomState extends State<AddNewRoom> {
                 }
             ),
             RadioListTile<int>(
-                value: 6 ,
+                value: 5 ,
                 groupValue: selectValue,
                 title: Row(
                   children: [

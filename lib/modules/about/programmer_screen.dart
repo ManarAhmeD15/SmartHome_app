@@ -92,7 +92,7 @@ class ProgrammerScreen extends StatelessWidget{
                             children: [
                               Text('Ibrahim Ahmed El-Badwy',
                                   style: TextStyle(
-                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                                    fontSize: 20.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
                               ),
                               Row(
                                 children: [
@@ -141,13 +141,13 @@ class ProgrammerScreen extends StatelessWidget{
                             children: [
                               Text('Manar Ahmed Mohamed',
                                   style: TextStyle(
-                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                                    fontSize: 20.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
                               ),
                               Row(
                                 children: [
                                   Text('mnarahmed@gmail.com',
                                     style: TextStyle(
-                                      fontSize: 17.0,
+                                      fontSize: 16.0,
                                       color: Colors.grey,
                                     ),),
                                   Padding(
@@ -192,7 +192,7 @@ class ProgrammerScreen extends StatelessWidget{
                             children: [
                               Text('Ahmed Medhat Serag',
                                   style: TextStyle(
-                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                                    fontSize: 20.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
                               ),
                               Row(
                                 children: [
@@ -238,9 +238,9 @@ class ProgrammerScreen extends StatelessWidget{
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text('Ibrahem Samir (Team leader)',
+                              Text('Ibrahim Samir El-Tabakh (Leader)',
                                   style: TextStyle(
-                                    fontSize: 21.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                                    fontSize: 18.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
                               ),
                               Row(
                                 children: [
@@ -288,7 +288,7 @@ class ProgrammerScreen extends StatelessWidget{
                             children: [
                               Text('Asmaa Ahmed Saeed',
                                   style: TextStyle(
-                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                                    fontSize: 20.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
                               ),
                               Row(
                                 children: [
@@ -337,17 +337,17 @@ class ProgrammerScreen extends StatelessWidget{
                             children: [
                               Text('Hager Mahmoud Maher',
                                   style: TextStyle(
-                                    fontSize: 22.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
+                                    fontSize: 20.0,fontWeight: FontWeight.bold,color:Colors.blueGrey[800],)
                               ),
                               Row(
                                 children: [
                                   Text('hagermahmoud2468@gmail.com',
                                     style: TextStyle(
-                                      fontSize: 15.0,
+                                      fontSize: 14.0,
                                       color: Colors.grey,
                                     ),),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 2.0,top: 4.0),
+                                    padding: const EdgeInsets.only(left: 5.0,top: 4.0),
                                     child: Text('[Hardware]',
                                       style: TextStyle(
                                         fontSize: 15.0,

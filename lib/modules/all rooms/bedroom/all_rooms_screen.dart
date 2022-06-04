@@ -1,4 +1,5 @@
 import 'package:beginning_app/modules/all%20rooms/bedroom/add_new_room.dart';
+import 'package:beginning_app/modules/home/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,15 +13,52 @@ class AllRooms extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.only(top: 100.0,),
-              child: Text(
-                  'All Rooms',
-                  style: TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.yellow[500],
-                  ),
+              padding: const EdgeInsetsDirectional.only(top: 20.0,),
+              child: Container(
+                alignment: Alignment.topCenter,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      width: 260.0,
+                      height: 140.0,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(300),
+                          bottomRight: Radius.circular(300),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(
+                        end: 300.0,
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                           Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>  HomeScreen()),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          size: 35.0,
+                          color: Colors.blueGrey[800],
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'All Rooms',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ],
                 ),
+              ),
             ),
             SizedBox(height: 20.0,),
             Padding(
@@ -382,7 +420,10 @@ class AllRooms extends StatelessWidget {
               children: [
                 IconButton(onPressed: ()
                 {
-                  Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>  AddNewRoom()),);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  AddNewRoom()),
+                  );
                 },
                     icon: Icon(
                       Icons.add,

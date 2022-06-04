@@ -1,8 +1,11 @@
 import 'package:beginning_app/modules/navigation/collapsingnavigationdrawer.dart';
 //import 'package:beginning_app/modules/navigation/navigationdrawer.dart';
 import 'package:beginning_app/modules/login/loginscreen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../all rooms/bedroom/add_new_room.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -108,7 +111,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             TextButton(
-                              onPressed: () {},
+                              onPressed: ()
+                              {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>  AddNewRoom()),
+                                );
+                              },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
