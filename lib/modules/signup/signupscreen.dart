@@ -351,7 +351,11 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                               TextButton(
                                 onPressed: (){
-                                  Navigator.pop(context);
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LoginScreen()),
+                                  );
                                 },
                                 child:Text
                                   (
@@ -398,6 +402,7 @@ class _SignupScreenState extends State<SignupScreen> {
         .set(model.toMap())
         .then((value){
     })
+
         .catchError((error){});
 
 
