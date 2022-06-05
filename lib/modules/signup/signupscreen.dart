@@ -1,8 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+//import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:beginning_app/modules/password/forgot_password.dart';
 import 'package:beginning_app/modules/login/loginscreen.dart';
+
+import '../../models/signup_user_model.dart';
+import '../home/home_screen.dart';
 class SignupScreen extends StatefulWidget {
 
   @override
@@ -15,6 +21,9 @@ class _SignupScreenState extends State<SignupScreen> {
   var passwordController = TextEditingController();
   var formKey=GlobalKey<FormState>();
   bool isPassword=true;
+
+  bool isClicked = false;
+  late FirebaseAuth mAuth;
 
   hexColor (String colorhexcode){
     String colornew = '0xff' + colorhexcode;
@@ -283,11 +292,38 @@ class _SignupScreenState extends State<SignupScreen> {
                               child: MaterialButton(
                                 onPressed:()
                                 {
-                                  if(formKey.currentState!.validate()) {
-                                    print(usernameController.text);
-                                    print(emailController.text);
-                                    print(passwordController.text);
-                                  }
+                                if(formKey.currentState!.validate())
+                                  {
+                                setState(() {
+                                isClicked = true;
+                                });
+                                FirebaseAuth.instance
+                                    .createUserWithEmailAndPassword(
+                                email: emailController.text,
+                                password: passwordController.text)
+                                    .then((value)
+                                async {
+                                print(value.user?.email);
+                                print(value.user?.uid);
+
+                                userCreate( name: usernameController.text,
+                                email: emailController.text,
+                                password: passwordController.text,
+                                uId: value.user!.uid,
+                                );
+                                print(value.user?.emailVerified);
+                                if (value.user?.emailVerified == false){
+                                User? user = FirebaseAuth.instance.currentUser;
+                                await FirebaseAuth.instance.setLanguageCode("fr");
+                                await user?.sendEmailVerification();
+                                }
+
+                                })
+                                    .catchError((error) {
+                                print(error.toString());
+                                });
+                                }
+
                                 },
                                 child:
                                 Text(
@@ -342,4 +378,28 @@ class _SignupScreenState extends State<SignupScreen> {
       ),
     );
   }
+  }
+  void userCreate({
+    required String name,
+    required String email,
+    required String password,
+    required String uId,
+  })
+  {
+    SignUpUserModel model = SignUpUserModel(
+      email: email,
+      name: name,
+      password: password,
+      uId: uId,
+    );
+    FirebaseFirestore.instance.
+    collection('users')
+        .doc(uId)
+        .set(model.toMap())
+        .then((value){
+    })
+        .catchError((error){});
+
+
+
 }

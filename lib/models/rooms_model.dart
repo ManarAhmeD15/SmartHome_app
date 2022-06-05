@@ -42,8 +42,8 @@ void add_room({
 }
 
 
-/*
- File profileImage;
+
+ File ? profileImage;
 
 var picker = ImagePicker();
 
@@ -54,11 +54,11 @@ Future <void> getProfileImage() async
   );
   if (pickedFile != null)
     {
-      profileImage = File(pickedFile.path)
+      profileImage = File(pickedFile.path);
     } else
     {
       print('No image selected');
     }
 }
 
-*/
+
