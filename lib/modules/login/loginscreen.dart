@@ -31,10 +31,9 @@ class _LoginScreenState extends State<LoginScreen> {
     final user=UserPreferences.getUser();
 
     return Scaffold(
-      // appBar: AppBar(
-      //   title:Text(appTitle),
-      //
-      // ),
+
+
+
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
