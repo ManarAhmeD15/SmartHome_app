@@ -1,11 +1,14 @@
 import 'package:beginning_app/modules/navigation/collapsingnavigationdrawer.dart';
 //import 'package:beginning_app/modules/navigation/navigationdrawer.dart';
 import 'package:beginning_app/modules/login/loginscreen.dart';
+import 'package:beginning_app/modules/navigation/navigation_drawer_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../all rooms/bedroom/add_new_room.dart';
+
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -34,7 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
       return colorint;
     }
     return Scaffold(
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
+
         backgroundColor:Color(hexColor("#264653")),
         leading:Icon(
           Icons.menu,
@@ -177,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                       children:[
                         Padding(
-                          padding: const EdgeInsets.only(right: 25.0),
+                          padding: const EdgeInsets.only(left: 90.0),
                           child: Text(
                             'Latest worked devices',
                             style:TextStyle(
@@ -189,6 +194,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(
                           height: 10.0,
                         ),
+
+                        /*
                         Expanded(
                           child: Column(
                             children: [
@@ -313,7 +320,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
-
+*/
 
                       ],
                     ),
@@ -325,9 +332,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
           ),
 
-
-
-          CollapsingNavigationDrawer() ,
 
 
         ],

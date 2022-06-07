@@ -2,6 +2,8 @@ import 'package:beginning_app/my_flutter_app_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../home/home_screen.dart';
+
 class RemoteScreen extends StatefulWidget {
   const RemoteScreen({Key? key}) : super(key: key);
 
@@ -63,7 +65,10 @@ class _RemoteScreenState extends State<RemoteScreen> {
                        // bottom: 40.0,
                       ),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(builder: (context) => const HomeScreen()),);
+
+                        },
                         icon: Icon(
                           Icons.arrow_back_ios,
                           size: 35.0,

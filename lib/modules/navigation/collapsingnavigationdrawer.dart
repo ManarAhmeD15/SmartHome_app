@@ -116,4 +116,3 @@ class _CollapsingNavigationDrawerState extends State<CollapsingNavigationDrawer>
   }
 
 }
-

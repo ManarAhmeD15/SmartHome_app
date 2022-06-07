@@ -17,6 +17,9 @@ import 'modules/profile/user_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
 //import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+import 'modules/navigation/navigation_drawer_widget.dart';
+import 'modules/navigation/navigation_provider.dart';
 
 
 void main() async {
@@ -27,13 +30,43 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-   return MaterialApp(
+static final String title = 'Navigation Drawer';
 
-     debugShowCheckedModeBanner: false,
-     home: LoginScreen(),
-   );
-  }
+@override
+Widget build(BuildContext context) => ChangeNotifierProvider(
+  create: (context) => NavigationProvider(),
+  child: MaterialApp(
+    debugShowCheckedModeBanner: false,
+    //title: title,
+    //theme: ThemeData(primarySwatch: Colors.deepOrange),
+    home: HomeScreen(),
+
+  ),
+);
+}
+
+/*
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    drawer: NavigationDrawerWidget(),
+
+    appBar: AppBar(
+      backgroundColor: Colors.red,
+      title: Text(MyApp.title),
+      centerTitle: true,
+    ),
+
+
+  );
+
 
 }
+
+
+ */
