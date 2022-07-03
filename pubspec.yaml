@@ -60,6 +60,7 @@ dependencies:
   percent_indicator: ^4.0.0
 
   flutter_switch: ^0.3.2
+  firebase_storage: ^10.3.1
 
 
 

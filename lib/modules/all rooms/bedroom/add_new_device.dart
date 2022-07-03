@@ -2,68 +2,54 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AddNewDevice extends StatefulWidget {
-
-
-
   @override
   State<AddNewDevice> createState() => _AddNewDeviceState();
 }
 
 class _AddNewDeviceState extends State<AddNewDevice> {
   late int selectValue;
-   String? value;
+  String? value;
 
-
-  hexColor (String colorhexcode){
+  hexColor(String colorhexcode) {
     String colornew = '0xff' + colorhexcode;
     colornew = colornew.replaceAll('#', '');
     int colorint = int.parse(colornew);
     return colorint;
-
-
-
   }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    selectValue=0;
+    selectValue = 0;
   }
 
-  setSelectedValue(int val)
-  {
+  setSelectedValue(int val) {
     setState(() {
-      selectValue=val;
+      selectValue = val;
     });
-
   }
+
   final items = ['1', '2', '3', '4'];
 
-  DropdownMenuItem<String> buildMenu(String item) =>
-      DropdownMenuItem(
-          value :item,
-          child: Text(
-            item,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 10.0,
-              color: Colors.white,
-            ),
-          )
-      ) ;
+  DropdownMenuItem<String> buildMenu(String item) => DropdownMenuItem(
+      value: item,
+      child: Text(
+        item,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 10.0,
+          color: Colors.white,
+        ),
+      ));
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return Scaffold(
-      body:
-      SafeArea(
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:
-            [
+            children: [
               Padding(
                 padding: const EdgeInsetsDirectional.all(25.0),
                 child: Center(
@@ -77,9 +63,10 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   ),
                 ),
               ),
-              SizedBox(height: 30.0,),
               Padding(
-                padding: const EdgeInsets.only(left: 27.0,),
+                padding: const EdgeInsets.only(
+                  left: 27.0,
+                ),
                 child: Row(
                   children: [
                     Text(
@@ -87,20 +74,23 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15.0,
-                        color:  Color(hexColor("#264653")),
+                        color: Color(hexColor("#264653")),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 10.0,),
-              
+              SizedBox(
+                height: 5.0,
+              ),
               RadioListTile<int>(
-                  value: 1 ,
+                  value: 1,
                   groupValue: selectValue,
                   title: Row(
                     children: [
-                      SizedBox(width: 10.0,),
+                      SizedBox(
+                        width: 10.0,
+                      ),
                       Text(
                         'Switch 1-2-4 Channels',
                         style: TextStyle(
@@ -114,10 +104,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }
-
-              ),
-              SizedBox(height: 5.0,),
+                  }),
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 50.0),
                 child: Column(
@@ -128,9 +115,11 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                           width: 300,
                           height: 120,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color:Colors.black, width: 0.7,)
-                          ),
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Colors.black,
+                                width: 0.7,
+                              )),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(3.0),
@@ -152,26 +141,34 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                   Container(
                                     width: 50.0,
                                     height: 30.0,
-                                    padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 4.0,),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 10.0,
+                                      vertical: 4.0,
+                                    ),
                                     decoration: BoxDecoration(
-                                      color:Color(hexColor("#264653")),
-                                      borderRadius: BorderRadius.circular(20.0,),
+                                      color: Color(hexColor("#264653")),
+                                      borderRadius: BorderRadius.circular(
+                                        20.0,
+                                      ),
                                     ),
                                     child: DropdownButtonHideUnderline(
                                       child: DropdownButton<String>(
                                         iconSize: 20.0,
                                         iconEnabledColor: Colors.white,
-                                        dropdownColor:Color(hexColor("#264653")),
+                                        dropdownColor:
+                                            Color(hexColor("#264653")),
                                         value: value,
-                                        items : items.map(buildMenu).toList(),
-                                        onChanged: (value) => setState(() => this.value = value!,
+                                        items: items.map(buildMenu).toList(),
+                                        onChanged: (value) => setState(
+                                          () => this.value = value!,
                                         ),
                                       ),
                                     ),
                                   ),
-                                  SizedBox(width: 5.0,),
-
-                                   ],
+                                  SizedBox(
+                                    width: 5.0,
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -203,30 +200,37 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                 top: 40.0,
                               ),
                               child: RadioListTile<int>(
-                                  value: 10 ,
+                                  value: 10,
                                   groupValue: selectValue,
                                   title: Row(
                                     children: [
                                       Container(
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Image(image: AssetImage('assets/lamp.png'),
+                                          child: Image(
+                                            image:
+                                                AssetImage('assets/lamp.png'),
                                             width: 20.0,
-                                            height: 20.0,),
+                                            height: 20.0,
+                                          ),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(15.0,),
-                                          color:  Colors.black12,
+                                          borderRadius: BorderRadius.circular(
+                                            15.0,
+                                          ),
+                                          color: Colors.black12,
                                         ),
                                       ),
-                                      SizedBox(width: 5.0,),
+                                      SizedBox(
+                                        width: 5.0,
+                                      ),
                                       Text(
                                         'Lamp',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
+                                          color: Color(hexColor("#264653")),
                                           fontSize: 10.0,
                                         ),
                                       ),
@@ -236,10 +240,8 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
-                                  }
-                              ),
+                                  }),
                             ),
-
                           ],
                         ),
                         Stack(
@@ -249,30 +251,37 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                 top: 72.0,
                               ),
                               child: RadioListTile<int>(
-                                  value: 11 ,
+                                  value: 11,
                                   groupValue: selectValue,
                                   title: Row(
                                     children: [
                                       Container(
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Image(image: AssetImage('assets/fridge.png'),
+                                          child: Image(
+                                            image:
+                                                AssetImage('assets/fridge.png'),
                                             width: 20.0,
-                                            height: 20.0,),
+                                            height: 20.0,
+                                          ),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(15.0,),
-                                          color:  Colors.black12,
+                                          borderRadius: BorderRadius.circular(
+                                            15.0,
+                                          ),
+                                          color: Colors.black12,
                                         ),
                                       ),
-                                      SizedBox(width: 5.0,),
+                                      SizedBox(
+                                        width: 5.0,
+                                      ),
                                       Text(
                                         'Fridge',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
+                                          color: Color(hexColor("#264653")),
                                           fontSize: 10.0,
                                         ),
                                       ),
@@ -282,10 +291,8 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
-                                  }
-                              ),
+                                  }),
                             ),
-
                           ],
                         ),
                         Stack(
@@ -296,30 +303,36 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                 start: 140.0,
                               ),
                               child: RadioListTile<int>(
-                                  value: 12 ,
+                                  value: 12,
                                   groupValue: selectValue,
                                   title: Row(
                                     children: [
                                       Container(
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Image(image: AssetImage('assets/fan.png'),
+                                          child: Image(
+                                            image: AssetImage('assets/fan.png'),
                                             width: 20.0,
-                                            height: 20.0,),
+                                            height: 20.0,
+                                          ),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(14.0,),
-                                          color:  Colors.black12,
+                                          borderRadius: BorderRadius.circular(
+                                            14.0,
+                                          ),
+                                          color: Colors.black12,
                                         ),
                                       ),
-                                      SizedBox(width: 5.0,),
+                                      SizedBox(
+                                        width: 5.0,
+                                      ),
                                       Text(
                                         'Fan',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
+                                          color: Color(hexColor("#264653")),
                                           fontSize: 10.0,
                                         ),
                                       ),
@@ -329,10 +342,8 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
-                                  }
-                              ),
+                                  }),
                             ),
-
                           ],
                         ),
                         Stack(
@@ -343,30 +354,36 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                 start: 140.0,
                               ),
                               child: RadioListTile<int>(
-                                  value: 13 ,
+                                  value: 13,
                                   groupValue: selectValue,
                                   title: Row(
                                     children: [
                                       Container(
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Image(image: AssetImage('assets/tv.png'),
+                                          child: Image(
+                                            image: AssetImage('assets/tv.png'),
                                             width: 20.0,
-                                            height: 20.0,),
+                                            height: 20.0,
+                                          ),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(15.0,),
-                                          color:  Colors.black12,
+                                          borderRadius: BorderRadius.circular(
+                                            15.0,
+                                          ),
+                                          color: Colors.black12,
                                         ),
                                       ),
-                                      SizedBox(width: 5.0,),
+                                      SizedBox(
+                                        width: 5.0,
+                                      ),
                                       Text(
                                         'TV',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
+                                          color: Color(hexColor("#264653")),
                                           fontSize: 10.0,
                                         ),
                                       ),
@@ -376,10 +393,8 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
-                                  }
-                              ),
+                                  }),
                             ),
-
                           ],
                         ),
                       ],
@@ -387,7 +402,9 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   ],
                 ),
               ),
-              SizedBox(height: 10.0,),
+              SizedBox(
+                height: 5.0,
+              ),
               RadioListTile<int>(
                   value: 2,
                   groupValue: selectValue,
@@ -396,18 +413,24 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image(image: AssetImage('assets/motion.png'),
+                          child: Image(
+                            image: AssetImage('assets/motion.png'),
                             width: 20.0,
-                            height: 20.0,),
+                            height: 20.0,
+                          ),
                         ),
                         width: 40.0,
                         height: 40.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0,),
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
                           color: Colors.black12,
                         ),
                       ),
-                      SizedBox(width: 5.0,),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text(
                         'Motion',
                         style: TextStyle(
@@ -420,30 +443,35 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   ),
                   activeColor: Color(hexColor("#264653")),
                   selected: true,
-
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  } ),
+                  }),
               RadioListTile<int>(
-                  value: 3 ,
+                  value: 3,
                   groupValue: selectValue,
-                  title:Row(
+                  title: Row(
                     children: [
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image(image: AssetImage('assets/alarm.png'),
+                          child: Image(
+                            image: AssetImage('assets/alarm.png'),
                             width: 20.0,
-                            height: 20.0,),
+                            height: 20.0,
+                          ),
                         ),
                         width: 40.0,
                         height: 40.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0,),
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
                           color: Colors.black12,
                         ),
                       ),
-                      SizedBox(width: 5.0,),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text(
                         'Alarm clock',
                         style: TextStyle(
@@ -458,33 +486,38 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }
-              ),
+                  }),
               RadioListTile<int>(
-                  value: 4 ,
+                  value: 4,
                   groupValue: selectValue,
                   title: Row(
                     children: [
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image(image: AssetImage('assets/fire.png'),
+                          child: Image(
+                            image: AssetImage('assets/fire.png'),
                             width: 20.0,
-                            height: 20.0,),
+                            height: 20.0,
+                          ),
                         ),
                         width: 40.0,
                         height: 40.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0,),
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
                           color: Colors.black12,
                         ),
                       ),
-                      SizedBox(width: 5.0,),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text(
                         'Fire detector',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color:  Color(hexColor("#264653")),
+                          color: Color(hexColor("#264653")),
                           fontSize: 15.0,
                         ),
                       ),
@@ -494,33 +527,38 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }
-              ),
+                  }),
               RadioListTile<int>(
-                  value: 5 ,
+                  value: 5,
                   groupValue: selectValue,
                   title: Row(
                     children: [
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image(image: AssetImage('assets/smoke.png'),
+                          child: Image(
+                            image: AssetImage('assets/smoke.png'),
                             width: 20.0,
-                            height: 20.0,),
+                            height: 20.0,
+                          ),
                         ),
                         width: 40.0,
                         height: 40.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0,),
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
                           color: Colors.black12,
                         ),
                       ),
-                      SizedBox(width: 5.0,),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text(
                         'Smoke detector',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color:Color(hexColor("#264653")),
+                          color: Color(hexColor("#264653")),
                           fontSize: 15.0,
                         ),
                       ),
@@ -530,33 +568,38 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }
-              ),
+                  }),
               RadioListTile<int>(
-                  value: 6 ,
+                  value: 6,
                   groupValue: selectValue,
                   title: Row(
                     children: [
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image(image: AssetImage('assets/magnetic.png'),
+                          child: Image(
+                            image: AssetImage('assets/magnetic.png'),
                             width: 20.0,
-                            height: 20.0,),
+                            height: 20.0,
+                          ),
                         ),
                         width: 40.0,
                         height: 40.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0,),
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
                           color: Colors.black12,
                         ),
                       ),
-                      SizedBox(width: 5.0,),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text(
                         'Door & Window Magnetic',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color:  Color(hexColor("#264653")),
+                          color: Color(hexColor("#264653")),
                           fontSize: 15.0,
                         ),
                       ),
@@ -566,8 +609,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }
-              ),
+                  }),
               RadioListTile<int>(
                   value: 7,
                   groupValue: selectValue,
@@ -576,23 +618,29 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image(image: AssetImage('assets/humidity.png'),
+                          child: Image(
+                            image: AssetImage('assets/humidity.png'),
                             width: 20.0,
-                            height: 20.0,),
+                            height: 20.0,
+                          ),
                         ),
                         width: 40.0,
                         height: 40.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0,),
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
                           color: Colors.black12,
                         ),
                       ),
-                      SizedBox(width: 5.0,),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text(
                         'Temperature and humidity',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                         color: Color(hexColor("#264653")),
+                          color: Color(hexColor("#264653")),
                           fontSize: 15.0,
                         ),
                       ),
@@ -602,33 +650,38 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }
-              ),
+                  }),
               RadioListTile<int>(
-                  value: 8 ,
+                  value: 8,
                   groupValue: selectValue,
                   title: Row(
                     children: [
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image(image: AssetImage('assets/ac.png'),
+                          child: Image(
+                            image: AssetImage('assets/ac.png'),
                             width: 20.0,
-                            height: 20.0,),
+                            height: 20.0,
+                          ),
                         ),
                         width: 40.0,
                         height: 40.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0,),
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
                           color: Colors.black12,
                         ),
                       ),
-                      SizedBox(width: 5.0,),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text(
                         'Ac control',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color:  Color(hexColor("#264653")),
+                          color: Color(hexColor("#264653")),
                           fontSize: 15.0,
                         ),
                       ),
@@ -638,33 +691,38 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }
-              ),
+                  }),
               RadioListTile<int>(
-                  value: 9 ,
+                  value: 9,
                   groupValue: selectValue,
                   title: Row(
                     children: [
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image(image: AssetImage('assets/leak.png'),
+                          child: Image(
+                            image: AssetImage('assets/leak.png'),
                             width: 20.0,
-                            height: 20.0,),
+                            height: 20.0,
+                          ),
                         ),
                         width: 40.0,
                         height: 40.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0,),
-                          color:  Colors.black12,
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
+                          color: Colors.black12,
                         ),
                       ),
-                      SizedBox(width: 5.0,),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text(
                         'Water leak',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color:  Color(hexColor("#264653")),
+                          color: Color(hexColor("#264653")),
                           fontSize: 15.0,
                         ),
                       ),
@@ -674,25 +732,23 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }
-              ),
+                  }),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 140.0,
-                  vertical:10.0,
+                  vertical: 10.0,
                 ),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.amber,
-                    borderRadius: BorderRadius.circular(25.0,),
+                    borderRadius: BorderRadius.circular(
+                      25.0,
+                    ),
                   ),
                   width: 120.0,
                   height: 40.0,
                   child: MaterialButton(
-                    onPressed:()
-                    {
-
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Add',
                       style: TextStyle(
