@@ -1,5 +1,6 @@
 import 'package:beginning_app/modules/all%20rooms/bedroom/alarm.dart';
 import 'package:beginning_app/modules/all%20rooms/bedroom/add_new_device.dart';
+import 'package:beginning_app/modules/all%20rooms/bedroom/magentic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -25,7 +26,7 @@ class _bedroomState extends State<bedroom> {
     return colorint;
   }
 
-  bool selected=false;
+  bool selected=true;
   bool val1 = true;
   bool val2 = true;
 
@@ -200,37 +201,9 @@ class _bedroomState extends State<bedroom> {
                           height: 50.0,
                           child: TextButton(
                             onPressed: (){
-                              showDialog(
-                                context: context,
-                                builder: (context) => AlertDialog(
-                                  title: Center(
-                                    child: Text(
-                                      'Magnetic',
-                                      maxLines: 1,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color:  Color(hexColor("#264653")),
-                                        fontSize: 20.0,
-                                      ),
-                                    ),
-                                  ),
-                                  content: Container(
-                                    width: 160.0,
-                                    height: 220.0,
-                                  ),
-                                  actions: [
-                                    Center(
-                                      child: FloatingActionButton(
-                                        backgroundColor: Colors.amber,
-                                        onPressed: (){},
-                                        child: Icon(
-                                          Icons.add,
-                                          size: 30.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  Magentic()),
                               );
                             },
                             child: Stack(
@@ -538,6 +511,9 @@ class _bedroomState extends State<bedroom> {
                         ),
                       ),
                     ),
+
+
+
                   ],
                 ),
               ],
