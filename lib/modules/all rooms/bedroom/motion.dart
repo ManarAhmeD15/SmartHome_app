@@ -1,6 +1,9 @@
 import 'package:beginning_app/modules/all%20rooms/bedroom/bedroom.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
 class Motion extends StatefulWidget {
   const Motion({Key? key}) : super(key: key);
@@ -10,27 +13,37 @@ class Motion extends StatefulWidget {
 
 class _MotionState extends State<Motion> {
   @override
-
   bool val2 = false;
+
   onChangedFunction2(bool newValue2) {
     setState(() {
       val2 = newValue2;
-      if (val2 == true){
+      if (val2 == true) {
         print('On');
-      }
-      else
+      } else
         print('Off');
     });
   }
+
   bool val1 = false;
 
   onChangedFunction1(bool newValue1) {
     setState(() {
       val1 = newValue1;
-      if (val1 == true){
+      if (val1 == true) {
         print('On');
-      }
-      else
+      } else
+        print('Off');
+    });
+  }
+
+  var val;
+  onChangedFunction3(bool newValue3) {
+    setState(() {
+      val = newValue3;
+      if (val == true) {
+        print('On');
+      } else
         print('Off');
     });
   }
@@ -228,21 +241,47 @@ class _MotionState extends State<Motion> {
               ),
             ),  */
             Positioned(
-              bottom: 25.0,
-              right: 55.0,
+              bottom: 40.0,
+              right: 67.0,
               child: Stack(
                 children: [
                   Row(
                     children: [
-                      Switch(
-                          value: val1,
-                          onChanged: onChangedFunction1,
-                        activeColor: Color(hexColor("#264653")),
-                        activeTrackColor: Colors.blueGrey,
-                      ),
+                      // Switch(
+                      //   value: val1,
+                      //   onChanged: onChangedFunction1,
+                      //   activeColor: Color(hexColor("#264653")),
+                      //   activeTrackColor: Colors.blueGrey,
+                      // ),      --
+                      FlutterSwitch(
+                        height: 20.0,
+                        width: 40.0,
+                        borderRadius: 20.0,
+                        padding: 1.0,
+                        activeColor: Colors.blueGrey,
+                        inactiveColor: Colors.grey,
+                        value: status7,
+                        onToggle: (val) async {
+                          if (val) {
+                            await ref
+                                .child('output')
+                                .child('state')
+                                .set('on')
+                                .asStream();
+                          } else {
+                            await ref
+                                .child('output')
+                                .child('state')
+                                .set('off')
+                                .asStream();
+                          }
+                          setState(() {
+                            status7 = val;
+                          });
+                        },
+                      )
                     ],
                   ),
-
                 ],
               ),
             ),
@@ -285,7 +324,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 10.0,
-                    height:10.0,
+                    height: 10.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.grey[300],
@@ -301,7 +340,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 12.0,
-                    height:12.0,
+                    height: 12.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.blueGrey[400],
@@ -317,7 +356,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 15.0,
-                    height:15.0,
+                    height: 15.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.blueGrey,
@@ -334,7 +373,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 10.0,
-                    height:10.0,
+                    height: 10.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.grey[300],
@@ -350,7 +389,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 12.0,
-                    height:12.0,
+                    height: 12.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.blueGrey[400],
@@ -366,7 +405,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 15.0,
-                    height:15.0,
+                    height: 15.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.blueGrey,
@@ -378,12 +417,16 @@ class _MotionState extends State<Motion> {
             //Right Three Circles//
           ],
         ),
-      ]
-      ),
-    )
-    );
+      ]),
+    ));
   }
+
+  final ref = refrenceData.ref();
 }
+
+late final FirebaseApp app;
+final refrenceData = FirebaseDatabase.instance;
+bool status7 = false;
 
 Widget customSwitch(String text, bool val, Function onChangedMethod) {
   return Padding(

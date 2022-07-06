@@ -1,15 +1,12 @@
+import 'package:beginning_app/modules/all%20rooms/bedroom/add_new_device_bedroom.dart';
 import 'package:beginning_app/modules/all%20rooms/bedroom/alarm.dart';
-import 'package:beginning_app/modules/all%20rooms/bedroom/add_new_device.dart';
 import 'package:beginning_app/modules/all%20rooms/bedroom/magentic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import 'motion.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 //import 'package:lite_rolling_switch/lite_rolling_switch.dart';
-
-
 
 class bedroom extends StatefulWidget {
   const bedroom({Key? key}) : super(key: key);
@@ -26,22 +23,22 @@ class _bedroomState extends State<bedroom> {
     return colorint;
   }
 
-  bool selected=true;
+  bool selected = true;
   bool val1 = true;
   bool val2 = true;
 
-  double temp_percent=0.22;
-  onChangedFunction1(bool newValue1){
+  double temp_percent = 0.22;
+  onChangedFunction1(bool newValue1) {
     setState(() {
       val1 = newValue1;
     });
   }
-  onChangedFunction2(bool newValue2){
+
+  onChangedFunction2(bool newValue2) {
     setState(() {
       val2 = newValue2;
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +92,9 @@ class _bedroomState extends State<bedroom> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 8.0,),
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 8.0,
+                  ),
                   child: Text(
                     'Devices',
                     style: TextStyle(
@@ -117,29 +116,33 @@ class _bedroomState extends State<bedroom> {
                   children: [
                     Container(
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) =>  AddNewDevice()),
+                            MaterialPageRoute(
+                                builder: (context) => AddNewDevice()),
                           );
                         },
-                        icon:Icon(
+                        icon: Icon(
                           Icons.add,
                           size: 30.0,
                           color: Color(hexColor("#264653")),
-                        ),),
+                        ),
+                      ),
                       width: 50.0,
                       height: 50.0,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0,),
-                        color:  Colors.black12,
+                        borderRadius: BorderRadius.circular(
+                          10.0,
+                        ),
+                        color: Colors.black12,
                       ),
                     ),
                     Text(
                       'Add new device',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color:  Color(hexColor("#264653")),
+                        color: Color(hexColor("#264653")),
                         fontSize: 10.0,
                       ),
                     ),
@@ -149,30 +152,35 @@ class _bedroomState extends State<bedroom> {
                   width: 10.0,
                 ),
                 Column(
-                  children:[
+                  children: [
                     Stack(
                       children: [
                         Container(
                           width: 50.0,
                           height: 50.0,
                           child: TextButton(
-                            onPressed: (){
+                            onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) =>  Motion()),
+                                MaterialPageRoute(
+                                    builder: (context) => Motion()),
                               );
                             },
                             child: Stack(
                               children: [
-                                Image(image: AssetImage('assets/motion.png'),
+                                Image(
+                                  image: AssetImage('assets/motion.png'),
                                   width: 30.0,
-                                  height: 30.0,),
+                                  height: 30.0,
+                                ),
                               ],
                             ),
                           ),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0,),
-                            color:  Colors.black12,
+                            borderRadius: BorderRadius.circular(
+                              10.0,
+                            ),
+                            color: Colors.black12,
                           ),
                         ),
                       ],
@@ -182,9 +190,8 @@ class _bedroomState extends State<bedroom> {
                       maxLines: 1,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color:  Color(hexColor("#264653")),
+                        color: Color(hexColor("#264653")),
                         fontSize: 10.0,
-
                       ),
                     ),
                   ],
@@ -193,30 +200,35 @@ class _bedroomState extends State<bedroom> {
                   width: 10.0,
                 ),
                 Column(
-                  children:[
+                  children: [
                     Stack(
                       children: [
                         Container(
                           width: 50.0,
                           height: 50.0,
                           child: TextButton(
-                            onPressed: (){
+                            onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) =>  Magentic()),
+                                MaterialPageRoute(
+                                    builder: (context) => Magentic()),
                               );
                             },
                             child: Stack(
                               children: [
-                                Image(image: AssetImage('assets/magnetic.png'),
+                                Image(
+                                  image: AssetImage('assets/magnetic.png'),
                                   width: 30.0,
-                                  height: 30.0,),
+                                  height: 30.0,
+                                ),
                               ],
                             ),
                           ),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0,),
-                            color:  Colors.black12,
+                            borderRadius: BorderRadius.circular(
+                              10.0,
+                            ),
+                            color: Colors.black12,
                           ),
                         ),
                       ],
@@ -226,9 +238,8 @@ class _bedroomState extends State<bedroom> {
                       maxLines: 1,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color:  Color(hexColor("#264653")),
+                        color: Color(hexColor("#264653")),
                         fontSize: 10.0,
-
                       ),
                     ),
                   ],
@@ -237,30 +248,32 @@ class _bedroomState extends State<bedroom> {
                   width: 10.0,
                 ),
                 Column(
-                  children:[
+                  children: [
                     Stack(
                       children: [
                         Container(
                           width: 50.0,
                           height: 50.0,
                           child: TextButton(
-                            onPressed: (){
+                            onPressed: () {
                               showDialog(
                                 context: context,
                                 builder: (context) => AlertDialog(
                                   title: Row(
-                                    children:[ Padding(
-                                      padding: const EdgeInsets.only(left: 20.0),
-                                      child: Text(
-                                        'Temperature & Humidity',
-                                        maxLines: 1,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
-                                          fontSize: 16.0,
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 20.0),
+                                        child: Text(
+                                          'Temperature & Humidity',
+                                          maxLines: 1,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(hexColor("#264653")),
+                                            fontSize: 16.0,
+                                          ),
                                         ),
                                       ),
-                                    ),
 
                                       // Stack(
                                       //   alignment: Alignment.bottomLeft,
@@ -288,11 +301,12 @@ class _bedroomState extends State<bedroom> {
                                     Row(
                                       children: [
                                         Center(
-                                          child:Container(
-
-                                            child:
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),
+                                          child: Container(
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 20.0,
+                                                      vertical: 10.0),
                                               child: CircularPercentIndicator(
                                                 radius: 50.0,
                                                 lineWidth: 10.0,
@@ -301,8 +315,10 @@ class _bedroomState extends State<bedroom> {
                                                 progressColor: Colors.amber,
                                                 animation: true,
                                                 animationDuration: 1500,
-                                                circularStrokeCap: CircularStrokeCap.round,
-                                                header: Text('Temperature',
+                                                circularStrokeCap:
+                                                    CircularStrokeCap.round,
+                                                header: Text(
+                                                  'Temperature',
                                                   maxLines: 1,
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.bold,
@@ -310,21 +326,26 @@ class _bedroomState extends State<bedroom> {
                                                     fontSize: 15.0,
                                                   ),
                                                 ),
-
-                                                center:
-                                                Stack(
+                                                center: Stack(
                                                   children: [
                                                     Padding(
-                                                      padding: const EdgeInsetsDirectional.only(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .only(
                                                         top: 23.0,
                                                       ),
                                                       child: Stack(
                                                         children: [
-                                                          Text("22'C",
+                                                          Text(
+                                                            "22'C",
                                                             //maxLines: 1,
                                                             style: TextStyle(
-                                                              fontWeight: FontWeight.bold,
-                                                              color:Color(hexColor("#264653")),
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color: Color(
+                                                                  hexColor(
+                                                                      "#264653")),
                                                               fontSize: 15.0,
                                                             ),
                                                           ),
@@ -332,37 +353,44 @@ class _bedroomState extends State<bedroom> {
                                                       ),
                                                     ),
                                                     Padding(
-                                                      padding: const EdgeInsetsDirectional.only(start:5.0,),
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .only(
+                                                        start: 5.0,
+                                                      ),
                                                       child: Stack(
                                                         children: [
-                                                          Image(image: AssetImage('assets/hot.png'),
+                                                          Image(
+                                                            image: AssetImage(
+                                                                'assets/hot.png'),
                                                             width: 20.0,
-                                                            height: 20.0,),
+                                                            height: 20.0,
+                                                          ),
                                                         ],
                                                       ),
                                                     ),
                                                   ],
                                                 ),
-
-
                                               ),
                                             ),
                                           ),
-
-
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 10.0, vertical: 10.0),
                                           child: CircularPercentIndicator(
                                             radius: 50.0,
                                             lineWidth: 10.0,
                                             backgroundColor: Colors.grey,
                                             percent: 0.44,
-                                            progressColor: Colors.lightBlueAccent,
+                                            progressColor:
+                                                Colors.lightBlueAccent,
                                             animation: true,
                                             animationDuration: 1500,
-                                            circularStrokeCap: CircularStrokeCap.round,
-                                            header: Text('Humidity',
+                                            circularStrokeCap:
+                                                CircularStrokeCap.round,
+                                            header: Text(
+                                              'Humidity',
                                               maxLines: 1,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
@@ -370,42 +398,49 @@ class _bedroomState extends State<bedroom> {
                                                 fontSize: 15.0,
                                               ),
                                             ),
-
-                                            center:
-                                            Stack(
+                                            center: Stack(
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional.only(
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .only(
                                                     top: 23.0,
                                                   ),
                                                   child: Stack(
                                                     children: [
-                                                      Text("40%",
+                                                      Text(
+                                                        "40%",
                                                         //maxLines: 1,
                                                         style: TextStyle(
-                                                          fontWeight: FontWeight.bold,
-                                                          color:Color(hexColor("#264653")),
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Color(hexColor(
+                                                              "#264653")),
                                                           fontSize: 15.0,
                                                         ),
                                                       ),
                                                     ],
                                                   ),
                                                 ),
-                                                
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional.only(start:5.0,),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .only(
+                                                    start: 5.0,
+                                                  ),
                                                   child: Stack(
                                                     children: [
-                                                      Image(image: AssetImage('assets/humidity2.png'),
+                                                      Image(
+                                                        image: AssetImage(
+                                                            'assets/humidity2.png'),
                                                         width: 20.0,
-                                                        height: 20.0,),
+                                                        height: 20.0,
+                                                      ),
                                                     ],
                                                   ),
                                                 ),
                                               ],
                                             ),
-
-
                                           ),
                                         ),
                                       ],
@@ -416,15 +451,19 @@ class _bedroomState extends State<bedroom> {
                             },
                             child: Stack(
                               children: [
-                                Image(image: AssetImage('assets/humidity.png'),
+                                Image(
+                                  image: AssetImage('assets/humidity.png'),
                                   width: 30.0,
-                                  height: 30.0,),
+                                  height: 30.0,
+                                ),
                               ],
                             ),
                           ),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0,),
-                            color:  Colors.black12,
+                            borderRadius: BorderRadius.circular(
+                              10.0,
+                            ),
+                            color: Colors.black12,
                           ),
                         ),
                       ],
@@ -435,11 +474,9 @@ class _bedroomState extends State<bedroom> {
 
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-
                         fontWeight: FontWeight.bold,
-                        color:  Color(hexColor("#264653")),
+                        color: Color(hexColor("#264653")),
                         fontSize: 10.0,
-
                       ),
                     ),
                   ],
@@ -448,30 +485,35 @@ class _bedroomState extends State<bedroom> {
                   width: 10.0,
                 ),
                 Column(
-                  children:[
+                  children: [
                     Stack(
                       children: [
                         Container(
                           width: 50.0,
                           height: 50.0,
                           child: TextButton(
-                            onPressed: (){
+                            onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) =>  Alarm()),
+                                MaterialPageRoute(
+                                    builder: (context) => Alarm()),
                               );
                             },
                             child: Stack(
                               children: [
-                                Image(image: AssetImage('assets/alarm.png'),
+                                Image(
+                                  image: AssetImage('assets/alarm.png'),
                                   width: 30.0,
-                                  height: 30.0,),
+                                  height: 30.0,
+                                ),
                               ],
                             ),
                           ),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0,),
-                            color:  Colors.black12,
+                            borderRadius: BorderRadius.circular(
+                              10.0,
+                            ),
+                            color: Colors.black12,
                           ),
                         ),
                       ],
@@ -481,9 +523,8 @@ class _bedroomState extends State<bedroom> {
                       maxLines: 1,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color:  Color(hexColor("#264653")),
+                        color: Color(hexColor("#264653")),
                         fontSize: 10.0,
-
                       ),
                     ),
                   ],
@@ -507,13 +548,12 @@ class _bedroomState extends State<bedroom> {
                         height: 350,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(15.0,),
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
                         ),
                       ),
                     ),
-
-
-
                   ],
                 ),
               ],
@@ -525,38 +565,32 @@ class _bedroomState extends State<bedroom> {
   }
 }
 
-
-
-Widget customSwitch(String text, bool val, Function onChangedMethod){
+Widget customSwitch(String text, bool val, Function onChangedMethod) {
   return Padding(
-    padding: const EdgeInsets.symmetric(vertical:0,),
+    padding: const EdgeInsets.symmetric(
+      vertical: 0,
+    ),
     child: Row(
-      children:[
+      children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            text, style: TextStyle(
-            fontSize: 12.0,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
-          ),
+            text,
+            style: TextStyle(
+              fontSize: 12.0,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
           ),
         ),
         CupertinoSwitch(
             value: val,
             trackColor: Colors.white70,
             activeColor: Colors.blueGrey,
-            onChanged: (newValue)
-            {
+            onChanged: (newValue) {
               onChangedMethod(newValue);
-            }
-        )
+            })
       ],
     ),
   );
 }
-
-
-
-
-

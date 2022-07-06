@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -405,7 +406,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
               SizedBox(
                 height: 5.0,
               ),
-              RadioListTile<int>(
+              /*  RadioListTile<int>(
                   value: 2,
                   groupValue: selectValue,
                   title: Row(
@@ -486,7 +487,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }),
+                  }),   */ //alarm & motion
               RadioListTile<int>(
                   value: 4,
                   groupValue: selectValue,
@@ -569,7 +570,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   onChanged: (val) {
                     setSelectedValue(val!);
                   }),
-              RadioListTile<int>(
+              /*   RadioListTile<int>(
                   value: 6,
                   groupValue: selectValue,
                   title: Row(
@@ -650,7 +651,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   selected: true,
                   onChanged: (val) {
                     setSelectedValue(val!);
-                  }),
+                  }),   */ //----> temprature & magnetic
               RadioListTile<int>(
                   value: 8,
                   groupValue: selectValue,
@@ -748,7 +749,12 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   width: 120.0,
                   height: 40.0,
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      await refreneceData.child('input').set({
+                        '1': 'string',
+                        '2': 12,
+                      });
+                    },
                     child: Text(
                       'Add',
                       style: TextStyle(
@@ -765,4 +771,6 @@ class _AddNewDeviceState extends State<AddNewDevice> {
       ),
     );
   }
+
+  final refreneceData = FirebaseDatabase.instance.reference();
 }

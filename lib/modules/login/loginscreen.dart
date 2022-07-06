@@ -6,12 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../home/home_screen.dart';
-
-
 class LoginScreen extends StatefulWidget {
-
-
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -39,25 +34,19 @@ class _LoginScreenState extends State<LoginScreen> {
     //final user=UserPreferences.getUser();
 
     return Scaffold(
-
-
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
             child: Column(
-
               crossAxisAlignment: CrossAxisAlignment.center,
-
-              children:
-              [
-
-
+              children: [
                 Padding(
                   padding: const EdgeInsetsDirectional.only(top: 30.0),
-
-                  child: Image(image: AssetImage('assets/smart-home(2).png'),
+                  child: Image(
+                    image: AssetImage('assets/smart-home(2).png'),
                     width: 50.0,
-                    height: 50.0,),
+                    height: 50.0,
+                  ),
                 ),
                 SizedBox(
                   height: 20.0,
@@ -72,7 +61,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 20.0,
                 ),
-
                 Padding(
                   padding: const EdgeInsetsDirectional.only(top: 20.0),
                   child: Container(
@@ -84,19 +72,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Color(hexColor("#264653")),
                     ),
                     width: double.infinity,
-
                     child: Form(
                       key: formKey,
                       child: Column(
-
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 30.0,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.only(
-                                  top: 50.0),
+                              padding:
+                                  const EdgeInsetsDirectional.only(top: 50.0),
                               child: TextFormField(
                                 cursorColor: Colors.white,
                                 style: TextStyle(
@@ -113,8 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return 'user name must not be empty';
-                                  }
-                                  else
+                                  } else
                                     return null;
                                 },
                                 decoration: InputDecoration(
@@ -149,7 +134,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             child: TextFormField(
                               cursorColor: Colors.white,
-                              style: TextStyle(color: Colors.white,),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                               controller: passwordController,
                               keyboardType: TextInputType.visiblePassword,
                               obscureText: isPassword,
@@ -162,17 +149,14 @@ class _LoginScreenState extends State<LoginScreen> {
                               validator: (value) {
                                 if (value!.isEmpty) {
                                   return 'password is too short! ';
-                                }
-                                else
+                                } else
                                   return null;
                               },
                               decoration: InputDecoration(
-
                                 labelText: 'Password',
                                 labelStyle: TextStyle(
                                   color: Colors.white,
                                 ),
-
                                 focusColor: Colors.white,
                                 prefixIcon: Icon(
                                   Icons.lock,
@@ -180,8 +164,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 suffixIcon: IconButton(
                                   icon: Icon(
-                                    isPassword ? Icons.visibility : Icons
-                                        .visibility_off,
+                                    isPassword
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
                                     color: Colors.white,
                                   ),
                                   onPressed: () {
@@ -201,10 +186,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   borderRadius: BorderRadius.circular(15),
                                 ),
                               ),
-
                             ),
                           ),
-
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -216,22 +199,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                         builder: (context) => ForgetPassword()),
                                   );
                                 },
-                                child: Text
-                                  (
+                                child: Text(
                                   'Forgot Password?',
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     color: Colors.amber,
                                   ),
-
-                                )
-                                ,),
+                                ),
+                              ),
                             ],
                           ),
                           SizedBox(
                             height: 100.0,
                           ),
-
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 50.0,
@@ -240,7 +220,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(25.0,),
+                                borderRadius: BorderRadius.circular(
+                                  25.0,
+                                ),
                               ),
                               child: MaterialButton(
                                 onPressed: () {
@@ -279,14 +261,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                         builder: (context) => SignupScreen()),
                                   );
                                 },
-                                child: Text
-                                  (
+                                child: Text(
                                   'Sign Up',
                                   style: TextStyle(
                                     color: Colors.amber,
                                   ),
-                                )
-                                ,),
+                                ),
+                              ),
                             ],
                           ),
                           SizedBox(
@@ -305,48 +286,44 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-}
-
   void userCreate({
     required String name,
     required String email,
     required String password,
     required String uId,
-  })
-  {
+  }) {
     SignUpUserModel model = SignUpUserModel(
       email: email,
       name: name,
       password: password,
       uId: uId,
     );
-    FirebaseFirestore.instance.
-    collection('users')
+    FirebaseFirestore.instance
+        .collection('users')
         .doc(uId)
         .set(model.toMap())
-        .then((value){
-    })
-        .catchError((error){
+        .then((value) {})
+        .catchError((error) {
       print(error.toString());
     });
   }
 
-
   void userLogin({
     required String email,
     required String password,
-  }){
+  }) {
     FirebaseAuth.instance
         .signInWithEmailAndPassword(
       email: email,
-      password: password,)
+      password: password,
+    )
         .then((value) {
       print(value.user?.uid);
-      if (value.user?.uid == true){
+      if (value.user?.uid == true) {
         print('Log in Success');
       }
-    }).catchError((error){
+    }).catchError((error) {
       print(error.toString());
     });
-
+  }
 }
