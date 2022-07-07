@@ -1,3 +1,4 @@
+//import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -753,7 +754,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                       await refreneceData.child('input').set({
                         '1': 'string',
                         '2': 12,
-                      });
+                     });
                     },
                     child: Text(
                       'Add',
