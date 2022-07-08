@@ -41,6 +41,21 @@ class _bedroomState extends State<bedroom> {
       val2 = newValue2;
     });
   }
+  bool switch1 = true;
+  bool switch2 = true;
+  bool switch3 = true;
+  bool switch4 = true;
+  onChangedFunction3(bool newValue3) {
+    setState(() {
+
+      switch1 = newValue3;
+      if (switch1 == true){
+        print('On');
+      }
+      else
+        print('Off');
+    });
+  }
 
 
   @override
@@ -67,7 +82,7 @@ class _bedroomState extends State<bedroom> {
                   ),
                   Padding(
                     padding: const EdgeInsetsDirectional.only(
-                      end: 300.0,
+                      end: 280.0,
                     ),
                     child: IconButton(
                       onPressed: () {},
@@ -90,7 +105,7 @@ class _bedroomState extends State<bedroom> {
               ),
             ),
             SizedBox(
-              height: 40.0,
+              height: 20.0,
             ),
             Row(
               children: [
@@ -240,191 +255,194 @@ class _bedroomState extends State<bedroom> {
                   children:[
                     Stack(
                       children: [
-                        Container(
-                          width: 50.0,
-                          height: 50.0,
-                          child: TextButton(
-                            onPressed: (){
-                              showDialog(
-                                context: context,
-                                builder: (context) => AlertDialog(
-                                  title: Row(
-                                    children:[ Padding(
-                                      padding: const EdgeInsets.only(left: 20.0),
-                                      child: Text(
-                                        'Temperature & Humidity',
-                                        maxLines: 1,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
-                                          fontSize: 16.0,
+                        Padding(
+                          padding: const EdgeInsets.only(top:10.0),
+                          child: Container(
+                            width: 50.0,
+                            height: 50.0,
+                            child: TextButton(
+                              onPressed: (){
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    title: Row(
+                                      children:[ Padding(
+                                        padding: const EdgeInsets.only(left: 20.0),
+                                        child: Text(
+                                          'Temperature & Humidity',
+                                          maxLines: 2,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color:  Color(hexColor("#264653")),
+                                            fontSize: 16.0,
+                                          ),
                                         ),
                                       ),
+
+                                        // Stack(
+                                        //   alignment: Alignment.bottomLeft,
+                                        //   children: [
+                                        //     // LiteRollingSwitch(
+                                        //     //   value: true,
+                                        //     //
+                                        //     // ),
+                                        //
+                                        //     Switch(value: selected, onChanged: (bool value){
+                                        //       setState(() {
+                                        //         selected=value;
+                                        //       });
+                                        //
+                                        //     }),
+                                        //   ],
+                                        // ),
+                                      ],
                                     ),
+                                    // content: Container(
+                                    //   width: 160.0,
+                                    //   height: 220.0,
+                                    // ),
+                                    actions: [
+                                      Row(
+                                        children: [
+                                          Center(
+                                            child:Container(
 
-                                      // Stack(
-                                      //   alignment: Alignment.bottomLeft,
-                                      //   children: [
-                                      //     // LiteRollingSwitch(
-                                      //     //   value: true,
-                                      //     //
-                                      //     // ),
-                                      //
-                                      //     Switch(value: selected, onChanged: (bool value){
-                                      //       setState(() {
-                                      //         selected=value;
-                                      //       });
-                                      //
-                                      //     }),
-                                      //   ],
-                                      // ),
-                                    ],
-                                  ),
-                                  // content: Container(
-                                  //   width: 160.0,
-                                  //   height: 220.0,
-                                  // ),
-                                  actions: [
-                                    Row(
-                                      children: [
-                                        Center(
-                                          child:Container(
-
-                                            child:
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),
-                                              child: CircularPercentIndicator(
-                                                radius: 50.0,
-                                                lineWidth: 10.0,
-                                                backgroundColor: Colors.grey,
-                                                percent: temp_percent,
-                                                progressColor: Colors.amber,
-                                                animation: true,
-                                                animationDuration: 1500,
-                                                circularStrokeCap: CircularStrokeCap.round,
-                                                header: Text('Temperature',
-                                                  maxLines: 1,
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    // color:  Color(hexColor("#264653")),
-                                                    fontSize: 15.0,
-                                                  ),
-                                                ),
-
-                                                center:
-                                                Stack(
-                                                  children: [
-                                                    Padding(
-                                                      padding: const EdgeInsetsDirectional.only(
-                                                        top: 23.0,
-                                                      ),
-                                                      child: Stack(
-                                                        children: [
-                                                          Text("22'C",
-                                                            //maxLines: 1,
-                                                            style: TextStyle(
-                                                              fontWeight: FontWeight.bold,
-                                                              color:Color(hexColor("#264653")),
-                                                              fontSize: 15.0,
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
+                                              child:
+                                              Padding(
+                                                padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),
+                                                child: CircularPercentIndicator(
+                                                  radius: 50.0,
+                                                  lineWidth: 10.0,
+                                                  backgroundColor: Colors.grey,
+                                                  percent: temp_percent,
+                                                  progressColor: Colors.amber,
+                                                  animation: true,
+                                                  animationDuration: 1500,
+                                                  circularStrokeCap: CircularStrokeCap.round,
+                                                  header: Text('Temperature',
+                                                    maxLines: 1,
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      // color:  Color(hexColor("#264653")),
+                                                      fontSize: 15.0,
                                                     ),
-                                                    Padding(
-                                                      padding: const EdgeInsetsDirectional.only(start:5.0,),
-                                                      child: Stack(
-                                                        children: [
-                                                          Image(image: AssetImage('assets/hot.png'),
-                                                            width: 20.0,
-                                                            height: 20.0,),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-
-
-                                              ),
-                                            ),
-                                          ),
-
-
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
-                                          child: CircularPercentIndicator(
-                                            radius: 50.0,
-                                            lineWidth: 10.0,
-                                            backgroundColor: Colors.grey,
-                                            percent: 0.44,
-                                            progressColor: Colors.lightBlueAccent,
-                                            animation: true,
-                                            animationDuration: 1500,
-                                            circularStrokeCap: CircularStrokeCap.round,
-                                            header: Text('Humidity',
-                                              maxLines: 1,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                //color:  Color(hexColor("#264653")),
-                                                fontSize: 15.0,
-                                              ),
-                                            ),
-
-                                            center:
-                                            Stack(
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional.only(
-                                                    top: 23.0,
                                                   ),
-                                                  child: Stack(
+
+                                                  center:
+                                                  Stack(
                                                     children: [
-                                                      Text("40%",
-                                                        //maxLines: 1,
-                                                        style: TextStyle(
-                                                          fontWeight: FontWeight.bold,
-                                                          color:Color(hexColor("#264653")),
-                                                          fontSize: 15.0,
+                                                      Padding(
+                                                        padding: const EdgeInsetsDirectional.only(
+                                                          top: 23.0,
+                                                        ),
+                                                        child: Stack(
+                                                          children: [
+                                                            Text("22'C",
+                                                              //maxLines: 1,
+                                                              style: TextStyle(
+                                                                fontWeight: FontWeight.bold,
+                                                                color:Color(hexColor("#264653")),
+                                                                fontSize: 15.0,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding: const EdgeInsetsDirectional.only(start:5.0,),
+                                                        child: Stack(
+                                                          children: [
+                                                            Image(image: AssetImage('assets/hot.png'),
+                                                              width: 20.0,
+                                                              height: 20.0,),
+                                                          ],
                                                         ),
                                                       ),
                                                     ],
                                                   ),
+
+
                                                 ),
-                                                
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional.only(start:5.0,),
-                                                  child: Stack(
-                                                    children: [
-                                                      Image(image: AssetImage('assets/humidity2.png'),
-                                                        width: 20.0,
-                                                        height: 20.0,),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ],
+                                              ),
                                             ),
 
 
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                            child: Stack(
-                              children: [
-                                Image(image: AssetImage('assets/humidity.png'),
-                                  width: 30.0,
-                                  height: 30.0,),
-                              ],
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
+                                            child: CircularPercentIndicator(
+                                              radius: 50.0,
+                                              lineWidth: 10.0,
+                                              backgroundColor: Colors.grey,
+                                              percent: 0.44,
+                                              progressColor: Colors.lightBlueAccent,
+                                              animation: true,
+                                              animationDuration: 1500,
+                                              circularStrokeCap: CircularStrokeCap.round,
+                                              header: Text('Humidity',
+                                                maxLines: 1,
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  //color:  Color(hexColor("#264653")),
+                                                  fontSize: 15.0,
+                                                ),
+                                              ),
+
+                                              center:
+                                              Stack(
+                                                children: [
+                                                  Padding(
+                                                    padding: const EdgeInsetsDirectional.only(
+                                                      top: 23.0,
+                                                    ),
+                                                    child: Stack(
+                                                      children: [
+                                                        Text("40%",
+                                                          //maxLines: 1,
+                                                          style: TextStyle(
+                                                            fontWeight: FontWeight.bold,
+                                                            color:Color(hexColor("#264653")),
+                                                            fontSize: 15.0,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+
+                                                  Padding(
+                                                    padding: const EdgeInsetsDirectional.only(start:5.0,),
+                                                    child: Stack(
+                                                      children: [
+                                                        Image(image: AssetImage('assets/humidity2.png'),
+                                                          width: 20.0,
+                                                          height: 20.0,),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+
+
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                              child: Stack(
+                                children: [
+                                  Image(image: AssetImage('assets/humidity.png'),
+                                    width: 30.0,
+                                    height: 30.0,),
+                                ],
+                              ),
                             ),
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0,),
-                            color:  Colors.black12,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0,),
+                              color:  Colors.black12,
+                            ),
                           ),
                         ),
                       ],
@@ -494,7 +512,7 @@ class _bedroomState extends State<bedroom> {
               ],
             ),
             SizedBox(
-              height: 20.0,
+              height: 10.0,
             ),
             Stack(
               children: [
@@ -506,7 +524,7 @@ class _bedroomState extends State<bedroom> {
                         width: 340,
                         height: 370,
                         decoration: BoxDecoration(
-                          color: Colors.black,
+                          color: Colors.blueGrey[800],
                           borderRadius: BorderRadius.circular(15.0,),
                         ),
                       ),
@@ -528,16 +546,17 @@ class _bedroomState extends State<bedroom> {
                                       width: 140,
                                       height: 160,
                                       decoration: BoxDecoration(
-                                        color: Colors.red,
+                                        color: Colors.white,
                                         borderRadius: BorderRadius.circular(15.0,),
                                       ),
                                     ),
                                   ),
                                   Positioned(
-                                    top: 25.0,
-                                    left: 35.0,
+                                    top: 20.0,
+                                    left: 40.0,
                                     child: Stack(
                                       children: [
+                                        /*
                                         Text(
                                           'Device 1',
                                           maxLines: 1,
@@ -546,6 +565,75 @@ class _bedroomState extends State<bedroom> {
                                             color:  Color(hexColor("#264653")),
                                             fontSize: 10.0,
                                           ),
+                                        ),
+
+                                         */
+
+                                        Column(
+                                          children:
+                                          [
+                                            Container(
+                                              child:
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Image
+                                                  (
+                                                  image: AssetImage('assets/tv.png'
+                                                  ),
+                                                width: 20.0,
+                                                height: 25.0,),
+                                              ),
+                                              width: 80.0,
+                                              height: 80.0,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10.0),
+                                                color: Colors.lightGreen[100],
+                                              ),
+
+                                            ),
+
+                                            SizedBox(
+                                              height: 5.0,
+                                            ),
+
+
+                                            Text('TV',
+
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                                color: Color(hexColor("#264653")),
+                                              ),
+                                            ),
+
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  'Off',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 10.0,
+                                                    color: Color(hexColor("#264653")),
+                                                  ),
+                                                ),
+                                                Switch(
+                                                  value: switch1,
+                                                  onChanged: onChangedFunction3,
+                                                  activeColor: Colors.lightGreen[700],
+                                                  activeTrackColor: Colors.lightGreen[200],
+                                                ),
+                                                Text(
+                                                  'On',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 10.0,
+                                                    color: Color(hexColor("#264653")),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+
+                                          ],
                                         ),
                                       ],
                                     ),
@@ -563,24 +651,81 @@ class _bedroomState extends State<bedroom> {
                                       width: 140,
                                       height: 160,
                                       decoration: BoxDecoration(
-                                        color: Colors.teal,
+                                        color: Colors.white,
                                         borderRadius: BorderRadius.circular(15.0,),
                                       ),
                                     ),
                                   ),
                                   Positioned(
-                                    top: 25.0,
-                                    left: 35.0,
+                                    top: 20.0,
+                                    left: 40.0,
                                     child: Stack(
                                       children: [
-                                        Text(
-                                          'Device 2',
-                                          maxLines: 1,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color:  Color(hexColor("#264653")),
-                                            fontSize: 10.0,
-                                          ),
+                                        Column(
+                                          children:
+                                          [
+                                            Container(
+                                              child:
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Image
+                                                  (
+                                                  image: AssetImage('assets/lamp.png'
+                                                  ),
+                                                  width: 30.0,
+                                                  height: 30.0,),
+                                              ),
+                                              width: 80.0,
+                                              height: 80.0,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10.0),
+                                                color: Colors.orange[100],
+                                              ),
+
+                                            ),
+
+                                            SizedBox(
+                                              height: 5.0,
+                                            ),
+
+
+                                            Text('Lamp',
+
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                                color: Color(hexColor("#264653")),
+                                              ),
+                                            ),
+
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  'Off',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 10.0,
+                                                    color: Color(hexColor("#264653")),
+                                                  ),
+                                                ),
+                                                Switch(
+                                                  value: switch1,
+                                                  onChanged: onChangedFunction3,
+                                                  activeColor: Colors.orange[500],
+                                                  activeTrackColor: Colors.orange[200],
+                                                ),
+                                                Text(
+                                                  'On',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 10.0,
+                                                    color: Color(hexColor("#264653")),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+
+                                          ],
                                         ),
                                       ],
                                     ),
@@ -607,24 +752,81 @@ class _bedroomState extends State<bedroom> {
                                       width: 140,
                                       height: 160,
                                       decoration: BoxDecoration(
-                                        color: Colors.blue,
+                                        color: Colors.white,
                                         borderRadius: BorderRadius.circular(15.0,),
                                       ),
                                     ),
                                   ),
                                   Positioned(
-                                    top: 25.0,
-                                    left: 35.0,
+                                    top: 20.0,
+                                    left: 40.0,
                                     child: Stack(
                                       children: [
-                                        Text(
-                                          'Device 3',
-                                          maxLines: 1,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color:  Color(hexColor("#264653")),
-                                            fontSize: 10.0,
-                                          ),
+                                        Column(
+                                          children:
+                                          [
+                                            Container(
+                                              child:
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Image
+                                                  (
+                                                  image: AssetImage('assets/fridge.png'
+                                                  ),
+                                                  width: 30.0,
+                                                  height: 30.0,),
+                                              ),
+                                              width: 80.0,
+                                              height: 80.0,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10.0),
+                                                color: Colors.deepOrange[100],
+                                              ),
+
+                                            ),
+
+                                            SizedBox(
+                                              height: 5.0,
+                                            ),
+
+
+                                            Text('Fridge',
+
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                                color: Color(hexColor("#264653")),
+                                              ),
+                                            ),
+
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  'Off',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 10.0,
+                                                    color: Color(hexColor("#264653")),
+                                                  ),
+                                                ),
+                                                Switch(
+                                                  value: switch1,
+                                                  onChanged: onChangedFunction3,
+                                                  activeColor: Colors.deepOrange[700],
+                                                  activeTrackColor: Colors.deepOrange[200],
+                                                ),
+                                                Text(
+                                                  'On',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 10.0,
+                                                    color: Color(hexColor("#264653")),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+
+                                          ],
                                         ),
                                       ],
                                     ),
@@ -645,24 +847,81 @@ class _bedroomState extends State<bedroom> {
                                       width: 140,
                                       height: 160,
                                       decoration: BoxDecoration(
-                                        color: Colors.yellow,
+                                        color: Colors.white,
                                         borderRadius: BorderRadius.circular(15.0,),
                                       ),
                                     ),
                                   ),
                                   Positioned(
-                                    top: 25.0,
-                                    left: 35.0,
+                                    top: 20.0,
+                                    left: 30.0,
                                     child: Stack(
                                       children: [
-                                        Text(
-                                          'Device 4',
-                                          maxLines: 1,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color:  Color(hexColor("#264653")),
-                                            fontSize: 10.0,
-                                          ),
+                                        Column(
+                                          children:
+                                          [
+                                            Container(
+                                              child:
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:13.0),
+                                                child: Image
+                                                  (
+                                                  image: AssetImage('assets/washing.png'
+                                                  ),
+                                                  width: 15.0,
+                                                  height: 15.0,),
+                                              ),
+                                              width: 80.0,
+                                              height: 80.0,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10.0),
+                                                color: Colors.cyan[100],
+                                              ),
+
+                                            ),
+
+                                            SizedBox(
+                                              height: 5.0,
+                                            ),
+
+
+                                            Text('Washing machine',
+
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                                color: Color(hexColor("#264653")),
+                                              ),
+                                            ),
+
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  'Off',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 10.0,
+                                                    color: Color(hexColor("#264653")),
+                                                  ),
+                                                ),
+                                                Switch(
+                                                  value: switch1,
+                                                  onChanged: onChangedFunction3,
+                                                  activeColor: Colors.cyan[500],
+                                                  activeTrackColor: Colors.cyan[200],
+                                                ),
+                                                Text(
+                                                  'On',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 10.0,
+                                                    color: Color(hexColor("#264653")),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+
+                                          ],
                                         ),
                                       ],
                                     ),

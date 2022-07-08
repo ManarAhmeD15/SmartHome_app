@@ -131,6 +131,7 @@ flutter:
    - assets/humidity2.png
    - assets/windows.png
    - assets/door.png
+   - assets/washing.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
