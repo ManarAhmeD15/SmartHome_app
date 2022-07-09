@@ -208,37 +208,30 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Image(
-                                            image:
-                                                AssetImage('assets/lamp.png'),
-                                            width: 20.0,
-                                            height: 20.0,
-                                          ),
+                                          padding: const EdgeInsets.all(5.0),
+                                          child: Image(image: AssetImage('assets/fan.png'),
+                                            width: 25.0,
+                                            height: 25.0,),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                            15.0,
-                                          ),
-                                          color: Colors.black12,
+                                          borderRadius: BorderRadius.circular(15.0,),
+                                          color:  Colors.pink[50],
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: 5.0,
-                                      ),
+                                      SizedBox(width: 5.0,),
                                       Text(
-                                        'Lamp',
+                                        'Fan',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Color(hexColor("#264653")),
+                                          color:  Colors.pink[400],
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Color(hexColor("#264653")),
+                                  activeColor: Colors.pink[300],
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -259,10 +252,10 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(6.0),
                                           child: Image(
                                             image:
-                                                AssetImage('assets/fridge.png'),
+                                                AssetImage('assets/washing.png'),
                                             width: 20.0,
                                             height: 20.0,
                                           ),
@@ -273,23 +266,23 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                           borderRadius: BorderRadius.circular(
                                             15.0,
                                           ),
-                                          color: Colors.black12,
+                                          color: Colors.cyan[50],
                                         ),
                                       ),
                                       SizedBox(
                                         width: 5.0,
                                       ),
                                       Text(
-                                        'Fridge',
+                                        'Washing machine',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Color(hexColor("#264653")),
-                                          fontSize: 10.0,
+                                          color: Colors.cyan[900],
+                                          fontSize: 8.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Color(hexColor("#264653")),
+                                  activeColor: Colors.cyan[400],
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -311,9 +304,9 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(3.0),
                                           child: Image(
-                                            image: AssetImage('assets/fan.png'),
+                                            image: AssetImage('assets/air-cooler.png'),
                                             width: 20.0,
                                             height: 20.0,
                                           ),
@@ -324,23 +317,23 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                           borderRadius: BorderRadius.circular(
                                             14.0,
                                           ),
-                                          color: Colors.black12,
+                                          color: Colors.blue[50],
                                         ),
                                       ),
                                       SizedBox(
                                         width: 5.0,
                                       ),
                                       Text(
-                                        'Fan',
+                                        'Air cooler',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Color(hexColor("#264653")),
+                                          color: Colors.blue[900],
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Color(hexColor("#264653")),
+                                  activeColor: Colors.blue[900],
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -362,9 +355,9 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(5.0),
                                           child: Image(
-                                            image: AssetImage('assets/tv.png'),
+                                            image: AssetImage('assets/computer.png'),
                                             width: 20.0,
                                             height: 20.0,
                                           ),
@@ -375,7 +368,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                           borderRadius: BorderRadius.circular(
                                             15.0,
                                           ),
-                                          color: Colors.black12,
+                                          color: Colors.amber[50],
                                         ),
                                       ),
                                       SizedBox(
@@ -385,13 +378,13 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                         'TV',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Color(hexColor("#264653")),
+                                          color: Colors.amber[900],
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Color(hexColor("#264653")),
+                                  activeColor: Colors.amber[800],
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);

@@ -863,19 +863,19 @@ class _bedroomState extends State<bedroom> {
                                             Container(
                                               child:
                                               Padding(
-                                                padding: const EdgeInsets.only(left:13.0),
+                                                padding: const EdgeInsets.only(left:3.0),
                                                 child: Image
                                                   (
-                                                  image: AssetImage('assets/washing.png'
+                                                  image: AssetImage('assets/air-conditioner.png'
                                                   ),
-                                                  width: 15.0,
+                                                  width: 10.0,
                                                   height: 15.0,),
                                               ),
                                               width: 80.0,
                                               height: 80.0,
                                               decoration: BoxDecoration(
                                                 borderRadius: BorderRadius.circular(10.0),
-                                                color: Colors.cyan[100],
+                                                color: Colors.purple[50],
                                               ),
 
                                             ),
@@ -885,7 +885,7 @@ class _bedroomState extends State<bedroom> {
                                             ),
 
 
-                                            Text('Washing machine',
+                                            Text('Air condintioner',
 
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
@@ -907,8 +907,8 @@ class _bedroomState extends State<bedroom> {
                                                 Switch(
                                                   value: switch1,
                                                   onChanged: onChangedFunction3,
-                                                  activeColor: Colors.cyan[500],
-                                                  activeTrackColor: Colors.cyan[200],
+                                                  activeColor: Colors.purple[500],
+                                                  activeTrackColor: Colors.purple[200],
                                                 ),
                                                 Text(
                                                   'On',

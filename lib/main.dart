@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'modules/all rooms/bedroom/bedroom.dart';
+import 'modules/all rooms/kitchen/kitchen.dart';
 import 'modules/navigation/navigation_provider.dart';
 
 void main() async {

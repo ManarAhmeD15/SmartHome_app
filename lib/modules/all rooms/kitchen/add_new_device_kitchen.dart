@@ -209,30 +209,30 @@ class _AddNewDeviceState extends State<AddNewKitchen> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Image(image: AssetImage('assets/lamp.png'),
-                                            width: 20.0,
-                                            height: 20.0,),
+                                          padding: const EdgeInsets.all(5.0),
+                                          child: Image(image: AssetImage('assets/fan.png'),
+                                            width: 25.0,
+                                            height: 25.0,),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(15.0,),
-                                          color:  Colors.black12,
+                                          color:  Colors.pink[50],
                                         ),
                                       ),
                                       SizedBox(width: 5.0,),
                                       Text(
-                                        'Lamp',
+                                        'Fan',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
+                                          color:  Colors.pink[400],
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Color(hexColor("#264653")),
+                                  activeColor: Colors.pink[300],
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -255,30 +255,30 @@ class _AddNewDeviceState extends State<AddNewKitchen> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Image(image: AssetImage('assets/fridge.png'),
-                                            width: 20.0,
-                                            height: 20.0,),
+                                          padding: const EdgeInsets.all(5.0),
+                                          child: Image(image: AssetImage('assets/dish-washer.png'),
+                                            width: 17.0,
+                                            height: 17.0,),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(15.0,),
-                                          color:  Colors.black12,
+                                          color:  Colors.amber[50],
                                         ),
                                       ),
                                       SizedBox(width: 5.0,),
                                       Text(
-                                        'Fridge',
+                                        'Dish washer',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
+                                          color:  Colors.amber[600],
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Color(hexColor("#264653")),
+                                  activeColor: Colors.amber[600],
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -302,30 +302,30 @@ class _AddNewDeviceState extends State<AddNewKitchen> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Image(image: AssetImage('assets/fan.png'),
-                                            width: 20.0,
-                                            height: 20.0,),
+                                          padding: const EdgeInsets.all(5.0),
+                                          child: Image(image: AssetImage('assets/microwave.png'),
+                                            width: 28.0,
+                                            height: 28.0,),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(14.0,),
-                                          color:  Colors.black12,
+                                          color:  Colors.blue[50],
                                         ),
                                       ),
                                       SizedBox(width: 5.0,),
                                       Text(
-                                        'Fan',
+                                        'Microwave',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
+                                          color:  Colors.blue[900],
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Color(hexColor("#264653")),
+                                  activeColor: Colors.blue[800],
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -349,30 +349,30 @@ class _AddNewDeviceState extends State<AddNewKitchen> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Image(image: AssetImage('assets/tv.png'),
-                                            width: 20.0,
-                                            height: 20.0,),
+                                          padding: const EdgeInsets.all(5.0),
+                                          child: Image(image: AssetImage('assets/boiler.png'),
+                                            width: 25.0,
+                                            height: 25.0,),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(15.0,),
-                                          color:  Colors.black12,
+                                          color:  Colors.red[50],
                                         ),
                                       ),
                                       SizedBox(width: 5.0,),
                                       Text(
-                                        'TV',
+                                        'Boiler',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color:  Color(hexColor("#264653")),
+                                          color:  Colors.red[500],
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Color(hexColor("#264653")),
+                                  activeColor: Colors.red[500],
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);

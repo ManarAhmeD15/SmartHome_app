@@ -132,6 +132,13 @@ flutter:
    - assets/windows.png
    - assets/door.png
    - assets/washing.png
+   - assets/boiler.png
+   - assets/cooker.png
+   - assets/microwave.png
+   - assets/dish-washer.png
+   - assets/air-conditioner.png
+   - assets/air-cooler.png
+   - assets/computer.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
