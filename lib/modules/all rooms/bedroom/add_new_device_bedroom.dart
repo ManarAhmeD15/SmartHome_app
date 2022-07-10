@@ -1,7 +1,8 @@
-//import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'bedroom.dart';
 
 class AddNewDevice extends StatefulWidget {
   @override
@@ -52,17 +53,50 @@ class _AddNewDeviceState extends State<AddNewDevice> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.all(25.0),
-                child: Center(
-                  child: Text(
-                    'Add device',
-                    style: TextStyle(
-                      color: Colors.amber,
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.w900,
+              Container(
+                alignment: Alignment.topCenter,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      width: 260.0,
+                      height: 140.0,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(300),
+                          bottomRight: Radius.circular(300),
+                        ),
+                      ),
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(
+                        end: 280.0,
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => bedroom()),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          size: 35.0,
+                          color: Colors.blueGrey[800],
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Add New Device',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Padding(
@@ -208,30 +242,37 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(5.0),
-                                          child: Image(image: AssetImage('assets/fan.png'),
-                                            width: 25.0,
-                                            height: 25.0,),
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Image(
+                                            image:
+                                                AssetImage('assets/lamp.png'),
+                                            width: 20.0,
+                                            height: 20.0,
+                                          ),
                                         ),
                                         width: 30.0,
                                         height: 30.0,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(15.0,),
-                                          color:  Colors.pink[50],
+                                          borderRadius: BorderRadius.circular(
+                                            15.0,
+                                          ),
+                                          color: Colors.black12,
                                         ),
                                       ),
-                                      SizedBox(width: 5.0,),
+                                      SizedBox(
+                                        width: 5.0,
+                                      ),
                                       Text(
                                         'Fan',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color:  Colors.pink[400],
+                                          color: Color(hexColor("#264653")),
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Colors.pink[300],
+                                  activeColor: Color(hexColor("#264653")),
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -252,10 +293,10 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Image(
                                             image:
-                                                AssetImage('assets/washing.png'),
+                                                AssetImage('assets/fridge.png'),
                                             width: 20.0,
                                             height: 20.0,
                                           ),
@@ -266,23 +307,23 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                           borderRadius: BorderRadius.circular(
                                             15.0,
                                           ),
-                                          color: Colors.cyan[50],
+                                          color: Colors.black12,
                                         ),
                                       ),
                                       SizedBox(
                                         width: 5.0,
                                       ),
                                       Text(
-                                        'Washing machine',
+                                        'Fridge',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.cyan[900],
-                                          fontSize: 8.0,
+                                          color: Color(hexColor("#264653")),
+                                          fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Colors.cyan[400],
+                                  activeColor: Color(hexColor("#264653")),
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -304,9 +345,9 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(3.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Image(
-                                            image: AssetImage('assets/air-cooler.png'),
+                                            image: AssetImage('assets/fan.png'),
                                             width: 20.0,
                                             height: 20.0,
                                           ),
@@ -317,23 +358,23 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                           borderRadius: BorderRadius.circular(
                                             14.0,
                                           ),
-                                          color: Colors.blue[50],
+                                          color: Colors.black12,
                                         ),
                                       ),
                                       SizedBox(
                                         width: 5.0,
                                       ),
                                       Text(
-                                        'Air cooler',
+                                        'Fan',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.blue[900],
+                                          color: Color(hexColor("#264653")),
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Colors.blue[900],
+                                  activeColor: Color(hexColor("#264653")),
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -355,9 +396,9 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                     children: [
                                       Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(5.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Image(
-                                            image: AssetImage('assets/computer.png'),
+                                            image: AssetImage('assets/tv.png'),
                                             width: 20.0,
                                             height: 20.0,
                                           ),
@@ -368,7 +409,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                           borderRadius: BorderRadius.circular(
                                             15.0,
                                           ),
-                                          color: Colors.amber[50],
+                                          color: Colors.black12,
                                         ),
                                       ),
                                       SizedBox(
@@ -378,13 +419,13 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                         'TV',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.amber[900],
+                                          color: Color(hexColor("#264653")),
                                           fontSize: 10.0,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  activeColor: Colors.amber[800],
+                                  activeColor: Color(hexColor("#264653")),
                                   selected: true,
                                   onChanged: (val) {
                                     setSelectedValue(val!);
@@ -747,7 +788,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                       await refreneceData.child('input').set({
                         '1': 'string',
                         '2': 12,
-                     });
+                      });
                     },
                     child: Text(
                       'Add',
@@ -766,5 +807,6 @@ class _AddNewDeviceState extends State<AddNewDevice> {
     );
   }
 
-  final refreneceData = FirebaseDatabase.instance.reference();
+  final refreneceData = FirebaseDatabase.instance
+      .ref('https://smarthome-2-10-99-default-rtdb.firebaseio.com/');
 }

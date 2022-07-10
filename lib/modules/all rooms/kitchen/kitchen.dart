@@ -1,3 +1,4 @@
+import 'package:beginning_app/modules/all%20rooms/bedroom/all_rooms_screen.dart';
 import 'package:beginning_app/modules/all%20rooms/kitchen/add_new_device_kitchen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,22 +19,47 @@ class _KitchenScreenState extends State<KitchenScreen> {
     return colorint;
   }
 
-  bool switch1 = true;
-
-  bool switch2 = true;
-
-  bool switch3 = true;
-
-  bool switch4 = true;
+  bool switch1 = false;
+  bool switch2 = false;
+  bool switch3 = false;
+  bool switch4 = false;
 
   onChangedFunction3(bool newValue3) {
     setState(() {
-
       switch1 = newValue3;
-      if (switch1 == true){
+      if (switch1 == true) {
         print('On');
-      }
-      else
+      } else
+        print('Off');
+    });
+  }
+
+  onChangedFunction4(bool newValue4) {
+    setState(() {
+      switch2 = newValue4;
+      if (switch2 == true) {
+        print('On');
+      } else
+        print('Off');
+    });
+  }
+
+  onChangedFunction5(bool newValue5) {
+    setState(() {
+      switch3 = newValue5;
+      if (switch3 == true) {
+        print('On');
+      } else
+        print('Off');
+    });
+  }
+
+  onChangedFunction6(bool newValue6) {
+    setState(() {
+      switch4 = newValue6;
+      if (switch4 == true) {
+        print('On');
+      } else
         print('Off');
     });
   }
@@ -63,7 +89,13 @@ class _KitchenScreenState extends State<KitchenScreen> {
                   Padding(
                     padding: const EdgeInsetsDirectional.only(end: 290.0),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AllRooms()),
+                        );
+                      },
                       icon: Icon(
                         Icons.arrow_back_ios,
                         size: 35.0,
@@ -575,7 +607,6 @@ class _KitchenScreenState extends State<KitchenScreen> {
                               fontSize: 10.0,
                             ),
                           ),
-
                         ],
                       ),
                     ],
@@ -617,12 +648,12 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                 height: 370,
                                 decoration: BoxDecoration(
                                   color: Colors.blueGrey[800],
-                                  borderRadius: BorderRadius.circular(15.0,),
+                                  borderRadius: BorderRadius.circular(
+                                    15.0,
+                                  ),
                                 ),
                               ),
                             ),
-
-
                             Positioned(
                               left: 20.0,
                               top: 10.0,
@@ -639,7 +670,10 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                               height: 160,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
-                                                borderRadius: BorderRadius.circular(15.0,),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                  15.0,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -649,69 +683,78 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                             child: Stack(
                                               children: [
                                                 Column(
-                                                  children:
-                                                  [
+                                                  children: [
                                                     Container(
-                                                      child:
-                                                      Padding(
-                                                        padding: const EdgeInsets.all(8.0),
-                                                        child: Image
-                                                          (
-                                                          image: AssetImage('assets/cooker.png'
-                                                          ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8.0),
+                                                        child: Image(
+                                                          image: AssetImage(
+                                                              'assets/cooker.png'),
                                                           width: 20.0,
-                                                          height: 25.0,),
+                                                          height: 25.0,
+                                                        ),
                                                       ),
                                                       width: 80.0,
                                                       height: 80.0,
                                                       decoration: BoxDecoration(
-                                                        borderRadius: BorderRadius.circular(10.0),
-                                                        color: Colors.purple[50],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                        color:
+                                                            Colors.purple[50],
                                                       ),
-
                                                     ),
-
                                                     SizedBox(
                                                       height: 5.0,
                                                     ),
-
-
-                                                    Text('Cooker',
-
+                                                    Text(
+                                                      'Cooker',
                                                       style: TextStyle(
-                                                        fontWeight: FontWeight.bold,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                         fontSize: 15.0,
-                                                        color: Color(hexColor("#264653")),
+                                                        color: Color(hexColor(
+                                                            "#264653")),
                                                       ),
                                                     ),
-
                                                     Row(
                                                       children: [
                                                         Text(
                                                           'Off',
                                                           style: TextStyle(
-                                                            fontWeight: FontWeight.bold,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
-                                                            color: Color(hexColor("#264653")),
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
                                                           ),
                                                         ),
                                                         Switch(
                                                           value: switch1,
-                                                          onChanged: onChangedFunction3,
-                                                          activeColor: Colors.purple[300],
-                                                          activeTrackColor: Colors.purple[100],
+                                                          onChanged:
+                                                              onChangedFunction3,
+                                                          activeColor: Colors
+                                                              .purple[300],
+                                                          activeTrackColor:
+                                                              Colors
+                                                                  .purple[100],
                                                         ),
                                                         Text(
                                                           'On',
                                                           style: TextStyle(
-                                                            fontWeight: FontWeight.bold,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
-                                                            color: Color(hexColor("#264653")),
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
                                                           ),
                                                         ),
                                                       ],
                                                     ),
-
                                                   ],
                                                 ),
                                               ],
@@ -731,7 +774,10 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                               height: 160,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
-                                                borderRadius: BorderRadius.circular(15.0,),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                  15.0,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -741,81 +787,85 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                             child: Stack(
                                               children: [
                                                 Column(
-                                                  children:
-                                                  [
+                                                  children: [
                                                     Container(
-                                                      child:
-                                                      Padding(
-                                                        padding: const EdgeInsets.all(8.0),
-                                                        child: Image
-                                                          (
-                                                          image: AssetImage('assets/lamp.png'
-                                                          ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8.0),
+                                                        child: Image(
+                                                          image: AssetImage(
+                                                              'assets/lamp.png'),
                                                           width: 30.0,
-                                                          height: 30.0,),
+                                                          height: 30.0,
+                                                        ),
                                                       ),
                                                       width: 80.0,
                                                       height: 80.0,
                                                       decoration: BoxDecoration(
-                                                        borderRadius: BorderRadius.circular(10.0),
-                                                        color: Colors.orange[100],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                        color:
+                                                            Colors.orange[100],
                                                       ),
-
                                                     ),
-
                                                     SizedBox(
                                                       height: 5.0,
                                                     ),
-
-
-                                                    Text('Lamp',
-
+                                                    Text(
+                                                      'Lamp',
                                                       style: TextStyle(
-                                                        fontWeight: FontWeight.bold,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                         fontSize: 15.0,
-                                                        color: Color(hexColor("#264653")),
+                                                        color: Color(hexColor(
+                                                            "#264653")),
                                                       ),
                                                     ),
-
                                                     Row(
                                                       children: [
                                                         Text(
                                                           'Off',
                                                           style: TextStyle(
-                                                            fontWeight: FontWeight.bold,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
-                                                            color: Color(hexColor("#264653")),
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
                                                           ),
                                                         ),
                                                         Switch(
-                                                          value: switch1,
-                                                          onChanged: onChangedFunction3,
-                                                          activeColor: Colors.orange[500],
-                                                          activeTrackColor: Colors.orange[200],
+                                                          value: switch2,
+                                                          onChanged:
+                                                              onChangedFunction4,
+                                                          activeColor: Colors
+                                                              .orange[500],
+                                                          activeTrackColor:
+                                                              Colors
+                                                                  .orange[200],
                                                         ),
                                                         Text(
                                                           'On',
                                                           style: TextStyle(
-                                                            fontWeight: FontWeight.bold,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
-                                                            color: Color(hexColor("#264653")),
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
                                                           ),
                                                         ),
                                                       ],
                                                     ),
-
                                                   ],
                                                 ),
                                               ],
                                             ),
                                           ),
-
-
-
                                         ],
                                       ),
-
-
                                     ],
                                   ),
                                   SizedBox(
@@ -832,7 +882,10 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                               height: 160,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
-                                                borderRadius: BorderRadius.circular(15.0,),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                  15.0,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -842,77 +895,83 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                             child: Stack(
                                               children: [
                                                 Column(
-                                                  children:
-                                                  [
+                                                  children: [
                                                     Container(
-                                                      child:
-                                                      Padding(
-                                                        padding: const EdgeInsets.all(8.0),
-                                                        child: Image
-                                                          (
-                                                          image: AssetImage('assets/fridge.png'
-                                                          ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8.0),
+                                                        child: Image(
+                                                          image: AssetImage(
+                                                              'assets/fridge.png'),
                                                           width: 30.0,
-                                                          height: 30.0,),
+                                                          height: 30.0,
+                                                        ),
                                                       ),
                                                       width: 80.0,
                                                       height: 80.0,
                                                       decoration: BoxDecoration(
-                                                        borderRadius: BorderRadius.circular(10.0),
-                                                        color: Colors.deepOrange[100],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                        color: Colors
+                                                            .deepOrange[100],
                                                       ),
-
                                                     ),
-
                                                     SizedBox(
                                                       height: 5.0,
                                                     ),
-
-
-                                                    Text('Fridge',
-
+                                                    Text(
+                                                      'Fridge',
                                                       style: TextStyle(
-                                                        fontWeight: FontWeight.bold,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                         fontSize: 15.0,
-                                                        color: Color(hexColor("#264653")),
+                                                        color: Color(hexColor(
+                                                            "#264653")),
                                                       ),
                                                     ),
-
                                                     Row(
                                                       children: [
                                                         Text(
                                                           'Off',
                                                           style: TextStyle(
-                                                            fontWeight: FontWeight.bold,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
-                                                            color: Color(hexColor("#264653")),
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
                                                           ),
                                                         ),
                                                         Switch(
-                                                          value: switch1,
-                                                          onChanged: onChangedFunction3,
-                                                          activeColor: Colors.deepOrange[700],
-                                                          activeTrackColor: Colors.deepOrange[200],
+                                                          value: switch3,
+                                                          onChanged:
+                                                              onChangedFunction5,
+                                                          activeColor: Colors
+                                                              .deepOrange[700],
+                                                          activeTrackColor:
+                                                              Colors.deepOrange[
+                                                                  200],
                                                         ),
                                                         Text(
                                                           'On',
                                                           style: TextStyle(
-                                                            fontWeight: FontWeight.bold,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
-                                                            color: Color(hexColor("#264653")),
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
                                                           ),
                                                         ),
                                                       ],
                                                     ),
-
                                                   ],
                                                 ),
                                               ],
                                             ),
                                           ),
-
-
-
                                         ],
                                       ),
                                       SizedBox(
@@ -927,98 +986,102 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                               height: 160,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
-                                                borderRadius: BorderRadius.circular(15.0,),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                  15.0,
+                                                ),
                                               ),
                                             ),
                                           ),
                                           Positioned(
                                             top: 20.0,
-                                            left: 30.0,
+                                            left: 20.0,
                                             child: Stack(
                                               children: [
                                                 Column(
-                                                  children:
-                                                  [
+                                                  children: [
                                                     Container(
-                                                      child:
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(left:13.0),
-                                                        child: Image
-                                                          (
-                                                          image: AssetImage('assets/washing.png'
-                                                          ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                left: 13.0),
+                                                        child: Image(
+                                                          image: AssetImage(
+                                                              'assets/washing.png'),
                                                           width: 15.0,
-                                                          height: 15.0,),
+                                                          height: 15.0,
+                                                        ),
                                                       ),
                                                       width: 80.0,
                                                       height: 80.0,
                                                       decoration: BoxDecoration(
-                                                        borderRadius: BorderRadius.circular(10.0),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
                                                         color: Colors.cyan[100],
                                                       ),
-
                                                     ),
-
                                                     SizedBox(
                                                       height: 5.0,
                                                     ),
-
-
-                                                    Text('Washing machine',
-
+                                                    Text(
+                                                      'Washing Machine',
                                                       style: TextStyle(
-                                                        fontWeight: FontWeight.bold,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                         fontSize: 15.0,
-                                                        color: Color(hexColor("#264653")),
+                                                        color: Color(hexColor(
+                                                            "#264653")),
                                                       ),
                                                     ),
-
                                                     Row(
                                                       children: [
                                                         Text(
                                                           'Off',
                                                           style: TextStyle(
-                                                            fontWeight: FontWeight.bold,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
-                                                            color: Color(hexColor("#264653")),
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
                                                           ),
                                                         ),
                                                         Switch(
-                                                          value: switch1,
-                                                          onChanged: onChangedFunction3,
-                                                          activeColor: Colors.cyan[500],
-                                                          activeTrackColor: Colors.cyan[200],
+                                                          value: switch4,
+                                                          onChanged:
+                                                              onChangedFunction6,
+                                                          activeColor:
+                                                              Colors.cyan[500],
+                                                          activeTrackColor:
+                                                              Colors.cyan[200],
                                                         ),
                                                         Text(
                                                           'On',
                                                           style: TextStyle(
-                                                            fontWeight: FontWeight.bold,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
-                                                            color: Color(hexColor("#264653")),
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
                                                           ),
                                                         ),
                                                       ],
                                                     ),
-
                                                   ],
                                                 ),
                                               ],
                                             ),
                                           ),
-
-
-
                                         ],
                                       ),
-
-
                                     ],
                                   ),
-
                                 ],
                               ),
                             ),
-
                           ],
                         ),
                       ],

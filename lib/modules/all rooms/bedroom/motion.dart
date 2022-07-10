@@ -421,7 +421,8 @@ class _MotionState extends State<Motion> {
     ));
   }
 
-  final ref = refrenceData.ref();
+  final ref = refrenceData.ref(
+      'https://console.firebase.google.com/project/gradsmarthomeproj/database/gradsmarthomeproj-default-rtdb/data/~2F');
 }
 
 late final FirebaseApp app;

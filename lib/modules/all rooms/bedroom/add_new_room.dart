@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../models/rooms_model.dart';
+import '../../home/home_screen.dart';
 
 CollectionReference users = FirebaseFirestore.instance.collection('users');
 
@@ -41,15 +42,50 @@ class _AddNewRoomState extends State<AddNewRoom> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.all(30.0),
-                child: Text(
-                  'Choose new room',
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w900,
-                  ),
+              Container(
+                alignment: Alignment.topCenter,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      width: 260.0,
+                      height: 140.0,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(300),
+                          bottomRight: Radius.circular(300),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(
+                        end: 280.0,
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          size: 35.0,
+                          color: Colors.blueGrey[800],
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Choose new room',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               // RadioListTile<int>(
