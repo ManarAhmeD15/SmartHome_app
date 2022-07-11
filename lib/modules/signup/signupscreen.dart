@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 //import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../models/signup_user_model.dart';
 
@@ -19,6 +20,19 @@ class _SignupScreenState extends State<SignupScreen> {
   var passwordController = TextEditingController();
   var formKey = GlobalKey<FormState>();
   bool isPassword = true;
+
+  setData() async {
+    var user = await FirebaseAuth.instance.currentUser;
+    var gett = await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .set({
+      'email': emailController.text,
+      'password': passwordController.text,
+      'name': usernameController.text,
+      'uId': user.uid,
+    });
+  }
 
   bool isClicked = false;
   late FirebaseAuth mAuth;
@@ -260,38 +274,33 @@ class _SignupScreenState extends State<SignupScreen> {
                                 borderRadius: BorderRadius.circular(25.0),
                               ),
                               child: MaterialButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   if (formKey.currentState!.validate()) {
                                     setState(() {
                                       isClicked = true;
                                     });
-                                    FirebaseAuth.instance
+
+                                    var result = await FirebaseAuth.instance
                                         .createUserWithEmailAndPassword(
                                             email: emailController.text,
-                                            password: passwordController.text)
-                                        .then((value) async {
-                                      print(value.user?.email);
-                                      print(value.user?.uid);
-
-                                      userCreate(
-                                        name: usernameController.text,
-                                        email: emailController.text,
-                                        password: passwordController.text,
-                                        uId: value.user!.uid,
-                                      );
-                                      print(value.user?.emailVerified);
-                                      if (value.user?.emailVerified == false) {
-                                        User? user =
-                                            FirebaseAuth.instance.currentUser;
-                                        await FirebaseAuth.instance
-                                            .setLanguageCode("fr");
-                                        await user?.sendEmailVerification();
-                                        print('email is verified?');
-                                      }
-                                    }).catchError((error) {
-                                      print(error.toString());
-                                    });
+                                            password: passwordController.text);
+                                    if (result != null) {
+                                      setData();
+                                    }
                                   }
+                                  Fluttertoast.showToast(
+                                      msg: "Signed up successfully!",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.BOTTOM,
+                                      timeInSecForIosWeb: 1,
+                                      backgroundColor: Colors.blueGrey,
+                                      textColor: Colors.white,
+                                      fontSize: 16.0);
+                                  // Navigator.push(
+                                  //   context,
+                                  //   MaterialPageRoute(
+                                  //       builder: (context) => HomeScreen()),
+                                  // );
                                 },
                                 child: Text(
                                   'Sign Up',

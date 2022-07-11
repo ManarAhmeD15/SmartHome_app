@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,16 @@ class _AddNewRoomState extends State<AddNewRoom> {
   setSelectedValue(int val) {
     setState(() {
       selectValue = val;
+    });
+  }
+
+  setData() async {
+    var user = await FirebaseAuth.instance.currentUser;
+    var gett = await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .update({
+      "user_room": RoomNameController.text,
     });
   }
 
@@ -478,10 +489,7 @@ class _AddNewRoomState extends State<AddNewRoom> {
                               Center(
                                 child: TextButton(
                                   onPressed: () {
-                                    UploadImage(
-                                      name: RoomNameController.text,
-                                      uid: '',
-                                    );
+                                    setData();
                                   },
                                   child: Text(
                                     'Add',

@@ -29,7 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   provider: ^5.0.0
-  fluttertoast: ^8.0.8
+  fluttertoast: ^8.0.9
 
   #Firebase
   cloud_firestore: ^2.5.1

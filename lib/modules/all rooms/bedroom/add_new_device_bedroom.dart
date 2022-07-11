@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +15,24 @@ class _AddNewDeviceState extends State<AddNewDevice> {
   late int selectValue;
   String? value;
 
+  var DeviceController = TextEditingController();
+
   hexColor(String colorhexcode) {
     String colornew = '0xff' + colorhexcode;
     colornew = colornew.replaceAll('#', '');
     int colorint = int.parse(colornew);
     return colorint;
+  }
+
+  var uId;
+  setData() async {
+    var user = await FirebaseAuth.instance.currentUser;
+    var gett = await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .update({
+      "user_device": DeviceController.text,
+    });
   }
 
   @override
@@ -77,8 +92,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => bedroom()),
+                            MaterialPageRoute(builder: (context) => bedroom()),
                           );
                         },
                         icon: Icon(

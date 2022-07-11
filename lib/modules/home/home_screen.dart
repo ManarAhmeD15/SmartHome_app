@@ -1,5 +1,6 @@
 //import 'package:beginning_app/modules/navigation/navigation_drawer_widgetper(key: key)';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,25 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  String user_name = 'loading name ........';
+  String user_email = 'loading email ........';
+  String user_uid = 'loading email ........';
+
+  GetData() async {
+    var user = await FirebaseAuth.instance.currentUser;
+    var gett = await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get();
+    if (this.mounted) {
+      setState(() {
+        user_name = gett.data()!['name'];
+        user_email = gett.data()!['email'];
+        user_uid = gett.data()!['uId'];
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     hexColor(String colorhexcode) {
@@ -29,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return colorint;
     }
 
+    GetData();
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
@@ -76,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       horizontal: 80.0,
                     ),
                     child: Text(
-                      'User name',
+                      user_name,
                       style: TextStyle(
                         fontSize: 22.0,
                         fontWeight: FontWeight.bold,
@@ -197,7 +218,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(
                           height: 10.0,
                         ),
-
                         /*
                         Expanded(
                           child: Column(
