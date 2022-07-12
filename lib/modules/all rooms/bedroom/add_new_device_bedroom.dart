@@ -74,8 +74,8 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                   alignment: Alignment.center,
                   children: [
                     Container(
-                      width: 260.0,
-                      height: 140.0,
+                      width: 240.0,
+                      height: 120.0,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
@@ -86,7 +86,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                     ),
                     Padding(
                       padding: const EdgeInsetsDirectional.only(
-                        end: 280.0,
+                        end: 290.0,
                       ),
                       child: IconButton(
                         onPressed: () {
@@ -430,7 +430,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                                         width: 5.0,
                                       ),
                                       Text(
-                                        'TV',
+                                        'Computer',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: Color(hexColor("#264653")),

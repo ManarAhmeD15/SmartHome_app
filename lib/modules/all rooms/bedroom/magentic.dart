@@ -39,8 +39,8 @@ class _MagenticState extends State<Magentic> {
                 alignment: Alignment.center,
                 children: [
                   Container(
-                    width: 260.0,
-                    height: 140.0,
+                    width: 240.0,
+                    height: 120.0,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -51,7 +51,7 @@ class _MagenticState extends State<Magentic> {
                   ),
                   Padding(
                     padding: const EdgeInsetsDirectional.only(
-                      end: 300.0,
+                      end: 290.0,
                     ),
                     child: IconButton(
                       onPressed: () {

@@ -72,7 +72,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
           children: [
             Container(
               alignment: Alignment.topCenter,
-              child: Stack(
+              child:
+
+              Stack(
                 alignment: Alignment.center,
                 children: [
                   Container(

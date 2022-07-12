@@ -139,6 +139,8 @@ flutter:
    - assets/air-conditioner.png
    - assets/air-cooler.png
    - assets/computer.png
+   - assets/up-arrow.png
+   - assets/arrow-down.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

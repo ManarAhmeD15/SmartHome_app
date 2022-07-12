@@ -1,3 +1,4 @@
+import 'package:beginning_app/modules/home/home_screen.dart';
 import 'package:beginning_app/modules/login/loginscreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -296,11 +297,11 @@ class _SignupScreenState extends State<SignupScreen> {
                                       backgroundColor: Colors.blueGrey,
                                       textColor: Colors.white,
                                       fontSize: 16.0);
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //       builder: (context) => HomeScreen()),
-                                  // );
+                                   Navigator.push(
+                                     context,
+                                     MaterialPageRoute(
+                                         builder: (context) => HomeScreen()),
+                                   );
                                 },
                                 child: Text(
                                   'Sign Up',
