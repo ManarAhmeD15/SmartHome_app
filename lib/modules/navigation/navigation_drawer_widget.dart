@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-
 import '../../models/drawer_item.dart';
 import '../../models/drawer_items.dart';
 import 'navigation_provider.dart';
