@@ -4,7 +4,7 @@ class NavigationProvider extends ChangeNotifier {
 
 
 
-  bool _isCollapsed = false;
+  bool _isCollapsed = true;
 
   bool get isCollapsed => _isCollapsed;
 

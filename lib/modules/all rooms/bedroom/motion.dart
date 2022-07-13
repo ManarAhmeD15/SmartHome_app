@@ -6,12 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
 class Motion extends StatefulWidget {
-  const Motion({Key? key}) : super(key: key);
+
+  late final FirebaseApp app;
+
+
   @override
   State<Motion> createState() => _MotionState();
+
+
 }
 
 class _MotionState extends State<Motion> {
+
+  final refrenceData = FirebaseDatabase.instance;
+  bool status7 = false;
+
   @override
   bool val2 = false;
 
@@ -49,6 +58,8 @@ class _MotionState extends State<Motion> {
   }
 
   Widget build(BuildContext context) {
+
+    final ref=refrenceData.reference();
     return Scaffold(
         body: SafeArea(
       child: Column(children: [
@@ -262,21 +273,26 @@ class _MotionState extends State<Motion> {
                         inactiveColor: Colors.grey,
                         value: status7,
                         onToggle: (val) async {
-                          if (val) {
-                            await ref
+                          setState(() {
+                            status7 = val;
+
+
+                            if (val) {
+                           // await
+                              ref
                                 .child('output')
                                 .child('state')
                                 .set('on')
                                 .asStream();
                           } else {
-                            await ref
+                           // await
+                              ref
                                 .child('output')
                                 .child('state')
                                 .set('off')
                                 .asStream();
                           }
-                          setState(() {
-                            status7 = val;
+
                           });
                         },
                       )
@@ -420,14 +436,14 @@ class _MotionState extends State<Motion> {
       ]),
     ));
   }
-
+/*
   final ref = refrenceData.ref(
       'https://console.firebase.google.com/project/gradsmarthomeproj/database/gradsmarthomeproj-default-rtdb/data/~2F');
+
+ */
 }
 
-late final FirebaseApp app;
-final refrenceData = FirebaseDatabase.instance;
-bool status7 = false;
+
 
 Widget customSwitch(String text, bool val, Function onChangedMethod) {
   return Padding(

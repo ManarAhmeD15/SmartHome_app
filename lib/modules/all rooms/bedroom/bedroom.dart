@@ -359,6 +359,8 @@ class _bedroomState extends State<bedroom> {
                                                     const EdgeInsets.symmetric(
                                                         horizontal: 20.0,
                                                         vertical: 10.0),
+
+
                                                 child: CircularPercentIndicator(
                                                   radius: 50.0,
                                                   lineWidth: 10.0,
