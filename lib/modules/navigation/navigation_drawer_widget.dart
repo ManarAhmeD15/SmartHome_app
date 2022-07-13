@@ -1,23 +1,14 @@
-
-import 'package:beginning_app/main.dart';
 import 'package:beginning_app/modules/about/programmer_screen.dart';
 import 'package:beginning_app/modules/profile/profile.dart';
 import 'package:beginning_app/modules/remote_control/remote_screen.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import '../../models/drawer_item.dart';
 import '../../models/drawer_items.dart';
-import 'package:flutter/material.dart';
+import 'navigation_provider.dart';
 
-import 'navigation_provider.dart';
-import 'navigation_provider.dart';
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
 
@@ -100,13 +91,13 @@ class NavigationDrawerWidget extends StatelessWidget {
         //navigateTo(HomeScreen());
         break;
       case 1:
-        navigateTo(profile());
+        navigateTo(Profile());
         break;
       case 2:
         //navigateTo(HomeScreen());
         break;
       case 3:
-       // navigateTo(HomeScreen());
+        // navigateTo(HomeScreen());
         break;
       case 4:
         navigateTo(RemoteScreen());
@@ -114,9 +105,6 @@ class NavigationDrawerWidget extends StatelessWidget {
       case 5:
         navigateTo(ProgrammerScreen());
         break;
-
-
-
     }
   }
 
