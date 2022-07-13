@@ -6,18 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
 class Motion extends StatefulWidget {
-
   late final FirebaseApp app;
-
 
   @override
   State<Motion> createState() => _MotionState();
-
-
 }
 
 class _MotionState extends State<Motion> {
-
   final refrenceData = FirebaseDatabase.instance;
   bool status7 = false;
 
@@ -58,8 +53,7 @@ class _MotionState extends State<Motion> {
   }
 
   Widget build(BuildContext context) {
-
-    final ref=refrenceData.reference();
+    final ref = refrenceData.reference();
     return Scaffold(
         body: SafeArea(
       child: Column(children: [
@@ -277,18 +271,17 @@ class _MotionState extends State<Motion> {
                             status7 = val;
                             if (val) {
                               ref
-                                .child('output')
-                                .child('state')
-                                .set('on')
-                                .asStream();
-                          } else {
+                                  .child('output')
+                                  .child('state')
+                                  .set('on')
+                                  .asStream();
+                            } else {
                               ref
-                                .child('output')
-                                .child('state')
-                                .set('off')
-                                .asStream();
-                          }
-
+                                  .child('output')
+                                  .child('state')
+                                  .set('off')
+                                  .asStream();
+                            }
                           });
                         },
                       )
@@ -438,8 +431,6 @@ class _MotionState extends State<Motion> {
 
  */
 }
-
-
 
 Widget customSwitch(String text, bool val, Function onChangedMethod) {
   return Padding(
