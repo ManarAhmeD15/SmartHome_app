@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "10709929557",
+    "project_id": "emailpasswordauthen-87229",
+    "storage_bucket": "emailpasswordauthen-87229.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10709929557:android:fece1f509ebd3b26cbcedc",
+        "android_client_info": {
+          "package_name": "com.manar.beginning_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10709929557-jfpu1h24g0fmftnn0g4kphlms561bo47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3CfTQLRXl6tFU6ZayB_0e9IHUTl-jcRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10709929557-jfpu1h24g0fmftnn0g4kphlms561bo47.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

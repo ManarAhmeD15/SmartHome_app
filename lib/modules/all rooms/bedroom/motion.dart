@@ -275,17 +275,13 @@ class _MotionState extends State<Motion> {
                         onToggle: (val) async {
                           setState(() {
                             status7 = val;
-
-
                             if (val) {
-                           // await
                               ref
                                 .child('output')
                                 .child('state')
                                 .set('on')
                                 .asStream();
                           } else {
-                           // await
                               ref
                                 .child('output')
                                 .child('state')

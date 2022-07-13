@@ -24,6 +24,8 @@ class _AddNewDeviceState extends State<AddNewDevice> {
     return colorint;
   }
 
+  final refreneceData = FirebaseDatabase.instance.reference();
+
   var uId;
   setData() async {
     var user = await FirebaseAuth.instance.currentUser;
@@ -62,6 +64,7 @@ class _AddNewDeviceState extends State<AddNewDevice> {
       ));
   @override
   Widget build(BuildContext context) {
+    //final ref = refreneceData.reference();
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -802,6 +805,8 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                       await refreneceData.child('input').set({
                         '1': 'string',
                         '2': 12,
+                        '3': 'manar',
+                        '4': 'asmaa',
                       });
                     },
                     child: Text(
@@ -820,7 +825,4 @@ class _AddNewDeviceState extends State<AddNewDevice> {
       ),
     );
   }
-
-  final refreneceData = FirebaseDatabase.instance
-      .ref('https://smarthome-2-10-99-default-rtdb.firebaseio.com/');
 }
