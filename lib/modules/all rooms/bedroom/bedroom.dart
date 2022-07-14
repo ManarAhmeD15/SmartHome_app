@@ -3,8 +3,8 @@ import 'package:beginning_app/modules/all%20rooms/bedroom/all_rooms_screen.dart'
 import 'package:beginning_app/modules/all%20rooms/bedroom/magentic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 
+import '../../temprature/temp.dart';
 import 'add_new_device_bedroom.dart';
 import 'motion.dart';
 //import 'package:lite_rolling_switch/lite_rolling_switch.dart';
@@ -297,240 +297,286 @@ class _bedroomState extends State<bedroom> {
                 SizedBox(
                   width: 10.0,
                 ),
+                // Column(
+                //   children: [
+                //     Stack(
+                //       children: [
+                //         Padding(
+                //           padding: const EdgeInsets.only(top: 10.0),
+                //           child: Container(
+                //             width: 50.0,
+                //             height: 50.0,
+                //             child: TextButton(
+                //               onPressed: () {
+                //                 showDialog(
+                //                   context: context,
+                //                   builder: (context) => AlertDialog(
+                //                     title: Row(
+                //                       children: [
+                //                         Padding(
+                //                           padding:
+                //                               const EdgeInsets.only(left: 20.0),
+                //                           child: Text(
+                //                             'Temperature & Humidity',
+                //                             maxLines: 2,
+                //                             style: TextStyle(
+                //                               fontWeight: FontWeight.bold,
+                //                               color: Color(hexColor("#264653")),
+                //                               fontSize: 16.0,
+                //                             ),
+                //                           ),
+                //                         ),
+                //
+                //                         // Stack(
+                //                         //   alignment: Alignment.bottomLeft,
+                //                         //   children: [
+                //                         //     // LiteRollingSwitch(
+                //                         //     //   value: true,
+                //                         //     //
+                //                         //     // ),
+                //                         //
+                //                         //     Switch(value: selected, onChanged: (bool value){
+                //                         //       setState(() {
+                //                         //         selected=value;
+                //                         //       });
+                //                         //
+                //                         //     }),
+                //                         //   ],
+                //                         // ),
+                //                       ],
+                //                     ),
+                //                     // content: Container(
+                //                     //   width: 160.0,
+                //                     //   height: 220.0,
+                //                     // ),
+                //                     actions: [
+                //                       Row(
+                //                         children: [
+                //                           Center(
+                //                             child: Container(
+                //                               child: Padding(
+                //                                 padding:
+                //                                     const EdgeInsets.symmetric(
+                //                                         horizontal: 20.0,
+                //                                         vertical: 10.0),
+                //
+                //
+                //                                 child: CircularPercentIndicator(
+                //                                   radius: 50.0,
+                //                                   lineWidth: 10.0,
+                //                                   backgroundColor: Colors.grey,
+                //                                   percent: temp_percent,
+                //                                   progressColor: Colors.amber,
+                //                                   animation: true,
+                //                                   animationDuration: 1500,
+                //                                   circularStrokeCap:
+                //                                       CircularStrokeCap.round,
+                //                                   header: Text(
+                //                                     'Temperature',
+                //                                     maxLines: 1,
+                //                                     style: TextStyle(
+                //                                       fontWeight:
+                //                                           FontWeight.bold,
+                //                                       // color:  Color(hexColor("#264653")),
+                //                                       fontSize: 15.0,
+                //                                     ),
+                //                                   ),
+                //                                   center: Stack(
+                //                                     children: [
+                //                                       Padding(
+                //                                         padding:
+                //                                             const EdgeInsetsDirectional
+                //                                                 .only(
+                //                                           top: 23.0,
+                //                                         ),
+                //                                         child: Stack(
+                //                                           children: [
+                //                                             Text(
+                //                                               "22'C",
+                //                                               //maxLines: 1,
+                //                                               style: TextStyle(
+                //                                                 fontWeight:
+                //                                                     FontWeight
+                //                                                         .bold,
+                //                                                 color: Color(
+                //                                                     hexColor(
+                //                                                         "#264653")),
+                //                                                 fontSize: 15.0,
+                //                                               ),
+                //                                             ),
+                //                                           ],
+                //                                         ),
+                //                                       ),
+                //                                       Padding(
+                //                                         padding:
+                //                                             const EdgeInsetsDirectional
+                //                                                 .only(
+                //                                           start: 5.0,
+                //                                         ),
+                //                                         child: Stack(
+                //                                           children: [
+                //                                             Image(
+                //                                               image: AssetImage(
+                //                                                   'assets/hot.png'),
+                //                                               width: 20.0,
+                //                                               height: 20.0,
+                //                                             ),
+                //                                           ],
+                //                                         ),
+                //                                       ),
+                //                                     ],
+                //                                   ),
+                //                                 ),
+                //                               ),
+                //                             ),
+                //                           ),
+                //                           Padding(
+                //                             padding: const EdgeInsets.symmetric(
+                //                                 horizontal: 10.0,
+                //                                 vertical: 10.0),
+                //                             child: CircularPercentIndicator(
+                //                               radius: 50.0,
+                //                               lineWidth: 10.0,
+                //                               backgroundColor: Colors.grey,
+                //                               percent: 0.44,
+                //                               progressColor:
+                //                                   Colors.lightBlueAccent,
+                //                               animation: true,
+                //                               animationDuration: 1500,
+                //                               circularStrokeCap:
+                //                                   CircularStrokeCap.round,
+                //                               header: Text(
+                //                                 'Humidity',
+                //                                 maxLines: 1,
+                //                                 style: TextStyle(
+                //                                   fontWeight: FontWeight.bold,
+                //                                   //color:  Color(hexColor("#264653")),
+                //                                   fontSize: 15.0,
+                //                                 ),
+                //                               ),
+                //                               center: Stack(
+                //                                 children: [
+                //                                   Padding(
+                //                                     padding:
+                //                                         const EdgeInsetsDirectional
+                //                                             .only(
+                //                                       top: 23.0,
+                //                                     ),
+                //                                     child: Stack(
+                //                                       children: [
+                //                                         Text(
+                //                                           "40%",
+                //                                           //maxLines: 1,
+                //                                           style: TextStyle(
+                //                                             fontWeight:
+                //                                                 FontWeight.bold,
+                //                                             color: Color(
+                //                                                 hexColor(
+                //                                                     "#264653")),
+                //                                             fontSize: 15.0,
+                //                                           ),
+                //                                         ),
+                //                                       ],
+                //                                     ),
+                //                                   ),
+                //                                   Padding(
+                //                                     padding:
+                //                                         const EdgeInsetsDirectional
+                //                                             .only(
+                //                                       start: 5.0,
+                //                                     ),
+                //                                     child: Stack(
+                //                                       children: [
+                //                                         Image(
+                //                                           image: AssetImage(
+                //                                               'assets/humidity2.png'),
+                //                                           width: 20.0,
+                //                                           height: 20.0,
+                //                                         ),
+                //                                       ],
+                //                                     ),
+                //                                   ),
+                //                                 ],
+                //                               ),
+                //                             ),
+                //                           ),
+                //                         ],
+                //                       ),
+                //                     ],
+                //                   ),
+                //                 );
+                //               },
+                //               child: Stack(
+                //                 children: [
+                //                   Image(
+                //                     image: AssetImage('assets/humidity.png'),
+                //                     width: 30.0,
+                //                     height: 30.0,
+                //                   ),
+                //                 ],
+                //               ),
+                //             ),
+                //             decoration: BoxDecoration(
+                //               borderRadius: BorderRadius.circular(
+                //                 10.0,
+                //               ),
+                //               color: Colors.black12,
+                //             ),
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //     Text(
+                //       'Temperature &\nHumidity',
+                //       // maxLines: 1,
+                //
+                //       overflow: TextOverflow.ellipsis,
+                //       style: TextStyle(
+                //         fontWeight: FontWeight.bold,
+                //         color: Color(hexColor("#264653")),
+                //         fontSize: 10.0,
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                // temperature old
                 Column(
                   children: [
                     Stack(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Container(
-                            width: 50.0,
-                            height: 50.0,
-                            child: TextButton(
-                              onPressed: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (context) => AlertDialog(
-                                    title: Row(
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 20.0),
-                                          child: Text(
-                                            'Temperature & Humidity',
-                                            maxLines: 2,
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Color(hexColor("#264653")),
-                                              fontSize: 16.0,
-                                            ),
-                                          ),
-                                        ),
-
-                                        // Stack(
-                                        //   alignment: Alignment.bottomLeft,
-                                        //   children: [
-                                        //     // LiteRollingSwitch(
-                                        //     //   value: true,
-                                        //     //
-                                        //     // ),
-                                        //
-                                        //     Switch(value: selected, onChanged: (bool value){
-                                        //       setState(() {
-                                        //         selected=value;
-                                        //       });
-                                        //
-                                        //     }),
-                                        //   ],
-                                        // ),
-                                      ],
-                                    ),
-                                    // content: Container(
-                                    //   width: 160.0,
-                                    //   height: 220.0,
-                                    // ),
-                                    actions: [
-                                      Row(
-                                        children: [
-                                          Center(
-                                            child: Container(
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 20.0,
-                                                        vertical: 10.0),
-
-
-                                                child: CircularPercentIndicator(
-                                                  radius: 50.0,
-                                                  lineWidth: 10.0,
-                                                  backgroundColor: Colors.grey,
-                                                  percent: temp_percent,
-                                                  progressColor: Colors.amber,
-                                                  animation: true,
-                                                  animationDuration: 1500,
-                                                  circularStrokeCap:
-                                                      CircularStrokeCap.round,
-                                                  header: Text(
-                                                    'Temperature',
-                                                    maxLines: 1,
-                                                    style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      // color:  Color(hexColor("#264653")),
-                                                      fontSize: 15.0,
-                                                    ),
-                                                  ),
-                                                  center: Stack(
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .only(
-                                                          top: 23.0,
-                                                        ),
-                                                        child: Stack(
-                                                          children: [
-                                                            Text(
-                                                              "22'C",
-                                                              //maxLines: 1,
-                                                              style: TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                color: Color(
-                                                                    hexColor(
-                                                                        "#264653")),
-                                                                fontSize: 15.0,
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .only(
-                                                          start: 5.0,
-                                                        ),
-                                                        child: Stack(
-                                                          children: [
-                                                            Image(
-                                                              image: AssetImage(
-                                                                  'assets/hot.png'),
-                                                              width: 20.0,
-                                                              height: 20.0,
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 10.0,
-                                                vertical: 10.0),
-                                            child: CircularPercentIndicator(
-                                              radius: 50.0,
-                                              lineWidth: 10.0,
-                                              backgroundColor: Colors.grey,
-                                              percent: 0.44,
-                                              progressColor:
-                                                  Colors.lightBlueAccent,
-                                              animation: true,
-                                              animationDuration: 1500,
-                                              circularStrokeCap:
-                                                  CircularStrokeCap.round,
-                                              header: Text(
-                                                'Humidity',
-                                                maxLines: 1,
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  //color:  Color(hexColor("#264653")),
-                                                  fontSize: 15.0,
-                                                ),
-                                              ),
-                                              center: Stack(
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .only(
-                                                      top: 23.0,
-                                                    ),
-                                                    child: Stack(
-                                                      children: [
-                                                        Text(
-                                                          "40%",
-                                                          //maxLines: 1,
-                                                          style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color: Color(
-                                                                hexColor(
-                                                                    "#264653")),
-                                                            fontSize: 15.0,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .only(
-                                                      start: 5.0,
-                                                    ),
-                                                    child: Stack(
-                                                      children: [
-                                                        Image(
-                                                          image: AssetImage(
-                                                              'assets/humidity2.png'),
-                                                          width: 20.0,
-                                                          height: 20.0,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
-                              child: Stack(
-                                children: [
-                                  Image(
-                                    image: AssetImage('assets/humidity.png'),
-                                    width: 30.0,
-                                    height: 30.0,
-                                  ),
-                                ],
-                              ),
+                        Container(
+                          width: 50.0,
+                          height: 50.0,
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Temperature()),
+                              );
+                            },
+                            child: Stack(
+                              children: [
+                                Image(
+                                  image: AssetImage('assets/humidity.png'),
+                                  width: 30.0,
+                                  height: 30.0,
+                                ),
+                              ],
                             ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                10.0,
-                              ),
-                              color: Colors.black12,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                              10.0,
                             ),
+                            color: Colors.black12,
                           ),
                         ),
                       ],
                     ),
                     Text(
-                      'Temperature &\nHumidity',
-                      // maxLines: 1,
-
-                      overflow: TextOverflow.ellipsis,
+                      'Temperature',
+                      maxLines: 1,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Color(hexColor("#264653")),

@@ -65,6 +65,7 @@ dependencies:
   percent_indicator: ^4.0.0
 
   flutter_switch: ^0.3.2
+  getwidget: ^3.0.1
 
 
 
