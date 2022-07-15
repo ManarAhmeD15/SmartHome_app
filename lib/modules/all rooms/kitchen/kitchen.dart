@@ -25,6 +25,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
   bool switch6 = false;
   bool switch7 = false;
   bool switch8 = false;
+  bool switch9 = false;
+  bool switch10 = false;
   final refrenceData = FirebaseDatabase.instance;
   onChangedFunction3(bool newValue3) {
     setState(() {
@@ -60,6 +62,24 @@ class _KitchenScreenState extends State<KitchenScreen> {
     setState(() {
       switch8 = newValue6;
       if (switch8 == true) {
+        print('On');
+      } else
+        print('Off');
+    });
+  }
+  onChangedFunction7(bool newValue6) {
+    setState(() {
+      switch9 = newValue6;
+      if (switch9 == true) {
+        print('On');
+      } else
+        print('Off');
+    });
+  }
+  onChangedFunction8(bool newValue6) {
+    setState(() {
+      switch10 = newValue6;
+      if (switch10 == true) {
         print('On');
       } else
         print('Off');
@@ -647,7 +667,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                               padding: const EdgeInsets.all(10.0),
                               child: Container(
                                 width: 340,
-                                height: 370,
+                                height: 420,
                                 decoration: BoxDecoration(
                                   color: Colors.blueGrey[800],
                                   borderRadius: BorderRadius.circular(
@@ -657,7 +677,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                               ),
                             ),
                             Positioned(
-                              left: 20.0,
+                              left: 23.0,
                               top: 10.0,
                               child: Column(
                                 children: [
@@ -666,14 +686,14 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                       Stack(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.all(10.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Container(
                                               width: 140,
-                                              height: 160,
+                                              height: 120,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
-                                                    BorderRadius.circular(
+                                                BorderRadius.circular(
                                                   15.0,
                                                 ),
                                               ),
@@ -689,17 +709,272 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                     Container(
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets
-                                                                .all(8.0),
+                                                        const EdgeInsets
+                                                            .all(3.0),
                                                         child: Image(
                                                           image: AssetImage(
-                                                              'assets/cooker.png'),
-                                                          width: 20.0,
+                                                              'assets/blender.png'),
+                                                          width: 30.0,
+                                                          height: 30.0,
+                                                        ),
+                                                      ),
+                                                      width: 80.0,
+                                                      height: 60.0,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                        BorderRadius
+                                                            .circular(10.0),
+                                                        color:
+                                                        Colors.grey[300],
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 5.0,
+                                                    ),
+                                                    Text(
+                                                      'Blender',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                        FontWeight.bold,
+                                                        fontSize: 15.0,
+                                                        color: Color(hexColor(
+                                                            "#264653")),
+                                                      ),
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          'Off',
+                                                          style: TextStyle(
+                                                            fontWeight:
+                                                            FontWeight.bold,
+                                                            fontSize: 10.0,
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.all(4.0),
+                                                          child: FlutterSwitch(
+                                                            height: 18.0,
+                                                            width: 40.0,
+                                                            borderRadius: 20.0,
+                                                            padding: 1.0,
+                                                            value: switch5,
+                                                            activeColor:
+                                                            Colors.blueGrey,
+                                                            inactiveColor:
+                                                            Colors.grey,
+                                                            onToggle:
+                                                                (val) async {
+                                                              setState(() {
+                                                                switch5 = val;
+                                                                if (val) {
+                                                                  ref
+                                                                      .child(
+                                                                      'Switch5')
+                                                                      .set('1')
+                                                                      .asStream();
+                                                                } else {
+                                                                  ref
+                                                                      .child(
+                                                                      'Switch5')
+                                                                      .set('0')
+                                                                      .asStream();
+                                                                }
+                                                              });
+                                                            },
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          'On',
+                                                          style: TextStyle(
+                                                            fontWeight:
+                                                            FontWeight.bold,
+                                                            fontSize: 10.0,
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        width: 2.0,
+                                      ),
+                                      Stack(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Container(
+                                              width: 140,
+                                              height: 120,
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                BorderRadius.circular(
+                                                  15.0,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 20.0,
+                                            left: 40.0,
+                                            child: Stack(
+                                              children: [
+                                                Column(
+                                                  children: [
+                                                    Container(
+                                                      child: Padding(
+                                                        padding:
+                                                        const EdgeInsets
+                                                            .all(4.0),
+                                                        child: Image(
+                                                          image: AssetImage(
+                                                              'assets/kettle.png'),
+                                                          width: 30.0,
                                                           height: 25.0,
                                                         ),
                                                       ),
                                                       width: 80.0,
-                                                      height: 80.0,
+                                                      height: 60.0,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                        BorderRadius
+                                                            .circular(10.0),
+                                                        color:
+                                                        Colors.blue[100],
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 5.0,
+                                                    ),
+                                                    Text(
+                                                      'Kettle',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                        FontWeight.bold,
+                                                        fontSize: 15.0,
+                                                        color: Color(hexColor(
+                                                            "#264653")),
+                                                      ),
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          'Off',
+                                                          style: TextStyle(
+                                                            fontWeight:
+                                                            FontWeight.bold,
+                                                            fontSize: 10.0,
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.all(4.0),
+                                                          child: FlutterSwitch(
+                                                            height: 18.0,
+                                                            width: 40.0,
+                                                            borderRadius: 20.0,
+                                                            padding: 1.0,
+                                                            value: switch6,
+                                                            activeColor:
+                                                            Colors.blue,
+                                                            inactiveColor:
+                                                            Colors.grey,
+                                                            onToggle:
+                                                                (val) async {
+                                                              setState(() {
+                                                                switch6 = val;
+                                                                if (val) {
+                                                                  ref
+                                                                      .child(
+                                                                      'Switch6')
+                                                                      .set('1')
+                                                                      .asStream();
+                                                                } else {
+                                                                  ref
+                                                                      .child(
+                                                                      'Switch6')
+                                                                      .set('0')
+                                                                      .asStream();
+                                                                }
+                                                              });
+                                                            },
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          'On',
+                                                          style: TextStyle(
+                                                            fontWeight:
+                                                            FontWeight.bold,
+                                                            fontSize: 10.0,
+                                                            color: Color(
+                                                                hexColor(
+                                                                    "#264653")),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Stack(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(4.0),
+                                            child: Container(
+                                              width: 140,
+                                              height: 120,
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                  15.0,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 15.0,
+                                            left: 35.0,
+                                            child: Stack(
+                                              children: [
+                                                Column(
+                                                  children: [
+                                                    Container(
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(3.0),
+                                                        child: Image(
+                                                          image: AssetImage(
+                                                              'assets/cooker.png'),
+                                                          width: 30.0,
+                                                          height: 20.0,
+                                                        ),
+                                                      ),
+                                                      width: 80.0,
+                                                      height: 60.0,
                                                       decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
@@ -734,35 +1009,38 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                     "#264653")),
                                                           ),
                                                         ),
-                                                        FlutterSwitch(
-                                                          height: 20.0,
-                                                          width: 40.0,
-                                                          borderRadius: 20.0,
-                                                          padding: 1.0,
-                                                          value: switch5,
-                                                          activeColor:
-                                                              Colors.blueGrey,
-                                                          inactiveColor:
-                                                              Colors.grey,
-                                                          onToggle:
-                                                              (val) async {
-                                                            setState(() {
-                                                              switch5 = val;
-                                                              if (val) {
-                                                                ref
-                                                                    .child(
-                                                                        'Switch5')
-                                                                    .set('1')
-                                                                    .asStream();
-                                                              } else {
-                                                                ref
-                                                                    .child(
-                                                                        'Switch5')
-                                                                    .set('0')
-                                                                    .asStream();
-                                                              }
-                                                            });
-                                                          },
+                                                        Padding(
+                                                          padding: const EdgeInsets.all(4.0),
+                                                          child: FlutterSwitch(
+                                                            height: 18.0,
+                                                            width: 40.0,
+                                                            borderRadius: 20.0,
+                                                            padding: 1.0,
+                                                            value: switch7,
+                                                            activeColor:
+                                                                Colors.purple,
+                                                            inactiveColor:
+                                                                Colors.grey,
+                                                            onToggle:
+                                                                (val) async {
+                                                              setState(() {
+                                                                switch7 = val;
+                                                                if (val) {
+                                                                  ref
+                                                                      .child(
+                                                                          'Switch7')
+                                                                      .set('1')
+                                                                      .asStream();
+                                                                } else {
+                                                                  ref
+                                                                      .child(
+                                                                          'Switch7')
+                                                                      .set('0')
+                                                                      .asStream();
+                                                                }
+                                                              });
+                                                            },
+                                                          ),
                                                         ),
                                                         Text(
                                                           'On',
@@ -790,10 +1068,10 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                       Stack(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.all(10.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Container(
                                               width: 140,
-                                              height: 160,
+                                              height: 120,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
@@ -814,7 +1092,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsets
-                                                                .all(8.0),
+                                                                .all(4.0),
                                                         child: Image(
                                                           image: AssetImage(
                                                               'assets/lamp.png'),
@@ -823,7 +1101,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                         ),
                                                       ),
                                                       width: 80.0,
-                                                      height: 80.0,
+                                                      height: 60.0,
                                                       decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
@@ -858,35 +1136,38 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                     "#264653")),
                                                           ),
                                                         ),
-                                                        FlutterSwitch(
-                                                          height: 20.0,
-                                                          width: 40.0,
-                                                          borderRadius: 20.0,
-                                                          padding: 1.0,
-                                                          value: switch6,
-                                                          activeColor:
-                                                              Colors.lightGreen,
-                                                          inactiveColor:
-                                                              Colors.grey,
-                                                          onToggle:
-                                                              (val) async {
-                                                            setState(() {
-                                                              switch6 = val;
-                                                              if (val) {
-                                                                ref
-                                                                    .child(
-                                                                        'Switch6')
-                                                                    .set('1')
-                                                                    .asStream();
-                                                              } else {
-                                                                ref
-                                                                    .child(
-                                                                        'Switch6')
-                                                                    .set('0')
-                                                                    .asStream();
-                                                              }
-                                                            });
-                                                          },
+                                                        Padding(
+                                                          padding: const EdgeInsets.all(4.0),
+                                                          child: FlutterSwitch(
+                                                            height: 18.0,
+                                                            width: 40.0,
+                                                            borderRadius: 20.0,
+                                                            padding: 1.0,
+                                                            value: switch8,
+                                                            activeColor:
+                                                                Colors.orangeAccent,
+                                                            inactiveColor:
+                                                                Colors.grey,
+                                                            onToggle:
+                                                                (val) async {
+                                                              setState(() {
+                                                                switch8 = val;
+                                                                if (val) {
+                                                                  ref
+                                                                      .child(
+                                                                          'Switch8')
+                                                                      .set('1')
+                                                                      .asStream();
+                                                                } else {
+                                                                  ref
+                                                                      .child(
+                                                                          'Switch8')
+                                                                      .set('0')
+                                                                      .asStream();
+                                                                }
+                                                              });
+                                                            },
+                                                          ),
                                                         ),
                                                         Text(
                                                           'On',
@@ -918,10 +1199,10 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                       Stack(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.all(10.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Container(
                                               width: 140,
-                                              height: 160,
+                                              height: 120,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
@@ -942,16 +1223,16 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsets
-                                                                .all(8.0),
+                                                                .all(3.0),
                                                         child: Image(
                                                           image: AssetImage(
                                                               'assets/fridge.png'),
-                                                          width: 30.0,
-                                                          height: 30.0,
+                                                          width: 40.0,
+                                                          height: 40.0,
                                                         ),
                                                       ),
                                                       width: 80.0,
-                                                      height: 80.0,
+                                                      height: 60.0,
                                                       decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
@@ -986,35 +1267,38 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                     "#264653")),
                                                           ),
                                                         ),
-                                                        FlutterSwitch(
-                                                          height: 20.0,
-                                                          width: 40.0,
-                                                          borderRadius: 20.0,
-                                                          padding: 1.0,
-                                                          value: switch7,
-                                                          activeColor:
-                                                              Colors.lightGreen,
-                                                          inactiveColor:
-                                                              Colors.grey,
-                                                          onToggle:
-                                                              (val) async {
-                                                            setState(() {
-                                                              switch7 = val;
-                                                              if (val) {
-                                                                ref
-                                                                    .child(
-                                                                        'Switch7')
-                                                                    .set('1')
-                                                                    .asStream();
-                                                              } else {
-                                                                ref
-                                                                    .child(
-                                                                        'Switch7')
-                                                                    .set('0')
-                                                                    .asStream();
-                                                              }
-                                                            });
-                                                          },
+                                                        Padding(
+                                                          padding: const EdgeInsets.all(4.0),
+                                                          child: FlutterSwitch(
+                                                            height: 18.0,
+                                                            width: 40.0,
+                                                            borderRadius: 20.0,
+                                                            padding: 1.0,
+                                                            value: switch9,
+                                                            activeColor:
+                                                                Colors.red,
+                                                            inactiveColor:
+                                                                Colors.grey,
+                                                            onToggle:
+                                                                (val) async {
+                                                              setState(() {
+                                                                switch9 = val;
+                                                                if (val) {
+                                                                  ref
+                                                                      .child(
+                                                                          'Switch9')
+                                                                      .set('1')
+                                                                      .asStream();
+                                                                } else {
+                                                                  ref
+                                                                      .child(
+                                                                          'Switch9')
+                                                                      .set('0')
+                                                                      .asStream();
+                                                                }
+                                                              });
+                                                            },
+                                                          ),
                                                         ),
                                                         Text(
                                                           'On',
@@ -1042,10 +1326,10 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                       Stack(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.all(10.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Container(
                                               width: 140,
-                                              height: 160,
+                                              height: 120,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
@@ -1057,7 +1341,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                           ),
                                           Positioned(
                                             top: 20.0,
-                                            left: 20.0,
+                                            left: 25.0,
                                             child: Stack(
                                               children: [
                                                 Column(
@@ -1067,7 +1351,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                         padding:
                                                             const EdgeInsets
                                                                     .only(
-                                                                left: 13.0),
+                                                                left: 8.0),
                                                         child: Image(
                                                           image: AssetImage(
                                                               'assets/washing.png'),
@@ -1076,7 +1360,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                         ),
                                                       ),
                                                       width: 80.0,
-                                                      height: 80.0,
+                                                      height: 60.0,
                                                       decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
@@ -1110,35 +1394,38 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                     "#264653")),
                                                           ),
                                                         ),
-                                                        FlutterSwitch(
-                                                          height: 20.0,
-                                                          width: 40.0,
-                                                          borderRadius: 20.0,
-                                                          padding: 1.0,
-                                                          value: switch8,
-                                                          activeColor:
-                                                              Colors.lightGreen,
-                                                          inactiveColor:
-                                                              Colors.grey,
-                                                          onToggle:
-                                                              (val) async {
-                                                            setState(() {
-                                                              switch8 = val;
-                                                              if (val) {
-                                                                ref
-                                                                    .child(
-                                                                        'Switch8')
-                                                                    .set('1')
-                                                                    .asStream();
-                                                              } else {
-                                                                ref
-                                                                    .child(
-                                                                        'Switch8')
-                                                                    .set('0')
-                                                                    .asStream();
-                                                              }
-                                                            });
-                                                          },
+                                                        Padding(
+                                                          padding: const EdgeInsets.all(4.0),
+                                                          child: FlutterSwitch(
+                                                            height: 18.0,
+                                                            width: 40.0,
+                                                            borderRadius: 20.0,
+                                                            padding: 1.0,
+                                                            value: switch10,
+                                                            activeColor:
+                                                                Colors.cyan,
+                                                            inactiveColor:
+                                                                Colors.grey,
+                                                            onToggle:
+                                                                (val) async {
+                                                              setState(() {
+                                                                switch10 = val;
+                                                                if (val) {
+                                                                  ref
+                                                                      .child(
+                                                                          'Switch10')
+                                                                      .set('1')
+                                                                      .asStream();
+                                                                } else {
+                                                                  ref
+                                                                      .child(
+                                                                          'Switch10')
+                                                                      .set('0')
+                                                                      .asStream();
+                                                                }
+                                                              });
+                                                            },
+                                                          ),
                                                         ),
                                                         Text(
                                                           'On',

@@ -142,6 +142,8 @@ flutter:
    - assets/computer.png
    - assets/up-arrow.png
    - assets/arrow-down.png
+   - assets/blender.png
+   - assets/kettle.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,10 +1,8 @@
 import 'package:beginning_app/modules/all%20rooms/bedroom/alarm.dart';
 import 'package:beginning_app/modules/all%20rooms/bedroom/all_rooms_screen.dart';
 import 'package:beginning_app/modules/all%20rooms/bedroom/magentic.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 
 import '../../temprature/temp.dart';
 import 'add_new_device_bedroom.dart';
@@ -47,7 +45,6 @@ class _bedroomState extends State<bedroom> {
   bool switch2 = false;
   bool switch3 = false;
   bool switch4 = false;
-  final refrenceData = FirebaseDatabase.instance;
   onChangedFunction3(bool newValue3) {
     setState(() {
       switch1 = newValue3;
@@ -90,7 +87,6 @@ class _bedroomState extends State<bedroom> {
 
   @override
   Widget build(BuildContext context) {
-    final ref = refrenceData.reference();
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -746,31 +742,13 @@ class _bedroomState extends State<bedroom> {
                                                         hexColor("#264653")),
                                                   ),
                                                 ),
-                                                FlutterSwitch(
-                                                  height: 20.0,
-                                                  width: 40.0,
-                                                  borderRadius: 20.0,
-                                                  padding: 1.0,
+                                                Switch(
                                                   value: switch1,
+                                                  onChanged: onChangedFunction3,
                                                   activeColor:
-                                                      Colors.lightGreen,
-                                                  inactiveColor: Colors.grey,
-                                                  onToggle: (val) async {
-                                                    setState(() {
-                                                      switch1 = val;
-                                                      if (val) {
-                                                        ref
-                                                            .child('Switch1')
-                                                            .set('1')
-                                                            .asStream();
-                                                      } else {
-                                                        ref
-                                                            .child('Switch1')
-                                                            .set('0')
-                                                            .asStream();
-                                                      }
-                                                    });
-                                                  },
+                                                      Colors.lightGreen[700],
+                                                  activeTrackColor:
+                                                      Colors.lightGreen[200],
                                                 ),
                                                 Text(
                                                   'On',
@@ -846,9 +824,6 @@ class _bedroomState extends State<bedroom> {
                                                     Color(hexColor("#264653")),
                                               ),
                                             ),
-                                            SizedBox(
-                                              height: 5.0,
-                                            ),
                                             Row(
                                               children: [
                                                 Text(
@@ -860,36 +835,13 @@ class _bedroomState extends State<bedroom> {
                                                         hexColor("#264653")),
                                                   ),
                                                 ),
-                                                SizedBox(
-                                                  width: 5.0,
-                                                ),
-                                                FlutterSwitch(
-                                                  height: 20.0,
-                                                  width: 40.0,
-                                                  borderRadius: 20.0,
-                                                  padding: 1.0,
+                                                Switch(
                                                   value: switch2,
-                                                  activeColor: Colors.orange,
-                                                  inactiveColor: Colors.grey,
-                                                  onToggle: (val) async {
-                                                    setState(() {
-                                                      switch2 = val;
-                                                      if (val) {
-                                                        ref
-                                                            .child('Switch2')
-                                                            .set('1')
-                                                            .asStream();
-                                                      } else {
-                                                        ref
-                                                            .child('Switch2')
-                                                            .set('0')
-                                                            .asStream();
-                                                      }
-                                                    });
-                                                  },
-                                                ),
-                                                SizedBox(
-                                                  width: 5.0,
+                                                  onChanged: onChangedFunction4,
+                                                  activeColor:
+                                                      Colors.orange[500],
+                                                  activeTrackColor:
+                                                      Colors.orange[200],
                                                 ),
                                                 Text(
                                                   'On',
@@ -980,30 +932,13 @@ class _bedroomState extends State<bedroom> {
                                                         hexColor("#264653")),
                                                   ),
                                                 ),
-                                                FlutterSwitch(
-                                                  height: 20.0,
-                                                  width: 40.0,
-                                                  borderRadius: 20.0,
-                                                  padding: 1.0,
+                                                Switch(
                                                   value: switch3,
-                                                  activeColor: Colors.redAccent,
-                                                  inactiveColor: Colors.grey,
-                                                  onToggle: (val) async {
-                                                    setState(() {
-                                                      switch3 = val;
-                                                      if (val) {
-                                                        ref
-                                                            .child('Switch3')
-                                                            .set('1')
-                                                            .asStream();
-                                                      } else {
-                                                        ref
-                                                            .child('Switch3')
-                                                            .set('0')
-                                                            .asStream();
-                                                      }
-                                                    });
-                                                  },
+                                                  onChanged: onChangedFunction5,
+                                                  activeColor:
+                                                      Colors.deepOrange[700],
+                                                  activeTrackColor:
+                                                      Colors.deepOrange[200],
                                                 ),
                                                 Text(
                                                   'On',
@@ -1090,30 +1025,13 @@ class _bedroomState extends State<bedroom> {
                                                         hexColor("#264653")),
                                                   ),
                                                 ),
-                                                FlutterSwitch(
-                                                  height: 20.0,
-                                                  width: 40.0,
-                                                  borderRadius: 20.0,
-                                                  padding: 1.0,
+                                                Switch(
                                                   value: switch4,
-                                                  activeColor: Colors.blueGrey,
-                                                  inactiveColor: Colors.grey,
-                                                  onToggle: (val) async {
-                                                    setState(() {
-                                                      switch4 = val;
-                                                      if (val) {
-                                                        ref
-                                                            .child('Switch4')
-                                                            .set('1')
-                                                            .asStream();
-                                                      } else {
-                                                        ref
-                                                            .child('Switch4')
-                                                            .set('0')
-                                                            .asStream();
-                                                      }
-                                                    });
-                                                  },
+                                                  onChanged: onChangedFunction6,
+                                                  activeColor:
+                                                      Colors.purple[500],
+                                                  activeTrackColor:
+                                                      Colors.purple[200],
                                                 ),
                                                 Text(
                                                   'On',

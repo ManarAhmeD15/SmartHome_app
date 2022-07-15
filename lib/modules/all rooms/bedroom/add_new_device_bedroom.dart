@@ -805,7 +805,8 @@ class _AddNewDeviceState extends State<AddNewDevice> {
                       await refreneceData.child('input').set({
                         '1': 'string',
                         '2': 12,
-                        '3': 'okkkk',
+                        '3': 'manar',
+                        '4': 'asmaa',
                       });
                     },
                     child: Text(
