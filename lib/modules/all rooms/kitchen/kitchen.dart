@@ -1018,7 +1018,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                             padding: 1.0,
                                                             value: switch7,
                                                             activeColor:
-                                                                Colors.purple,
+                                                                Colors.purpleAccent,
                                                             inactiveColor:
                                                                 Colors.grey,
                                                             onToggle:
@@ -1276,7 +1276,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                             padding: 1.0,
                                                             value: switch9,
                                                             activeColor:
-                                                                Colors.red,
+                                                                Colors.redAccent,
                                                             inactiveColor:
                                                                 Colors.grey,
                                                             onToggle:

@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'modules/all rooms/bedroom/bedroom.dart';
 import 'modules/all rooms/kitchen/kitchen.dart';
 import 'modules/navigation/navigation_provider.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           //title: title,
           //theme: ThemeData(primarySwatch: Colors.deepOrange),
-          home: KitchenScreen(),
+          home: bedroom(),
         ),
       );
 }
