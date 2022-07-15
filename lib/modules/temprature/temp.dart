@@ -27,12 +27,12 @@ class _TemperatureState extends State<Temperature> {
 
   get snapshot => null;
 
-  Future getdata() async {
+  Future showtemp() async {
     final result = await referenceData
-        .child('output')
-        .child('temp')
+        .child('Temperature')
+        .child('Write')
         .once()
-        .then((DatabaseEvent event) {
+        .then((DataSnapshot) {
       streamController.add(snapshot); //.add(snapshot.value)
       //.add(snapshot.snapshot)
     });
@@ -41,7 +41,7 @@ class _TemperatureState extends State<Temperature> {
 
   void initState() {
     streamController = StreamController();
-    Timer.periodic(Duration(seconds: 1), (_) => getdata());
+    Timer.periodic(Duration(seconds: 1), (_) => showtemp());
     super.initState();
   }
 
@@ -293,7 +293,7 @@ class _TemperatureState extends State<Temperature> {
                                       .child('Temperature')
                                       .child('Write')
                                       .set({
-                                    'Temp': '50',
+                                    'Temp': '70',
                                   });
                                 },
                                 child: Text(

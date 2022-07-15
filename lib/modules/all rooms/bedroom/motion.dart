@@ -14,7 +14,7 @@ class Motion extends StatefulWidget {
 
 class _MotionState extends State<Motion> {
   final refrenceData = FirebaseDatabase.instance;
-  bool status7 = false;
+  bool motion = false;
 
   @override
   bool val2 = false;
@@ -265,26 +265,18 @@ class _MotionState extends State<Motion> {
                         padding: 1.0,
                         activeColor: Colors.blueGrey,
                         inactiveColor: Colors.grey,
-                        value: status7,
+                        value: motion,
                         onToggle: (val) async {
                           setState(() {
-                            status7 = val;
+                            motion = val;
                             if (val) {
-                              ref
-                                  .child('output')
-                                  .child('state')
-                                  .set('on')
-                                  .asStream();
+                              ref.child('Motion').set('1').asStream();
                             } else {
-                              ref
-                                  .child('output')
-                                  .child('state')
-                                  .set('off')
-                                  .asStream();
+                              ref.child('Motion').set('0').asStream();
                             }
                           });
                         },
-                      )
+                      ),
                     ],
                   ),
                 ],
@@ -425,11 +417,6 @@ class _MotionState extends State<Motion> {
       ]),
     ));
   }
-/*
-  final ref = refrenceData.ref(
-      'https://console.firebase.google.com/project/gradsmarthomeproj/database/gradsmarthomeproj-default-rtdb/data/~2F');
-
- */
 }
 
 Widget customSwitch(String text, bool val, Function onChangedMethod) {

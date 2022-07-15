@@ -1,7 +1,9 @@
 import 'package:beginning_app/modules/all%20rooms/bedroom/all_rooms_screen.dart';
 import 'package:beginning_app/modules/all%20rooms/kitchen/add_new_device_kitchen.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class KitchenScreen extends StatefulWidget {
@@ -19,15 +21,15 @@ class _KitchenScreenState extends State<KitchenScreen> {
     return colorint;
   }
 
-  bool switch1 = false;
-  bool switch2 = false;
-  bool switch3 = false;
-  bool switch4 = false;
-
+  bool switch5 = false;
+  bool switch6 = false;
+  bool switch7 = false;
+  bool switch8 = false;
+  final refrenceData = FirebaseDatabase.instance;
   onChangedFunction3(bool newValue3) {
     setState(() {
-      switch1 = newValue3;
-      if (switch1 == true) {
+      switch5 = newValue3;
+      if (switch5 == true) {
         print('On');
       } else
         print('Off');
@@ -36,8 +38,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
 
   onChangedFunction4(bool newValue4) {
     setState(() {
-      switch2 = newValue4;
-      if (switch2 == true) {
+      switch6 = newValue4;
+      if (switch6 == true) {
         print('On');
       } else
         print('Off');
@@ -46,8 +48,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
 
   onChangedFunction5(bool newValue5) {
     setState(() {
-      switch3 = newValue5;
-      if (switch3 == true) {
+      switch7 = newValue5;
+      if (switch7 == true) {
         print('On');
       } else
         print('Off');
@@ -56,8 +58,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
 
   onChangedFunction6(bool newValue6) {
     setState(() {
-      switch4 = newValue6;
-      if (switch4 == true) {
+      switch8 = newValue6;
+      if (switch8 == true) {
         print('On');
       } else
         print('Off');
@@ -66,15 +68,14 @@ class _KitchenScreenState extends State<KitchenScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final ref = refrenceData.reference();
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
             Container(
               alignment: Alignment.topCenter,
-              child:
-
-              Stack(
+              child: Stack(
                 alignment: Alignment.center,
                 children: [
                   Container(
@@ -94,8 +95,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => AllRooms()),
+                          MaterialPageRoute(builder: (context) => AllRooms()),
                         );
                       },
                       icon: Icon(
@@ -734,15 +734,35 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                     "#264653")),
                                                           ),
                                                         ),
-                                                        Switch(
-                                                          value: switch1,
-                                                          onChanged:
-                                                              onChangedFunction3,
-                                                          activeColor: Colors
-                                                              .purple[300],
-                                                          activeTrackColor:
-                                                              Colors
-                                                                  .purple[100],
+                                                        FlutterSwitch(
+                                                          height: 20.0,
+                                                          width: 40.0,
+                                                          borderRadius: 20.0,
+                                                          padding: 1.0,
+                                                          value: switch5,
+                                                          activeColor:
+                                                              Colors.blueGrey,
+                                                          inactiveColor:
+                                                              Colors.grey,
+                                                          onToggle:
+                                                              (val) async {
+                                                            setState(() {
+                                                              switch5 = val;
+                                                              if (val) {
+                                                                ref
+                                                                    .child(
+                                                                        'Switch5')
+                                                                    .set('1')
+                                                                    .asStream();
+                                                              } else {
+                                                                ref
+                                                                    .child(
+                                                                        'Switch5')
+                                                                    .set('0')
+                                                                    .asStream();
+                                                              }
+                                                            });
+                                                          },
                                                         ),
                                                         Text(
                                                           'On',
@@ -838,15 +858,35 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                     "#264653")),
                                                           ),
                                                         ),
-                                                        Switch(
-                                                          value: switch2,
-                                                          onChanged:
-                                                              onChangedFunction4,
-                                                          activeColor: Colors
-                                                              .orange[500],
-                                                          activeTrackColor:
-                                                              Colors
-                                                                  .orange[200],
+                                                        FlutterSwitch(
+                                                          height: 20.0,
+                                                          width: 40.0,
+                                                          borderRadius: 20.0,
+                                                          padding: 1.0,
+                                                          value: switch6,
+                                                          activeColor:
+                                                              Colors.lightGreen,
+                                                          inactiveColor:
+                                                              Colors.grey,
+                                                          onToggle:
+                                                              (val) async {
+                                                            setState(() {
+                                                              switch6 = val;
+                                                              if (val) {
+                                                                ref
+                                                                    .child(
+                                                                        'Switch6')
+                                                                    .set('1')
+                                                                    .asStream();
+                                                              } else {
+                                                                ref
+                                                                    .child(
+                                                                        'Switch6')
+                                                                    .set('0')
+                                                                    .asStream();
+                                                              }
+                                                            });
+                                                          },
                                                         ),
                                                         Text(
                                                           'On',
@@ -946,15 +986,35 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                     "#264653")),
                                                           ),
                                                         ),
-                                                        Switch(
-                                                          value: switch3,
-                                                          onChanged:
-                                                              onChangedFunction5,
-                                                          activeColor: Colors
-                                                              .deepOrange[700],
-                                                          activeTrackColor:
-                                                              Colors.deepOrange[
-                                                                  200],
+                                                        FlutterSwitch(
+                                                          height: 20.0,
+                                                          width: 40.0,
+                                                          borderRadius: 20.0,
+                                                          padding: 1.0,
+                                                          value: switch7,
+                                                          activeColor:
+                                                              Colors.lightGreen,
+                                                          inactiveColor:
+                                                              Colors.grey,
+                                                          onToggle:
+                                                              (val) async {
+                                                            setState(() {
+                                                              switch7 = val;
+                                                              if (val) {
+                                                                ref
+                                                                    .child(
+                                                                        'Switch7')
+                                                                    .set('1')
+                                                                    .asStream();
+                                                              } else {
+                                                                ref
+                                                                    .child(
+                                                                        'Switch7')
+                                                                    .set('0')
+                                                                    .asStream();
+                                                              }
+                                                            });
+                                                          },
                                                         ),
                                                         Text(
                                                           'On',
@@ -1050,14 +1110,35 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                     "#264653")),
                                                           ),
                                                         ),
-                                                        Switch(
-                                                          value: switch4,
-                                                          onChanged:
-                                                              onChangedFunction6,
+                                                        FlutterSwitch(
+                                                          height: 20.0,
+                                                          width: 40.0,
+                                                          borderRadius: 20.0,
+                                                          padding: 1.0,
+                                                          value: switch8,
                                                           activeColor:
-                                                              Colors.cyan[500],
-                                                          activeTrackColor:
-                                                              Colors.cyan[200],
+                                                              Colors.lightGreen,
+                                                          inactiveColor:
+                                                              Colors.grey,
+                                                          onToggle:
+                                                              (val) async {
+                                                            setState(() {
+                                                              switch8 = val;
+                                                              if (val) {
+                                                                ref
+                                                                    .child(
+                                                                        'Switch8')
+                                                                    .set('1')
+                                                                    .asStream();
+                                                              } else {
+                                                                ref
+                                                                    .child(
+                                                                        'Switch8')
+                                                                    .set('0')
+                                                                    .asStream();
+                                                              }
+                                                            });
+                                                          },
                                                         ),
                                                         Text(
                                                           'On',
