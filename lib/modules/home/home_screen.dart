@@ -58,7 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
           Icons.menu,
           color: Colors.white,
         ),
-        title: Center(
+        title: Padding(
+          padding: const EdgeInsets.only(
+            left: 100.0,
+          ),
           child: Text(
             'Home',
             style: TextStyle(

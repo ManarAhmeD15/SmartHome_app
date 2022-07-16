@@ -1,10 +1,12 @@
 import 'package:beginning_app/modules/about/programmer_screen.dart';
+import 'package:beginning_app/modules/all%20rooms/bedroom/all_rooms_screen.dart';
 import 'package:beginning_app/modules/profile/profile.dart';
 import 'package:beginning_app/modules/remote_control/remote_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+
 import '../../models/drawer_item.dart';
 import '../../models/drawer_items.dart';
 import 'navigation_provider.dart';
@@ -94,7 +96,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         navigateTo(Profile());
         break;
       case 2:
-        //navigateTo(HomeScreen());
+        navigateTo(AllRooms());
         break;
       case 3:
         // navigateTo(HomeScreen());

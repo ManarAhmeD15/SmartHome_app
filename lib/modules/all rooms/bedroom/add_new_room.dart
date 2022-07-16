@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:beginning_app/modules/all%20rooms/bedroom/all_rooms_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
@@ -78,7 +79,7 @@ class _AddNewRoomState extends State<AddNewRoom> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomeScreen()),
+                                builder: (context) => AllRooms()),
                           );
                         },
                         icon: Icon(
