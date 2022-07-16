@@ -99,431 +99,431 @@ class _AddNewRoomState extends State<AddNewRoom> {
                   ],
                 ),
               ),
-              // RadioListTile<int>(
-              //     value: 1,
-              //     groupValue: selectValue,
-              //     title: Row(
-              //       children: [
-              //         Container(
-              //           child: Padding(
-              //             padding: const EdgeInsets.all(8.0),
-              //             child: Image(
-              //               image: AssetImage('assets/living-room.png'),
-              //               width: 20.0,
-              //               height: 20.0,
-              //             ),
-              //           ),
-              //           width: 40.0,
-              //           height: 40.0,
-              //           decoration: BoxDecoration(
-              //             borderRadius: BorderRadius.circular(
-              //               15.0,
-              //             ),
-              //             color: Colors.indigo[50],
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width: 10.0,
-              //         ),
-              //         Text(
-              //           'Living room',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.w600,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //     activeColor: Colors.indigo[300],
-              //     selected: true,
-              //     onChanged: (val) {
-              //       setSelectedValue(val!);
-              //     }),
-              // RadioListTile<int>(
-              //     value: 2,
-              //     groupValue: selectValue,
-              //     title: Row(
-              //       children: [
-              //         Container(
-              //           child: Padding(
-              //             padding: const EdgeInsets.all(8.0),
-              //             child: Image(
-              //               image: AssetImage('assets/bathroom.png'),
-              //               width: 20.0,
-              //               height: 20.0,
-              //             ),
-              //           ),
-              //           width: 40.0,
-              //           height: 40.0,
-              //           decoration: BoxDecoration(
-              //             borderRadius: BorderRadius.circular(
-              //               15.0,
-              //             ),
-              //             color: Colors.green[100],
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width: 10.0,
-              //         ),
-              //         Text(
-              //           'Bathroom',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.w600,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //     activeColor: Colors.green,
-              //     selected: true,
-              //     onChanged: (val) {
-              //       setSelectedValue(val!);
-              //     }),
-              // RadioListTile<int>(
-              //     value: 3,
-              //     groupValue: selectValue,
-              //     title: Row(
-              //       children: [
-              //         Container(
-              //           child: Padding(
-              //             padding: const EdgeInsets.all(8.0),
-              //             child: Image(
-              //               image: AssetImage('assets/gaming.png'),
-              //               width: 20.0,
-              //               height: 20.0,
-              //             ),
-              //           ),
-              //           width: 40.0,
-              //           height: 40.0,
-              //           decoration: BoxDecoration(
-              //             borderRadius: BorderRadius.circular(
-              //               15.0,
-              //             ),
-              //             color: Colors.blue[50],
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width: 10.0,
-              //         ),
-              //         Text(
-              //           'Gaming room',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.w600,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //     activeColor: Colors.blue,
-              //     selected: true,
-              //     onChanged: (val) {
-              //       setSelectedValue(val!);
-              //     }),
-              // RadioListTile<int>(
-              //     value: 4,
-              //     groupValue: selectValue,
-              //     title: Row(
-              //       children: [
-              //         Container(
-              //           child: Padding(
-              //             padding: const EdgeInsets.all(8.0),
-              //             child: Image(
-              //               image: AssetImage('assets/study.png'),
-              //               width: 20.0,
-              //               height: 20.0,
-              //             ),
-              //           ),
-              //           width: 40.0,
-              //           height: 40.0,
-              //           decoration: BoxDecoration(
-              //             borderRadius: BorderRadius.circular(
-              //               15.0,
-              //             ),
-              //             color: Colors.red[50],
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width: 10.0,
-              //         ),
-              //         Text(
-              //           'Studying room',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.w600,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //     activeColor: Colors.red,
-              //     //tileColor: Colors.blue,
-              //
-              //     selected: true,
-              //     onChanged: (val) {
-              //       setSelectedValue(val!);
-              //     }),
-              // RadioListTile<int>(
-              //     value: 5,
-              //     groupValue: selectValue,
-              //     title: Row(
-              //       children: [
-              //         Container(
-              //           child: Padding(
-              //             padding: const EdgeInsets.all(8.0),
-              //             child: Image(
-              //               image: AssetImage('assets/dining-room.png'),
-              //               width: 20.0,
-              //               height: 20.0,
-              //             ),
-              //           ),
-              //           width: 40.0,
-              //           height: 40.0,
-              //           decoration: BoxDecoration(
-              //             borderRadius: BorderRadius.circular(
-              //               15.0,
-              //             ),
-              //             color: Colors.orange[50],
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width: 10.0,
-              //         ),
-              //         Text(
-              //           'Dining room',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.w600,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //     activeColor: Colors.orangeAccent,
-              //     selected: true,
-              //     onChanged: (val) {
-              //       setSelectedValue(val!);
-              //     }),
-              // RadioListTile<int>(
-              //     value: 6,
-              //     groupValue: selectValue,
-              //     title: Row(
-              //       children: [
-              //         Container(
-              //           child: Padding(
-              //             padding: const EdgeInsets.all(8.0),
-              //             child: Image(
-              //               image: AssetImage('assets/garage.png'),
-              //               width: 20.0,
-              //               height: 20.0,
-              //             ),
-              //           ),
-              //           width: 40.0,
-              //           height: 40.0,
-              //           decoration: BoxDecoration(
-              //             borderRadius: BorderRadius.circular(
-              //               15.0,
-              //             ),
-              //             color: Colors.blueGrey[100],
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width: 10.0,
-              //         ),
-              //         Text(
-              //           'Garage',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.w600,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //     activeColor: Colors.blueGrey[600],
-              //     selected: true,
-              //     onChanged: (val) {
-              //       setSelectedValue(val!);
-              //     }),
-              // RadioListTile<int>(
-              //     value: 7,
-              //     groupValue: selectValue,
-              //     title: Row(
-              //       children: [
-              //         Container(
-              //           child: Padding(
-              //             padding: const EdgeInsets.all(8.0),
-              //             child: Image(
-              //               image: AssetImage('assets/kids-room.png'),
-              //               width: 20.0,
-              //               height: 20.0,
-              //             ),
-              //           ),
-              //           width: 40.0,
-              //           height: 40.0,
-              //           decoration: BoxDecoration(
-              //             borderRadius: BorderRadius.circular(
-              //               15.0,
-              //             ),
-              //             color: Colors.purple[50],
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width: 10.0,
-              //         ),
-              //         Text(
-              //           'Kids room',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.w600,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //     activeColor: Colors.purple,
-              //     selected: true,
-              //     onChanged: (val) {
-              //       setSelectedValue(val!);
-              //     }),
-
-              ListView.separated(
-                itemBuilder: (context, index) => buildRoomModel(),
-                separatorBuilder: (context, index) => Padding(
-                  padding: EdgeInsetsDirectional.only(start: 20.0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 1,
-                    color: Colors.grey[300],
-                  ),
-                ),
-                itemCount: 7,
-                shrinkWrap: true,
-                physics: BouncingScrollPhysics(),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.only(
-                  start: 13.0,
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            title: Center(
-                              child: Text(
-                                'add room',
-                                maxLines: 1,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.blueGrey,
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                            ),
-                            content: Column(
-                              children: [
-                                Container(
-                                  width: 160.0,
-                                  height: 220.0,
-                                  child: InkWell(
-                                    child: Stack(
-                                      alignment: Alignment.bottomRight,
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 65.0,
-                                          backgroundColor: Theme.of(context)
-                                              .scaffoldBackgroundColor,
-                                          child: CircleAvatar(
-                                            radius: 60.0,
-                                            backgroundImage: RoomImage == null
-                                                ? NetworkImage(
-                                                    'https://th.bing.com/th/id/OIP.ywlabKJiH0SRNFEmuiAb0QHaEo?pid=ImgDet&rs=1')
-                                                : FileImage(RoomImage!)
-                                                    as ImageProvider,
-                                          ),
-                                        ),
-                                        Icon(Icons.photo_camera),
-                                      ],
-                                    ),
-                                    onTap: () {
-                                      getRoomImage();
-                                      // cubit.getDocImage();
-                                    },
-                                  ),
-                                ),
-                                TextFormField(
-                                  cursorColor: Colors.blueGrey,
-                                  style: TextStyle(
-                                    color: Colors.blueGrey,
-                                  ),
-                                  controller: RoomNameController,
-                                  keyboardType: TextInputType.name,
-                                  onFieldSubmitted: (value) {
-                                    print(value);
-                                  },
-                                  onChanged: (value) {
-                                    print(value);
-                                  },
-                                  validator: (value) {
-                                    if (value!.isEmpty) {
-                                      return 'Room name must not be empty';
-                                    } else
-                                      return null;
-                                  },
-                                  decoration: InputDecoration(
-                                    labelText: 'Room name',
-                                    labelStyle: TextStyle(
-                                      color: Colors.blueGrey,
-                                    ),
-                                    prefixIcon: Icon(
-                                      Icons.person,
-                                      color: Colors.blueGrey,
-                                    ),
-                                    border: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          width: 3, color: Colors.blueGrey),
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          width: 3, color: Colors.blueGrey),
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            actions: [
-                              Center(
-                                child: TextButton(
-                                  onPressed: () {
-                                    setData();
-                                  },
-                                  child: Text(
-                                    'Add',
-                                    style: TextStyle(
-                                      fontSize: 10.0,
-                                      color: Colors.blueGrey,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+              RadioListTile<int>(
+                  value: 1,
+                  groupValue: selectValue,
+                  title: Row(
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image(
+                            image: AssetImage('assets/living-room.png'),
+                            width: 20.0,
+                            height: 20.0,
                           ),
-                        );
-                      },
-                      icon: Icon(
-                        Icons.add,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(
-                        top: 15.0,
-                      ),
-                      child: Text(
-                        'Add other',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
+                        ),
+                        width: 40.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
+                          color: Colors.indigo[50],
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        'Living room',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  activeColor: Colors.indigo[300],
+                  selected: true,
+                  onChanged: (val) {
+                    setSelectedValue(val!);
+                  }),
+              RadioListTile<int>(
+                  value: 2,
+                  groupValue: selectValue,
+                  title: Row(
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image(
+                            image: AssetImage('assets/bathroom.png'),
+                            width: 20.0,
+                            height: 20.0,
+                          ),
+                        ),
+                        width: 40.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
+                          color: Colors.green[100],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        'Bathroom',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  activeColor: Colors.green,
+                  selected: true,
+                  onChanged: (val) {
+                    setSelectedValue(val!);
+                  }),
+              RadioListTile<int>(
+                  value: 3,
+                  groupValue: selectValue,
+                  title: Row(
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image(
+                            image: AssetImage('assets/gaming.png'),
+                            width: 20.0,
+                            height: 20.0,
+                          ),
+                        ),
+                        width: 40.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
+                          color: Colors.blue[50],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        'Gaming room',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  activeColor: Colors.blue,
+                  selected: true,
+                  onChanged: (val) {
+                    setSelectedValue(val!);
+                  }),
+              RadioListTile<int>(
+                  value: 4,
+                  groupValue: selectValue,
+                  title: Row(
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image(
+                            image: AssetImage('assets/study.png'),
+                            width: 20.0,
+                            height: 20.0,
+                          ),
+                        ),
+                        width: 40.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
+                          color: Colors.red[50],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        'Studying room',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  activeColor: Colors.red,
+                  //tileColor: Colors.blue,
+
+                  selected: true,
+                  onChanged: (val) {
+                    setSelectedValue(val!);
+                  }),
+              RadioListTile<int>(
+                  value: 5,
+                  groupValue: selectValue,
+                  title: Row(
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image(
+                            image: AssetImage('assets/dining-room.png'),
+                            width: 20.0,
+                            height: 20.0,
+                          ),
+                        ),
+                        width: 40.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
+                          color: Colors.orange[50],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        'Dining room',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  activeColor: Colors.orangeAccent,
+                  selected: true,
+                  onChanged: (val) {
+                    setSelectedValue(val!);
+                  }),
+              RadioListTile<int>(
+                  value: 6,
+                  groupValue: selectValue,
+                  title: Row(
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image(
+                            image: AssetImage('assets/garage.png'),
+                            width: 20.0,
+                            height: 20.0,
+                          ),
+                        ),
+                        width: 40.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
+                          color: Colors.blueGrey[100],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        'Garage',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  activeColor: Colors.blueGrey[600],
+                  selected: true,
+                  onChanged: (val) {
+                    setSelectedValue(val!);
+                  }),
+              RadioListTile<int>(
+                  value: 7,
+                  groupValue: selectValue,
+                  title: Row(
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image(
+                            image: AssetImage('assets/kids-room.png'),
+                            width: 20.0,
+                            height: 20.0,
+                          ),
+                        ),
+                        width: 40.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            15.0,
+                          ),
+                          color: Colors.purple[50],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        'Kids room',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  activeColor: Colors.purple,
+                  selected: true,
+                  onChanged: (val) {
+                    setSelectedValue(val!);
+                  }),
+
+              // ListView.separated(
+              //   itemBuilder: (context, index) => buildRoomModel(),
+              //   separatorBuilder: (context, index) => Padding(
+              //     padding: EdgeInsetsDirectional.only(start: 20.0),
+              //     child: Container(
+              //       width: double.infinity,
+              //       height: 1,
+              //       color: Colors.grey[300],
+              //     ),
+              //   ),
+              //   itemCount: 7,
+              //   shrinkWrap: true,
+              //   physics: BouncingScrollPhysics(),
+              // ),
+              // Padding(
+              //   padding: const EdgeInsetsDirectional.only(
+              //     start: 13.0,
+              //   ),
+              //   child: Row(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       IconButton(
+              //         onPressed: () {
+              //           showDialog(
+              //             context: context,
+              //             builder: (context) => AlertDialog(
+              //               title: Center(
+              //                 child: Text(
+              //                   'add room',
+              //                   maxLines: 1,
+              //                   style: TextStyle(
+              //                     fontWeight: FontWeight.bold,
+              //                     color: Colors.blueGrey,
+              //                     fontSize: 20.0,
+              //                   ),
+              //                 ),
+              //               ),
+              //               content: Column(
+              //                 children: [
+              //                   Container(
+              //                     width: 160.0,
+              //                     height: 220.0,
+              //                     child: InkWell(
+              //                       child: Stack(
+              //                         alignment: Alignment.bottomRight,
+              //                         children: [
+              //                           CircleAvatar(
+              //                             radius: 65.0,
+              //                             backgroundColor: Theme.of(context)
+              //                                 .scaffoldBackgroundColor,
+              //                             child: CircleAvatar(
+              //                               radius: 60.0,
+              //                               backgroundImage: RoomImage == null
+              //                                   ? NetworkImage(
+              //                                       'https://th.bing.com/th/id/OIP.ywlabKJiH0SRNFEmuiAb0QHaEo?pid=ImgDet&rs=1')
+              //                                   : FileImage(RoomImage!)
+              //                                       as ImageProvider,
+              //                             ),
+              //                           ),
+              //                           Icon(Icons.photo_camera),
+              //                         ],
+              //                       ),
+              //                       onTap: () {
+              //                         getRoomImage();
+              //                         // cubit.getDocImage();
+              //                       },
+              //                     ),
+              //                   ),
+              //                   TextFormField(
+              //                     cursorColor: Colors.blueGrey,
+              //                     style: TextStyle(
+              //                       color: Colors.blueGrey,
+              //                     ),
+              //                     controller: RoomNameController,
+              //                     keyboardType: TextInputType.name,
+              //                     onFieldSubmitted: (value) {
+              //                       print(value);
+              //                     },
+              //                     onChanged: (value) {
+              //                       print(value);
+              //                     },
+              //                     validator: (value) {
+              //                       if (value!.isEmpty) {
+              //                         return 'Room name must not be empty';
+              //                       } else
+              //                         return null;
+              //                     },
+              //                     decoration: InputDecoration(
+              //                       labelText: 'Room name',
+              //                       labelStyle: TextStyle(
+              //                         color: Colors.blueGrey,
+              //                       ),
+              //                       prefixIcon: Icon(
+              //                         Icons.person,
+              //                         color: Colors.blueGrey,
+              //                       ),
+              //                       border: OutlineInputBorder(
+              //                         borderSide: const BorderSide(
+              //                             width: 3, color: Colors.blueGrey),
+              //                         borderRadius: BorderRadius.circular(15),
+              //                       ),
+              //                       focusedBorder: OutlineInputBorder(
+              //                         borderSide: const BorderSide(
+              //                             width: 3, color: Colors.blueGrey),
+              //                         borderRadius: BorderRadius.circular(15),
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ],
+              //               ),
+              //               actions: [
+              //                 Center(
+              //                   child: TextButton(
+              //                     onPressed: () {
+              //                       setData();
+              //                     },
+              //                     child: Text(
+              //                       'Add',
+              //                       style: TextStyle(
+              //                         fontSize: 10.0,
+              //                         color: Colors.blueGrey,
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           );
+              //         },
+              //         icon: Icon(
+              //           Icons.add,
+              //         ),
+              //       ),
+              //       Padding(
+              //         padding: const EdgeInsetsDirectional.only(
+              //           top: 15.0,
+              //         ),
+              //         child: Text(
+              //           'Add other',
+              //           style: TextStyle(
+              //             fontSize: 15.0,
+              //             fontWeight: FontWeight.w600,
+              //             color: Colors.black,
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
               SizedBox(
                 height: 10.0,
               ),

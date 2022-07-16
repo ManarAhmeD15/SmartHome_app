@@ -1,4 +1,6 @@
 import 'package:beginning_app/modules/all%20rooms/bedroom/add_new_room.dart';
+import 'package:beginning_app/modules/all%20rooms/bedroom/bedroom.dart';
+import 'package:beginning_app/modules/all%20rooms/kitchen/kitchen.dart';
 import 'package:beginning_app/modules/home/home_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -86,25 +88,42 @@ class AllRooms extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Container(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Image(
-                                  image: AssetImage('assets/bedroom.png'),
-                                  width: 40.0,
-                                  height: 40.0,
-                                ),
+                          Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  Container(
+                                    width: 60.0,
+                                    height: 60.0,
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => bedroom()),
+                                        );
+                                      },
+                                      child: Stack(
+                                        children: [
+                                          Image(
+                                            image: AssetImage(
+                                                'assets/bedroom.png'),
+                                            width: 40.0,
+                                            height: 40.0,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                        10.0,
+                                      ),
+                                      color: Colors.red[100],
+                                    ),
+                                  ),
+                                ],
                               ),
-                              width: double.infinity,
-                              height: 60.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                  10.0,
-                                ),
-                                color: Colors.red[100],
-                              ),
-                            ),
+                            ],
                           ),
                           SizedBox(
                             width: 10.0,
@@ -286,25 +305,43 @@ class AllRooms extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Container(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Image(
-                                  image: AssetImage('assets/kitchen.png'),
-                                  width: 40.0,
-                                  height: 40.0,
-                                ),
+                          Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  Container(
+                                    width: 60.0,
+                                    height: 60.0,
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  KitchenScreen()),
+                                        );
+                                      },
+                                      child: Stack(
+                                        children: [
+                                          Image(
+                                            image: AssetImage(
+                                                'assets/kitchen.png'),
+                                            width: 40.0,
+                                            height: 40.0,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                        10.0,
+                                      ),
+                                      color: Colors.orange[100],
+                                    ),
+                                  ),
+                                ],
                               ),
-                              width: double.infinity,
-                              height: 60.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                  10.0,
-                                ),
-                                color: Colors.orange[100],
-                              ),
-                            ),
+                            ],
                           ),
                           SizedBox(
                             width: 10.0,
@@ -513,4 +550,11 @@ class AllRooms extends StatelessWidget {
        }
    )  */
 
+}
+
+hexColor(String colorhexcode) {
+  String colornew = '0xff' + colorhexcode;
+  colornew = colornew.replaceAll('#', '');
+  int colorint = int.parse(colornew);
+  return colorint;
 }
