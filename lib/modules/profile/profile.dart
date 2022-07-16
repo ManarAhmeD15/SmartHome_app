@@ -1,7 +1,6 @@
+import 'package:beginning_app/modules/home/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../all rooms/bedroom/all_rooms_screen.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -32,7 +31,7 @@ class Profile extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => AllRooms()),
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
                         );
                       },
                       icon: Icon(
