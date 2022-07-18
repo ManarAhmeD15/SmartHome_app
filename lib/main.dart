@@ -1,4 +1,4 @@
-import 'package:beginning_app/modules/home/home_screen.dart';
+import 'package:beginning_app/modules/temprature/temp.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           //title: title,
           //theme: ThemeData(primarySwatch: Colors.deepOrange),
-          home: HomeScreen(),
+          home: Temperature(),
         ),
       );
 }

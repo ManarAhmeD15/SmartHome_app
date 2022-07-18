@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,18 +23,15 @@ class _TemperatureState extends State<Temperature> {
   @override
   late final FirebaseApp app;
   final referenceData = FirebaseDatabase.instance.reference();
-  StreamController streamController = StreamController();
-
-  get snapshot => null;
+  StreamController<dynamic> streamController = StreamController();
 
   Future showtemp() async {
     final result = await referenceData
-        .child('Temperature')
-        .child('Write')
+        .child('temperature')
         .once()
-        .then((DataSnapshot) {
-      streamController.add(snapshot); //.add(snapshot.value)
-      //.add(snapshot.snapshot)
+        .then((DatabaseEvent databaseEvent) {
+      streamController.add(databaseEvent.snapshot.value);
+      // .add(snapshot.value);
     });
     return result;
   }
@@ -153,36 +151,36 @@ class _TemperatureState extends State<Temperature> {
                               builder: (BuildContext context,
                                   AsyncSnapshot snapshot) {
                                 if (snapshot.hasData) {
-                                  dynamic t_temp = 23;
+                                  double tTemp;
                                   double t = 0.1;
-                                  t_temp = snapshot.data;
-
-                                  if (t_temp <= 10.01) {
+                                  tTemp = double.parse('${snapshot.data}');
+                                  if (tTemp <= 10.01) {
                                     t = 0.1;
-                                  } else if (t_temp <= 25.01) {
+                                  } else if (tTemp <= 25.01 && tTemp > 10.01) {
                                     t = 0.2;
-                                  } else if (t_temp <= 27.01) {
+                                  } else if (tTemp <= 27.01 && tTemp > 25.01) {
                                     t = 0.2;
-                                  } else if (t_temp <= 35) {
+                                  } else if (tTemp <= 35 && tTemp > 27.01) {
                                     t = 0.3;
-                                  } else if (t_temp <= 45) {
+                                  } else if (tTemp <= 45 && tTemp > 35) {
                                     t = 0.4;
-                                  } else if (t_temp <= 55) {
+                                  } else if (tTemp <= 55 && tTemp > 45) {
                                     t = 0.5;
-                                  } else if (t_temp <= 66) {
-                                    t = 0.6;
-                                  } else if (t_temp <= 77) {
-                                    t = 0.7;
-                                  } else if (t_temp <= 88.01) {
-                                    t = 0.8;
-                                  } else if (t_temp <= 90.01) {
-                                    t = 0.9;
-                                  } else if (t_temp <= 110) {
-                                    t = 0.99;
-                                  } else if (t_temp >= 110) {
-                                    t = 0.99;
-                                    t_temp = 110;
                                   }
+                                  // else if (tTemp <= 66) {
+                                  //   t = 0.6;
+                                  // } else if (tTemp <= 77) {
+                                  //   t = 0.7;
+                                  // } else if (tTemp <= 88.01) {
+                                  //   t = 0.8;
+                                  // } else if (tTemp <= 90.01) {
+                                  //   t = 0.9;
+                                  // } else if (tTemp <= 110) {
+                                  //   t = 0.99;
+                                  // } else if (tTemp >= 110) {
+                                  //   t = 0.99;
+                                  //   tTemp = 110;
+                                  // }
                                   return Column(children: [
                                     Padding(
                                       padding: const EdgeInsets.only(
@@ -199,15 +197,15 @@ class _TemperatureState extends State<Temperature> {
                                         progressBarColor: Colors.red,
                                         backgroundColor: Colors.blueGrey,
                                         width: 10, //width of the Progress bar
-                                        mask: MaskFilter.blur(
-                                            BlurStyle.solid, 3), //شادو للملئ
+                                        mask:
+                                            MaskFilter.blur(BlurStyle.solid, 3),
                                         radius: 250, //حجم الدائرة
                                         animateFromLastPercentage: true,
                                         circleWidth: 8.0,
                                         autoLive: true,
                                         animation: true,
                                         percentage: t, //كام في المية  %%%
-                                        trailing: Text('${t_temp} C',
+                                        trailing: Text('$tTemp C',
                                             style: TextStyle(
                                                 color:
                                                     Color(hexColor("#264653")),
@@ -267,88 +265,82 @@ class _TemperatureState extends State<Temperature> {
                         ],
                       ),
                     ),
-                    Positioned(
-                      bottom: 50.0,
-                      right: 80.0,
-                      child: Stack(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 140.0,
-                              vertical: 10.0,
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.amber,
-                                borderRadius: BorderRadius.circular(
-                                  25.0,
-                                ),
-                              ),
-                              width: 120.0,
-                              height: 40.0,
-                              child: MaterialButton(
-                                onPressed: () async {
-                                  await referenceData
-                                      .child('Temperature')
-                                      .child('Write')
-                                      .set({
-                                    'Temp': '70',
-                                  });
-                                },
-                                child: Text(
-                                  'Write',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 50.0,
-                      left: 80.0,
-                      child: Stack(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 140.0,
-                              vertical: 10.0,
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.amber,
-                                borderRadius: BorderRadius.circular(
-                                  25.0,
-                                ),
-                              ),
-                              width: 120.0,
-                              height: 40.0,
-                              child: MaterialButton(
-                                onPressed: () async {
-                                  await referenceData
-                                      .child('Temperature')
-                                      .child('Read')
-                                      .set({
-                                    'Temp': '100',
-                                  });
-                                },
-                                child: Text(
-                                  'Read',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+
+                    // Positioned(
+                    //   bottom: 50.0,
+                    //   right: 80.0,
+                    //   child: Stack(
+                    //     children: [
+                    //       Padding(
+                    //         padding: const EdgeInsets.symmetric(
+                    //           horizontal: 140.0,
+                    //           vertical: 10.0,
+                    //         ),
+                    //         child: Container(
+                    //           decoration: BoxDecoration(
+                    //             color: Colors.amber,
+                    //             borderRadius: BorderRadius.circular(
+                    //               25.0,
+                    //             ),
+                    //           ),
+                    //           width: 120.0,
+                    //           height: 40.0,
+                    //           child: MaterialButton(
+                    //             onPressed: () async {
+                    //               await referenceData
+                    //                   .child('Temperature')
+                    //                   .child('Write')
+                    //                   .set({
+                    //                 'Temp': '70',
+                    //               });
+                    //             },
+                    //             child: Text(
+                    //               'Write',
+                    //               style: TextStyle(
+                    //                 fontWeight: FontWeight.w600,
+                    //                 color: Colors.white,
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // Positioned(
+                    //   bottom: 50.0,
+                    //   left: 80.0,
+                    //   child: Stack(
+                    //     children: [
+                    //       Padding(
+                    //         padding: const EdgeInsets.symmetric(
+                    //           horizontal: 140.0,
+                    //           vertical: 10.0,
+                    //         ),
+                    //         child: Container(
+                    //           decoration: BoxDecoration(
+                    //             color: Colors.amber,
+                    //             borderRadius: BorderRadius.circular(
+                    //               25.0,
+                    //             ),
+                    //           ),
+                    //           width: 120.0,
+                    //           height: 40.0,
+                    //           child: MaterialButton(
+                    //             onPressed: ()  {},
+                    //             child: Text(
+                    //               'Read',
+                    //               style: TextStyle(
+                    //                 fontWeight: FontWeight.w600,
+                    //                 color: Colors.white,
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                   ],
                 ),
               ],
@@ -356,6 +348,7 @@ class _TemperatureState extends State<Temperature> {
           ],
         ),
       ),
+
       // Stack(
       //   children: [
       //     Image.asset(

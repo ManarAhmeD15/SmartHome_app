@@ -1,5 +1,6 @@
 import 'package:beginning_app/modules/about/programmer_screen.dart';
 import 'package:beginning_app/modules/all%20rooms/bedroom/all_rooms_screen.dart';
+import 'package:beginning_app/modules/home/home_screen.dart';
 import 'package:beginning_app/modules/profile/profile.dart';
 import 'package:beginning_app/modules/remote_control/remote_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -90,7 +91,7 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     switch (index) {
       case 0:
-        //navigateTo(HomeScreen());
+        navigateTo(HomeScreen());
         break;
       case 1:
         navigateTo(Profile());

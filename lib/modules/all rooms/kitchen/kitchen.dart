@@ -24,7 +24,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
   bool switch5 = false;
   bool switch6 = false;
   bool switch7 = false;
-  bool switch8 = false;
+  bool switch11 = false;
   bool switch9 = false;
   bool switch10 = false;
   final refrenceData = FirebaseDatabase.instance;
@@ -60,13 +60,14 @@ class _KitchenScreenState extends State<KitchenScreen> {
 
   onChangedFunction6(bool newValue6) {
     setState(() {
-      switch8 = newValue6;
-      if (switch8 == true) {
+      switch11 = newValue6;
+      if (switch11 == true) {
         print('On');
       } else
         print('Off');
     });
   }
+
   onChangedFunction7(bool newValue6) {
     setState(() {
       switch9 = newValue6;
@@ -76,6 +77,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
         print('Off');
     });
   }
+
   onChangedFunction8(bool newValue6) {
     setState(() {
       switch10 = newValue6;
@@ -693,7 +695,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
-                                                BorderRadius.circular(
+                                                    BorderRadius.circular(
                                                   15.0,
                                                 ),
                                               ),
@@ -709,8 +711,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                     Container(
                                                       child: Padding(
                                                         padding:
-                                                        const EdgeInsets
-                                                            .all(3.0),
+                                                            const EdgeInsets
+                                                                .all(3.0),
                                                         child: Image(
                                                           image: AssetImage(
                                                               'assets/blender.png'),
@@ -722,10 +724,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                       height: 60.0,
                                                       decoration: BoxDecoration(
                                                         borderRadius:
-                                                        BorderRadius
-                                                            .circular(10.0),
-                                                        color:
-                                                        Colors.grey[300],
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                        color: Colors.grey[300],
                                                       ),
                                                     ),
                                                     SizedBox(
@@ -735,7 +736,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                       'Blender',
                                                       style: TextStyle(
                                                         fontWeight:
-                                                        FontWeight.bold,
+                                                            FontWeight.bold,
                                                         fontSize: 15.0,
                                                         color: Color(hexColor(
                                                             "#264653")),
@@ -747,7 +748,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           'Off',
                                                           style: TextStyle(
                                                             fontWeight:
-                                                            FontWeight.bold,
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
                                                             color: Color(
                                                                 hexColor(
@@ -755,7 +756,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           ),
                                                         ),
                                                         Padding(
-                                                          padding: const EdgeInsets.all(4.0),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(4.0),
                                                           child: FlutterSwitch(
                                                             height: 18.0,
                                                             width: 40.0,
@@ -763,9 +766,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                             padding: 1.0,
                                                             value: switch5,
                                                             activeColor:
-                                                            Colors.blueGrey,
+                                                                Colors.blueGrey,
                                                             inactiveColor:
-                                                            Colors.grey,
+                                                                Colors.grey,
                                                             onToggle:
                                                                 (val) async {
                                                               setState(() {
@@ -773,13 +776,13 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                 if (val) {
                                                                   ref
                                                                       .child(
-                                                                      'Switch5')
+                                                                          'Switch5')
                                                                       .set('1')
                                                                       .asStream();
                                                                 } else {
                                                                   ref
                                                                       .child(
-                                                                      'Switch5')
+                                                                          'Switch5')
                                                                       .set('0')
                                                                       .asStream();
                                                                 }
@@ -791,7 +794,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           'On',
                                                           style: TextStyle(
                                                             fontWeight:
-                                                            FontWeight.bold,
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
                                                             color: Color(
                                                                 hexColor(
@@ -820,7 +823,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
-                                                BorderRadius.circular(
+                                                    BorderRadius.circular(
                                                   15.0,
                                                 ),
                                               ),
@@ -836,8 +839,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                     Container(
                                                       child: Padding(
                                                         padding:
-                                                        const EdgeInsets
-                                                            .all(4.0),
+                                                            const EdgeInsets
+                                                                .all(4.0),
                                                         child: Image(
                                                           image: AssetImage(
                                                               'assets/kettle.png'),
@@ -849,10 +852,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                       height: 60.0,
                                                       decoration: BoxDecoration(
                                                         borderRadius:
-                                                        BorderRadius
-                                                            .circular(10.0),
-                                                        color:
-                                                        Colors.blue[100],
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                        color: Colors.blue[100],
                                                       ),
                                                     ),
                                                     SizedBox(
@@ -862,7 +864,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                       'Kettle',
                                                       style: TextStyle(
                                                         fontWeight:
-                                                        FontWeight.bold,
+                                                            FontWeight.bold,
                                                         fontSize: 15.0,
                                                         color: Color(hexColor(
                                                             "#264653")),
@@ -874,7 +876,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           'Off',
                                                           style: TextStyle(
                                                             fontWeight:
-                                                            FontWeight.bold,
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
                                                             color: Color(
                                                                 hexColor(
@@ -882,7 +884,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           ),
                                                         ),
                                                         Padding(
-                                                          padding: const EdgeInsets.all(4.0),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(4.0),
                                                           child: FlutterSwitch(
                                                             height: 18.0,
                                                             width: 40.0,
@@ -890,9 +894,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                             padding: 1.0,
                                                             value: switch6,
                                                             activeColor:
-                                                            Colors.blue,
+                                                                Colors.blue,
                                                             inactiveColor:
-                                                            Colors.grey,
+                                                                Colors.grey,
                                                             onToggle:
                                                                 (val) async {
                                                               setState(() {
@@ -900,13 +904,13 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                                 if (val) {
                                                                   ref
                                                                       .child(
-                                                                      'Switch6')
+                                                                          'Switch6')
                                                                       .set('1')
                                                                       .asStream();
                                                                 } else {
                                                                   ref
                                                                       .child(
-                                                                      'Switch6')
+                                                                          'Switch6')
                                                                       .set('0')
                                                                       .asStream();
                                                                 }
@@ -918,7 +922,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           'On',
                                                           style: TextStyle(
                                                             fontWeight:
-                                                            FontWeight.bold,
+                                                                FontWeight.bold,
                                                             fontSize: 10.0,
                                                             color: Color(
                                                                 hexColor(
@@ -1010,15 +1014,17 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           ),
                                                         ),
                                                         Padding(
-                                                          padding: const EdgeInsets.all(4.0),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(4.0),
                                                           child: FlutterSwitch(
                                                             height: 18.0,
                                                             width: 40.0,
                                                             borderRadius: 20.0,
                                                             padding: 1.0,
                                                             value: switch7,
-                                                            activeColor:
-                                                                Colors.purpleAccent,
+                                                            activeColor: Colors
+                                                                .purpleAccent,
                                                             inactiveColor:
                                                                 Colors.grey,
                                                             onToggle:
@@ -1137,31 +1143,33 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           ),
                                                         ),
                                                         Padding(
-                                                          padding: const EdgeInsets.all(4.0),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(4.0),
                                                           child: FlutterSwitch(
                                                             height: 18.0,
                                                             width: 40.0,
                                                             borderRadius: 20.0,
                                                             padding: 1.0,
-                                                            value: switch8,
-                                                            activeColor:
-                                                                Colors.orangeAccent,
+                                                            value: switch11,
+                                                            activeColor: Colors
+                                                                .orangeAccent,
                                                             inactiveColor:
                                                                 Colors.grey,
                                                             onToggle:
                                                                 (val) async {
                                                               setState(() {
-                                                                switch8 = val;
+                                                                switch11 = val;
                                                                 if (val) {
                                                                   ref
                                                                       .child(
-                                                                          'Switch8')
+                                                                          'Switch11')
                                                                       .set('1')
                                                                       .asStream();
                                                                 } else {
                                                                   ref
                                                                       .child(
-                                                                          'Switch8')
+                                                                          'Switch11')
                                                                       .set('0')
                                                                       .asStream();
                                                                 }
@@ -1268,15 +1276,17 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           ),
                                                         ),
                                                         Padding(
-                                                          padding: const EdgeInsets.all(4.0),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(4.0),
                                                           child: FlutterSwitch(
                                                             height: 18.0,
                                                             width: 40.0,
                                                             borderRadius: 20.0,
                                                             padding: 1.0,
                                                             value: switch9,
-                                                            activeColor:
-                                                                Colors.redAccent,
+                                                            activeColor: Colors
+                                                                .redAccent,
                                                             inactiveColor:
                                                                 Colors.grey,
                                                             onToggle:
@@ -1395,7 +1405,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                                           ),
                                                         ),
                                                         Padding(
-                                                          padding: const EdgeInsets.all(4.0),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(4.0),
                                                           child: FlutterSwitch(
                                                             height: 18.0,
                                                             width: 40.0,
