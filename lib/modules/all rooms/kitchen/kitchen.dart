@@ -1,5 +1,8 @@
 import 'package:beginning_app/modules/all%20rooms/bedroom/all_rooms_screen.dart';
 import 'package:beginning_app/modules/all%20rooms/kitchen/add_new_device_kitchen.dart';
+import 'package:beginning_app/modules/all%20rooms/kitchen/fire.dart';
+import 'package:beginning_app/modules/all%20rooms/kitchen/smoke.dart';
+import 'package:beginning_app/modules/all%20rooms/kitchen/water.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -221,6 +224,13 @@ class _KitchenScreenState extends State<KitchenScreen> {
                             height: 50.0,
                             child: TextButton(
                               onPressed: () {
+
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Water()),
+                                );
+                                /*
                                 showDialog(
                                   context: context,
                                   builder: (context) => AlertDialog(
@@ -317,7 +327,11 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                     //   ),
                                     // ],
                                   ),
+
+
                                 );
+
+                                 */
                               },
                               child: Stack(
                                 children: [
@@ -360,6 +374,15 @@ class _KitchenScreenState extends State<KitchenScreen> {
                             height: 50.0,
                             child: TextButton(
                               onPressed: () {
+
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Smoke()),
+                                );
+
+                                /*
+
                                 showDialog(
                                   context: context,
                                   builder: (context) => AlertDialog(
@@ -445,6 +468,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                         ),
                                       ),
                                     ),
+
+
+
                                     // actions: [
                                     //   Center(
                                     //     child: FloatingActionButton(
@@ -459,6 +485,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                     // ],
                                   ),
                                 );
+
+
+                                */
                               },
                               child: Stack(
                                 children: [
@@ -501,6 +530,13 @@ class _KitchenScreenState extends State<KitchenScreen> {
                             height: 50.0,
                             child: TextButton(
                               onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Fire()),
+                                );
+
+                                /*
                                 showDialog(
                                   context: context,
                                   builder: (context) => AlertDialog(
@@ -600,6 +636,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                                     // ],
                                   ),
                                 );
+
+
+                                 */
                               },
                               child: Stack(
                                 children: [

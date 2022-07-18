@@ -10,16 +10,17 @@ import 'package:getwidget/size/gf_size.dart';
 import 'package:getwidget/types/gf_loader_type.dart';
 import 'package:getwidget/types/gf_progress_type.dart';
 
-import '../all rooms/bedroom/bedroom.dart';
+import 'kitchen.dart';
 
-class Temperature extends StatefulWidget {
-  const Temperature({Key? key}) : super(key: key);
+
+class Smoke extends StatefulWidget {
+  const Smoke({Key? key}) : super(key: key);
 
   @override
-  State<Temperature> createState() => _TemperatureState();
+  State<Smoke> createState() => _SmokeState();
 }
 
-class _TemperatureState extends State<Temperature> {
+class _SmokeState extends State<Smoke> {
   @override
   late final FirebaseApp app;
   final referenceData = FirebaseDatabase.instance.reference();
@@ -27,7 +28,7 @@ class _TemperatureState extends State<Temperature> {
 
   Future showtemp() async {
     final result = await referenceData
-        .child('temperature')
+        .child('Gas')
         .once()
         .then((DatabaseEvent databaseEvent) {
       streamController.add(databaseEvent.snapshot.value);
@@ -71,7 +72,7 @@ class _TemperatureState extends State<Temperature> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => bedroom()),
+                          MaterialPageRoute(builder: (context) => KitchenScreen()),
                         );
                       },
                       icon: Icon(
@@ -82,7 +83,7 @@ class _TemperatureState extends State<Temperature> {
                     ),
                   ),
                   Text(
-                    'Temperature',
+                    'Smoke detector',
                     style: TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
@@ -118,7 +119,7 @@ class _TemperatureState extends State<Temperature> {
                       child: Stack(
                         children: [
                           Text(
-                            'Temperature value',
+                            'Smoke detector value',
                             maxLines: 1,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -130,12 +131,12 @@ class _TemperatureState extends State<Temperature> {
                       ),
                     ),
                     Positioned(
-                      top: 310.0,
-                      left: 170.0,
+                      top: 290.0,
+                      left: 160.0,
                       child: Stack(
                         children: [
                           Image(
-                            image: AssetImage('assets/hot.png'),
+                            image: AssetImage('assets/smoke.png'),
                             width: 50.0,
                             height: 50.0,
                           ),
@@ -143,7 +144,7 @@ class _TemperatureState extends State<Temperature> {
                       ),
                     ),
                     Positioned(
-                      top: 200.0,
+                      top: 220.0,
                       child: Stack(
                         children: [
                           StreamBuilder(
@@ -187,28 +188,28 @@ class _TemperatureState extends State<Temperature> {
                                           left: 0, top: 0),
                                       child: GFProgressBar(
                                         leading: Text(
-                                          'Temp',
+                                          'Smoke',
                                           style: TextStyle(
                                             fontSize: 25,
                                             color: Color(hexColor("#264653")),
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        progressBarColor: Colors.red,
+                                        progressBarColor: Colors.orangeAccent,
                                         backgroundColor: Colors.blueGrey,
-                                        width: 12, //width of the Progress bar
+                                        width: 10, //width of the Progress bar
                                         mask:
                                         MaskFilter.blur(BlurStyle.solid, 3),
                                         radius: 250, //حجم الدائرة
                                         animateFromLastPercentage: true,
-                                        circleWidth: 8.0,
+                                        circleWidth: 12.0,
                                         autoLive: true,
                                         animation: true,
                                         percentage: t, //كام في المية  %%%
                                         trailing: Text('$tTemp C',
                                             style: TextStyle(
                                                 color:
-                                                Color(hexColor("#264653")),
+                                                Colors.red,
                                                 fontSize: 25,
                                                 fontWeight: FontWeight.bold)),
                                         type: GFProgressType.circular,
