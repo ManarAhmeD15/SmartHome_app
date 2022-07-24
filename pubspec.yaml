@@ -66,6 +66,14 @@ dependencies:
 
   flutter_switch: ^0.3.2
   getwidget: ^3.0.1
+  flutter_launcher_icons: ^0.9.3
+
+
+
+
+
+
+
 
 
 
@@ -144,6 +152,7 @@ flutter:
    - assets/arrow-down.png
    - assets/blender.png
    - assets/kettle.png
+   - assets/app-icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

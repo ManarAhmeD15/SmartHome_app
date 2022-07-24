@@ -283,41 +283,25 @@ class _SignupScreenState extends State<SignupScreen> {
 
                                     var result = await FirebaseAuth.instance
                                         .createUserWithEmailAndPassword(
-                                        email: emailController.text,
-                                        password: passwordController.text);
-                                    if(result!=null){
+                                            email: emailController.text,
+                                            password: passwordController.text);
+                                    if (result != null) {
                                       setData();
                                     }
-                                    Fluttertoast.showToast(
-                                        msg: "Signed up successfully!",
-                                        toastLength: Toast.LENGTH_SHORT,
-                                        gravity: ToastGravity.BOTTOM,
-                                        timeInSecForIosWeb: 1,
-                                        backgroundColor: Color(hexColor("#264653")),
-                                        textColor: Colors.white,
-                                        fontSize: 16.0);
+                                    showToast(
+                                        text: 'Signed up successfully',
+                                        state: ToastStates.SUCCESS);
 
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => HomeScreen()),
-
                                     );
-
+                                  } else {
+                                    showToast(
+                                        text: 'Please, type your info',
+                                        state: ToastStates.ERROR);
                                   }
-                                  else
-                                  {
-                                    Fluttertoast.showToast(
-                                        msg: "Signed up unsuccessfull!",
-                                        toastLength: Toast.LENGTH_SHORT,
-                                        gravity: ToastGravity.BOTTOM,
-                                        timeInSecForIosWeb: 1,
-                                        backgroundColor: Colors.blueGrey,
-                                        textColor: Colors.white,
-                                        fontSize: 16.0);
-                                  }
-
-
                                 },
                                 child: Text(
                                   'Sign Up',
@@ -393,4 +377,32 @@ class _SignupScreenState extends State<SignupScreen> {
         .then((value) {})
         .catchError((error) {});
   }
+}
+
+void showToast({required String text, required ToastStates state}) =>
+    Fluttertoast.showToast(
+        msg: text,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: chooseToastColor(state),
+        textColor: Colors.white,
+        fontSize: 16.0);
+
+enum ToastStates { SUCCESS, ERROR, WARNING }
+
+Color chooseToastColor(ToastStates state) {
+  Color color;
+  switch (state) {
+    case ToastStates.SUCCESS:
+      color = Colors.green;
+      break;
+    case ToastStates.ERROR:
+      color = Colors.red;
+      break;
+    case ToastStates.WARNING:
+      color = Colors.amber;
+      break;
+  }
+  return color;
 }

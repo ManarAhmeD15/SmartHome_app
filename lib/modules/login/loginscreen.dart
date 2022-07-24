@@ -1,13 +1,13 @@
-import 'package:beginning_app/models/signup_user_model.dart';
-import 'package:beginning_app/modules/password/forgot_password.dart';
-import 'package:beginning_app/modules/signup/signupscreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import '../../models/signup_user_model.dart';
 import '../home/home_screen.dart';
+import '../password/forgot_password.dart';
+import '../signup/signupscreen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -268,20 +268,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                         .signInWithEmailAndPassword(
                                             email: emailController.text,
                                             password: passwordController.text);
-                                    if (result != null) {
-                                      GetData();
-                                    }
+                                    if (result != null) {}
                                     print(usernameController.text);
                                     print(passwordController.text);
                                   }
-                                  Fluttertoast.showToast(
-                                      msg: "Logged in successfully!",
-                                      toastLength: Toast.LENGTH_SHORT,
-                                      gravity: ToastGravity.BOTTOM,
-                                      timeInSecForIosWeb: 1,
-                                      backgroundColor: Colors.blueGrey,
-                                      textColor: Colors.white,
-                                      fontSize: 16.0);
+                                  showToast(
+                                      text: 'Success',
+                                      state: ToastStates.SUCCESS);
 
                                   Navigator.push(
                                     context,
@@ -359,11 +352,11 @@ class _LoginScreenState extends State<LoginScreen> {
     FirebaseFirestore.instance
         .collection('users')
         .doc(uId)
-        .set(model.toMap())
+        .set({'success': 'success'})
         .then((value) {})
         .catchError((error) {
-      print(error.toString());
-    });
+          print(error.toString());
+        });
   }
 
   void userLogin({
@@ -384,4 +377,32 @@ class _LoginScreenState extends State<LoginScreen> {
       print(error.toString());
     });
   }
+}
+
+void showToast({required String text, required ToastStates state}) =>
+    Fluttertoast.showToast(
+        msg: text,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: chooseToastColor(state),
+        textColor: Colors.white,
+        fontSize: 16.0);
+
+enum ToastStates { SUCCESS, ERROR, WARNING }
+
+Color chooseToastColor(ToastStates state) {
+  Color color;
+  switch (state) {
+    case ToastStates.SUCCESS:
+      color = Colors.green;
+      break;
+    case ToastStates.ERROR:
+      color = Colors.red;
+      break;
+    case ToastStates.WARNING:
+      color = Colors.amber;
+      break;
+  }
+  return color;
 }
