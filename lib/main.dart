@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'modules/navigation/navigation_provider.dart';
-import 'modules/splash/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
 
           //title: title,
           //theme: ThemeData(primarySwatch: Colors.deepOrange),
-          home: SplashScreen(),
+          home: SignupScreen(),
         ),
       );
 }

@@ -48,9 +48,6 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.black54,
-      // ),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -280,7 +277,6 @@ class _SignupScreenState extends State<SignupScreen> {
                                     setState(() {
                                       isClicked = true;
                                     });
-
                                     var result = await FirebaseAuth.instance
                                         .createUserWithEmailAndPassword(
                                             email: emailController.text,
@@ -291,7 +287,6 @@ class _SignupScreenState extends State<SignupScreen> {
                                     showToast(
                                         text: 'Signed up successfully',
                                         state: ToastStates.SUCCESS);
-
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(

@@ -66,6 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     //final user=UserPreferences.getUser();
+    GetData();
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -121,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
-                                controller: usernameController,
+                                controller: emailController,
                                 keyboardType: TextInputType.name,
                                 onFieldSubmitted: (value) {
                                   print(value);
@@ -131,17 +132,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                 },
                                 validator: (value) {
                                   if (value!.isEmpty) {
-                                    return 'user name must not be empty';
+                                    return 'email must not be empty';
                                   } else
                                     return null;
                                 },
                                 decoration: InputDecoration(
-                                  labelText: 'User name',
+                                  labelText: 'Email',
                                   labelStyle: TextStyle(
                                     color: Colors.white,
                                   ),
                                   prefixIcon: Icon(
-                                    Icons.person,
+                                    Icons.email,
                                     color: Colors.white,
                                   ),
                                   border: OutlineInputBorder(
@@ -263,24 +264,26 @@ class _LoginScreenState extends State<LoginScreen> {
                                     setState(() {
                                       isClicked = true;
                                     });
-
                                     var result = await FirebaseAuth.instance
                                         .signInWithEmailAndPassword(
                                             email: emailController.text,
                                             password: passwordController.text);
-                                    if (result != null) {}
-                                    print(usernameController.text);
-                                    print(passwordController.text);
+                                    if (result != null) {
+                                      GetData();
+                                    }
+                                    showToast(
+                                        text: 'Logged in Successfully',
+                                        state: ToastStates.SUCCESS);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeScreen()),
+                                    );
+                                  } else {
+                                    showToast(
+                                        text: 'Please, type your info',
+                                        state: ToastStates.ERROR);
                                   }
-                                  showToast(
-                                      text: 'Success',
-                                      state: ToastStates.SUCCESS);
-
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => HomeScreen()),
-                                  );
                                 },
                                 child: Text(
                                   'Login',
