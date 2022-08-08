@@ -1,4 +1,4 @@
-import 'package:beginning_app/modules/signup/signupscreen.dart';
+import 'package:beginning_app/modules/all%20rooms/kitchen/kitchen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 
           //title: title,
           //theme: ThemeData(primarySwatch: Colors.deepOrange),
-          home: SignupScreen(),
+          home: KitchenScreen(),
         ),
       );
 }

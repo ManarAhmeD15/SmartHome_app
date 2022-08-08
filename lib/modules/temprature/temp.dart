@@ -130,7 +130,7 @@ class _TemperatureState extends State<Temperature> {
                       ),
                     ),
                     Positioned(
-                      top: 310.0,
+                      top: 280.0,
                       left: 170.0,
                       child: Stack(
                         children: [
@@ -198,23 +198,22 @@ class _TemperatureState extends State<Temperature> {
                                         backgroundColor: Colors.blueGrey,
                                         width: 12, //width of the Progress bar
                                         mask:
-                                        MaskFilter.blur(BlurStyle.solid, 3),
+                                            MaskFilter.blur(BlurStyle.solid, 3),
                                         radius: 250, //حجم الدائرة
                                         animateFromLastPercentage: true,
-                                        circleWidth: 8.0,
+                                        circleWidth: 12.0,
                                         autoLive: true,
                                         animation: true,
                                         percentage: t, //كام في المية  %%%
                                         trailing: Text('$tTemp C',
                                             style: TextStyle(
-                                                color:
-                                                Color(hexColor("#264653")),
+                                                color: Colors.red,
                                                 fontSize: 25,
                                                 fontWeight: FontWeight.bold)),
                                         type: GFProgressType.circular,
                                         circleStartAngle: 0.0, //بداية الملئ
                                         progressHeadType:
-                                        GFProgressHeadType.circular,
+                                            GFProgressHeadType.circular,
                                       ),
                                     ),
                                   ]);
@@ -239,16 +238,16 @@ class _TemperatureState extends State<Temperature> {
                                             BlurStyle.solid, 3), //شادو للملئ
                                         radius: 250, //حجم الدائرة
                                         animateFromLastPercentage: true,
-                                        circleWidth: 8.0,
+                                        circleWidth: 12.0,
                                         autoLive: true,
                                         animation: true,
                                         percentage: .1, //كام في المية  %%%
                                         trailing: GFLoader(
                                           loaderstrokeWidth:
-                                          5.0, //حجم الدوران في  الاندرويد
+                                              5.0, //حجم الدوران في  الاندرويد
                                           duration: Duration(
                                               milliseconds:
-                                              1000), //سرعة التحميل
+                                                  1000), //سرعة التحميل
                                           size: GFSize
                                               .LARGE, //حجم في circle.ios .android. square
                                           type: GFLoaderType.android,
@@ -256,7 +255,7 @@ class _TemperatureState extends State<Temperature> {
                                         type: GFProgressType.circular,
                                         circleStartAngle: 0.0, //بداية الملئ
                                         progressHeadType:
-                                        GFProgressHeadType.circular,
+                                            GFProgressHeadType.circular,
                                       ),
                                     ),
                                   ]);

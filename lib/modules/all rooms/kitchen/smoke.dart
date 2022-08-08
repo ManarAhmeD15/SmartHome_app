@@ -12,7 +12,6 @@ import 'package:getwidget/types/gf_progress_type.dart';
 
 import 'kitchen.dart';
 
-
 class Smoke extends StatefulWidget {
   const Smoke({Key? key}) : super(key: key);
 
@@ -72,7 +71,8 @@ class _SmokeState extends State<Smoke> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => KitchenScreen()),
+                          MaterialPageRoute(
+                              builder: (context) => KitchenScreen()),
                         );
                       },
                       icon: Icon(
@@ -131,8 +131,8 @@ class _SmokeState extends State<Smoke> {
                       ),
                     ),
                     Positioned(
-                      top: 290.0,
-                      left: 160.0,
+                      top: 300.0,
+                      left: 170.0,
                       child: Stack(
                         children: [
                           Image(
@@ -199,7 +199,7 @@ class _SmokeState extends State<Smoke> {
                                         backgroundColor: Colors.blueGrey,
                                         width: 10, //width of the Progress bar
                                         mask:
-                                        MaskFilter.blur(BlurStyle.solid, 3),
+                                            MaskFilter.blur(BlurStyle.solid, 3),
                                         radius: 250, //حجم الدائرة
                                         animateFromLastPercentage: true,
                                         circleWidth: 12.0,
@@ -208,14 +208,13 @@ class _SmokeState extends State<Smoke> {
                                         percentage: t, //كام في المية  %%%
                                         trailing: Text('$tTemp C',
                                             style: TextStyle(
-                                                color:
-                                                Colors.red,
+                                                color: Colors.orangeAccent,
                                                 fontSize: 25,
                                                 fontWeight: FontWeight.bold)),
                                         type: GFProgressType.circular,
                                         circleStartAngle: 0.0, //بداية الملئ
                                         progressHeadType:
-                                        GFProgressHeadType.circular,
+                                            GFProgressHeadType.circular,
                                       ),
                                     ),
                                   ]);
@@ -226,30 +225,30 @@ class _SmokeState extends State<Smoke> {
                                           left: 0, top: 0),
                                       child: GFProgressBar(
                                         leading: Text(
-                                          'Temp',
+                                          'Smoke',
                                           style: TextStyle(
                                             fontSize: 25,
                                             color: Color(hexColor("#264653")),
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        progressBarColor: Colors.red,
+                                        progressBarColor: Colors.orangeAccent,
                                         backgroundColor: Colors.blueGrey,
                                         width: 10, //width of the Progress bar
                                         mask: MaskFilter.blur(
                                             BlurStyle.solid, 3), //شادو للملئ
                                         radius: 250, //حجم الدائرة
                                         animateFromLastPercentage: true,
-                                        circleWidth: 8.0,
+                                        circleWidth: 12.0,
                                         autoLive: true,
                                         animation: true,
                                         percentage: .1, //كام في المية  %%%
                                         trailing: GFLoader(
                                           loaderstrokeWidth:
-                                          5.0, //حجم الدوران في  الاندرويد
+                                              5.0, //حجم الدوران في  الاندرويد
                                           duration: Duration(
                                               milliseconds:
-                                              1000), //سرعة التحميل
+                                                  1000), //سرعة التحميل
                                           size: GFSize
                                               .LARGE, //حجم في circle.ios .android. square
                                           type: GFLoaderType.android,
@@ -257,7 +256,7 @@ class _SmokeState extends State<Smoke> {
                                         type: GFProgressType.circular,
                                         circleStartAngle: 0.0, //بداية الملئ
                                         progressHeadType:
-                                        GFProgressHeadType.circular,
+                                            GFProgressHeadType.circular,
                                       ),
                                     ),
                                   ]);
