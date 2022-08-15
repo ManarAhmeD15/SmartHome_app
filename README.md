@@ -1,4 +1,4 @@
-# beginning_app
+# Smart Home
 
 A new Flutter application.
 
