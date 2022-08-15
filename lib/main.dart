@@ -1,9 +1,9 @@
-import 'package:beginning_app/modules/all%20rooms/bedroom/bedroom.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'modules/navigation/navigation_provider.dart';
+import 'modules/signup/signupscreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 
           //title: title,
           //theme: ThemeData(primarySwatch: Colors.deepOrange),
-          home: bedroom(),
+          home: SignupScreen(),
         ),
       );
 }
