@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "733385539953",
-    "project_id": "smarthome-2-10-99",
-    "storage_bucket": "smarthome-2-10-99.appspot.com"
+    "project_number": "10709929557",
+    "project_id": "emailpasswordauthen-87229",
+    "storage_bucket": "emailpasswordauthen-87229.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:733385539953:android:b541da2d5769c314ebf6d0",
+        "mobilesdk_app_id": "1:10709929557:android:fece1f509ebd3b26cbcedc",
         "android_client_info": {
           "package_name": "com.manar.beginning_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "733385539953-dt0lktp58208imqfnif5j7e1d61dnfuf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.manar.beginning_app",
-            "certificate_hash": "127b2c6007e769a61c2b816639fe86fb7cddc635"
-          }
-        },
-        {
-          "client_id": "733385539953-54ui2qum6vcvn3iu9d3202fv2p3irkel.apps.googleusercontent.com",
+          "client_id": "10709929557-jfpu1h24g0fmftnn0g4kphlms561bo47.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC3j9R5iQEBTF6TPDFD2uTY7eJyAdvgM14"
+          "current_key": "AIzaSyC3CfTQLRXl6tFU6ZayB_0e9IHUTl-jcRs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "733385539953-54ui2qum6vcvn3iu9d3202fv2p3irkel.apps.googleusercontent.com",
+              "client_id": "10709929557-jfpu1h24g0fmftnn0g4kphlms561bo47.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

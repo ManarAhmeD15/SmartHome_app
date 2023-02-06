@@ -1,10 +1,16 @@
+import 'package:beginning_app/modules/home/home_screen.dart';
+import 'package:beginning_app/modules/login/loginscreen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+//import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:beginning_app/modules/password/forgot_password.dart';
-import 'package:beginning_app/modules/login/loginscreen.dart';
-class SignupScreen extends StatefulWidget {
+import 'package:fluttertoast/fluttertoast.dart';
 
+import '../../models/signup_user_model.dart';
+
+class SignupScreen extends StatefulWidget {
   @override
   State<SignupScreen> createState() => _SignupScreenState();
 }
@@ -13,10 +19,26 @@ class _SignupScreenState extends State<SignupScreen> {
   var usernameController = TextEditingController();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
-  var formKey=GlobalKey<FormState>();
-  bool isPassword=true;
+  var formKey = GlobalKey<FormState>();
+  bool isPassword = true;
 
-  hexColor (String colorhexcode){
+  setData() async {
+    var user = await FirebaseAuth.instance.currentUser;
+    var gett = await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .set({
+      'email': emailController.text,
+      'password': passwordController.text,
+      'name': usernameController.text,
+      'uId': user.uid,
+    });
+  }
+
+  bool isClicked = false;
+  late FirebaseAuth mAuth;
+
+  hexColor(String colorhexcode) {
     String colornew = '0xff' + colorhexcode;
     colornew = colornew.replaceAll('#', '');
     int colorint = int.parse(colornew);
@@ -26,31 +48,23 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.black54,
-      // ),
-      body:  SafeArea(
+      body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
             child: Column(
-
               crossAxisAlignment: CrossAxisAlignment.center,
-
-              children:
-              [
+              children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(top:30.0),
-
-                  child: Image(image: AssetImage('assets/smart-home(2).png'),
+                  padding: const EdgeInsetsDirectional.only(top: 30.0),
+                  child: Image(
+                    image: AssetImage('assets/smart-home(2).png'),
                     width: 50.0,
-                    height: 50.0,),
+                    height: 50.0,
+                  ),
                 ),
-
                 SizedBox(
                   height: 20.0,
                 ),
-
-
                 Text(
                   'Create a new account',
                   style: TextStyle(
@@ -63,19 +77,18 @@ class _SignupScreenState extends State<SignupScreen> {
                   height: 20.0,
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(top:20.0),
+                  padding: const EdgeInsetsDirectional.only(top: 20.0),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(50.0),
                         topRight: Radius.circular(50.0),
                       ),
-                       color: Color(hexColor("#264653")),
+                      color: Color(hexColor("#264653")),
                     ),
                     width: double.infinity,
-
-
-                    child: Form(                      // validate
+                    child: Form(
+                      // validate
                       key: formKey,
                       child: Column(
                         children: [
@@ -84,31 +97,26 @@ class _SignupScreenState extends State<SignupScreen> {
                               horizontal: 30.0,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.only(top:50.0),
+                              padding:
+                                  const EdgeInsetsDirectional.only(top: 50.0),
                               child: TextFormField(
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
                                 controller: usernameController,
                                 keyboardType: TextInputType.name,
-                                onFieldSubmitted: ( value)
-                                {
+                                onFieldSubmitted: (value) {
                                   print(value);
                                 },
-                                onChanged: (value)
-                                {
+                                onChanged: (value) {
                                   print(value);
                                 },
                                 // validation
-                                validator:(value)
-                                {
-                                  if(value!.isEmpty)
-                                  {
+                                validator: (value) {
+                                  if (value!.isEmpty) {
                                     return 'user name must not be empty';
-                                  }
-                                  else
+                                  } else
                                     return null;
-
                                 },
                                 decoration: InputDecoration(
                                   labelText: 'User name',
@@ -120,18 +128,19 @@ class _SignupScreenState extends State<SignupScreen> {
                                     color: Colors.white,
                                   ),
                                   border: OutlineInputBorder(
-                                    borderSide: const BorderSide(width: 3, color: Colors.blue),
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.blue),
                                     borderRadius: BorderRadius.circular(15),
                                   ),
-                                  focusedBorder : OutlineInputBorder(
-                                    borderSide: const BorderSide(width: 3, color: Colors.white),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.white),
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-
                           SizedBox(
                             height: 15.0,
                           ),
@@ -145,26 +154,20 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                               controller: emailController,
                               keyboardType: TextInputType.emailAddress,
-                              onFieldSubmitted: ( value)
-                              {
+                              onFieldSubmitted: (value) {
                                 print(value);
                               },
-                              onChanged: (value)
-                              {
+                              onChanged: (value) {
                                 print(value);
                               },
 
                               // validation
 
-                              validator:(value)
-                              {
-                                if(value!.isEmpty)
-                                {
+                              validator: (value) {
+                                if (value!.isEmpty) {
                                   return 'email must not be empty';
-                                }
-                                else
+                                } else
                                   return null;
-
                               },
                               decoration: InputDecoration(
                                 labelText: 'Email',
@@ -176,23 +179,21 @@ class _SignupScreenState extends State<SignupScreen> {
                                   color: Colors.white,
                                 ),
                                 border: OutlineInputBorder(
-                                  borderSide: const BorderSide(width: 3, color: Colors.blue),
+                                  borderSide: const BorderSide(
+                                      width: 3, color: Colors.blue),
                                   borderRadius: BorderRadius.circular(15),
                                 ),
-                                focusedBorder : OutlineInputBorder(
-                                  borderSide: const BorderSide(width: 3, color: Colors.white),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      width: 3, color: Colors.white),
                                   borderRadius: BorderRadius.circular(15),
                                 ),
                               ),
                             ),
                           ),
-
                           SizedBox(
                             height: 15.0,
                           ),
-
-
-
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 30.0,
@@ -203,28 +204,21 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                               controller: passwordController,
                               keyboardType: TextInputType.visiblePassword,
-                              obscureText:isPassword,
-                              onFieldSubmitted: ( value)
-                              {
+                              obscureText: isPassword,
+                              onFieldSubmitted: (value) {
                                 print(value);
-
                               },
-                              onChanged: (value)
-                              {
+                              onChanged: (value) {
                                 print(value);
                               },
 
                               // validation
 
-                              validator:(value)
-                              {
-                                if(value!.isEmpty)
-                                {
+                              validator: (value) {
+                                if (value!.isEmpty) {
                                   return 'password is too short!';
-                                }
-                                else
+                                } else
                                   return null;
-
                               },
                               decoration: InputDecoration(
                                 labelText: 'Password',
@@ -240,33 +234,30 @@ class _SignupScreenState extends State<SignupScreen> {
 
                                 suffixIcon: IconButton(
                                   icon: Icon(
-                                    isPassword ? Icons.visibility : Icons.visibility_off,
+                                    isPassword
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
                                     color: Colors.white,
                                   ),
-                                  onPressed: ()
-                                  {
+                                  onPressed: () {
                                     setState(() {
                                       isPassword = !isPassword;
-
                                     });
                                   },
                                 ),
                                 border: OutlineInputBorder(
-                                  borderSide: const BorderSide(width: 3, color: Colors.blue),
+                                  borderSide: const BorderSide(
+                                      width: 3, color: Colors.blue),
                                   borderRadius: BorderRadius.circular(15),
                                 ),
-                                focusedBorder : OutlineInputBorder(
-                                  borderSide: const BorderSide(width: 3, color: Colors.white),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      width: 3, color: Colors.white),
                                   borderRadius: BorderRadius.circular(15),
-
                                 ),
                               ),
                             ),
                           ),
-
-
-
-
                           SizedBox(
                             height: 100.0,
                           ),
@@ -281,23 +272,39 @@ class _SignupScreenState extends State<SignupScreen> {
                                 borderRadius: BorderRadius.circular(25.0),
                               ),
                               child: MaterialButton(
-                                onPressed:()
-                                {
-                                  if(formKey.currentState!.validate()) {
-                                    print(usernameController.text);
-                                    print(emailController.text);
-                                    print(passwordController.text);
+                                onPressed: () async {
+                                  if (formKey.currentState!.validate()) {
+                                    setState(() {
+                                      isClicked = true;
+                                    });
+                                    var result = await FirebaseAuth.instance
+                                        .createUserWithEmailAndPassword(
+                                            email: emailController.text,
+                                            password: passwordController.text);
+                                    if (result != null) {
+                                      setData();
+                                    }
+                                    showToast(
+                                        text: 'Signed up successfully',
+                                        state: ToastStates.SUCCESS);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeScreen()),
+                                    );
+                                  } else {
+                                    showToast(
+                                        text: 'Please, type your info',
+                                        state: ToastStates.ERROR);
                                   }
                                 },
-                                child:
-                                Text(
+                                child: Text(
                                   'Sign Up',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Color(hexColor("#264653")),
                                   ),
                                 ),
-
                               ),
                             ),
                           ),
@@ -314,17 +321,20 @@ class _SignupScreenState extends State<SignupScreen> {
                                 ),
                               ),
                               TextButton(
-                                onPressed: (){
-                                  Navigator.pop(context);
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LoginScreen()),
+                                  );
                                 },
-                                child:Text
-                                  (
+                                child: Text(
                                   'Login',
                                   style: TextStyle(
                                     color: Colors.amber,
                                   ),
-                                )
-                                , ),
+                                ),
+                              ),
                             ],
                           ),
                           SizedBox(
@@ -342,4 +352,52 @@ class _SignupScreenState extends State<SignupScreen> {
       ),
     );
   }
+
+  void userCreate({
+    required String name,
+    required String email,
+    required String password,
+    required String uId,
+  }) {
+    SignUpUserModel model = SignUpUserModel(
+      email: email,
+      name: name,
+      password: password,
+      uId: uId,
+    );
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(uId)
+        .set(model.toMap())
+        .then((value) {})
+        .catchError((error) {});
+  }
+}
+
+void showToast({required String text, required ToastStates state}) =>
+    Fluttertoast.showToast(
+        msg: text,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: chooseToastColor(state),
+        textColor: Colors.white,
+        fontSize: 16.0);
+
+enum ToastStates { SUCCESS, ERROR, WARNING }
+
+Color chooseToastColor(ToastStates state) {
+  Color color;
+  switch (state) {
+    case ToastStates.SUCCESS:
+      color = Colors.green;
+      break;
+    case ToastStates.ERROR:
+      color = Colors.red;
+      break;
+    case ToastStates.WARNING:
+      color = Colors.amber;
+      break;
+  }
+  return color;
 }

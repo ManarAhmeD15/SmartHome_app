@@ -1,41 +1,59 @@
 import 'package:beginning_app/modules/all%20rooms/bedroom/bedroom.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
 class Motion extends StatefulWidget {
-  const Motion({Key? key}) : super(key: key);
+  late final FirebaseApp app;
+
   @override
   State<Motion> createState() => _MotionState();
 }
 
 class _MotionState extends State<Motion> {
-  @override
+  final refrenceData = FirebaseDatabase.instance;
+  bool motion = false;
 
+  @override
   bool val2 = false;
+
   onChangedFunction2(bool newValue2) {
     setState(() {
       val2 = newValue2;
-      if (val2 == true){
+      if (val2 == true) {
         print('On');
-      }
-      else
+      } else
         print('Off');
     });
   }
+
   bool val1 = false;
 
   onChangedFunction1(bool newValue1) {
     setState(() {
       val1 = newValue1;
-      if (val1 == true){
+      if (val1 == true) {
         print('On');
-      }
-      else
+      } else
+        print('Off');
+    });
+  }
+
+  var val;
+  onChangedFunction3(bool newValue3) {
+    setState(() {
+      val = newValue3;
+      if (val == true) {
+        print('On');
+      } else
         print('Off');
     });
   }
 
   Widget build(BuildContext context) {
+    final ref = refrenceData.reference();
     return Scaffold(
         body: SafeArea(
       child: Column(children: [
@@ -228,21 +246,39 @@ class _MotionState extends State<Motion> {
               ),
             ),  */
             Positioned(
-              bottom: 25.0,
-              right: 55.0,
+              bottom: 40.0,
+              right: 67.0,
               child: Stack(
                 children: [
                   Row(
                     children: [
-                      Switch(
-                          value: val1,
-                          onChanged: onChangedFunction1,
-                        activeColor: Color(hexColor("#264653")),
-                        activeTrackColor: Colors.blueGrey,
+                      // Switch(
+                      //   value: val1,
+                      //   onChanged: onChangedFunction1,
+                      //   activeColor: Color(hexColor("#264653")),
+                      //   activeTrackColor: Colors.blueGrey,
+                      // ),      --
+                      FlutterSwitch(
+                        height: 20.0,
+                        width: 40.0,
+                        borderRadius: 20.0,
+                        padding: 1.0,
+                        activeColor: Colors.blueGrey,
+                        inactiveColor: Colors.grey,
+                        value: motion,
+                        onToggle: (val) async {
+                          setState(() {
+                            motion = val;
+                            if (val) {
+                              ref.child('Motion').set('1').asStream();
+                            } else {
+                              ref.child('Motion').set('0').asStream();
+                            }
+                          });
+                        },
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
@@ -285,7 +321,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 10.0,
-                    height:10.0,
+                    height: 10.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.grey[300],
@@ -301,7 +337,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 12.0,
-                    height:12.0,
+                    height: 12.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.blueGrey[400],
@@ -317,7 +353,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 15.0,
-                    height:15.0,
+                    height: 15.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.blueGrey,
@@ -334,7 +370,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 10.0,
-                    height:10.0,
+                    height: 10.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.grey[300],
@@ -350,7 +386,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 12.0,
-                    height:12.0,
+                    height: 12.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.blueGrey[400],
@@ -366,7 +402,7 @@ class _MotionState extends State<Motion> {
                 children: [
                   Container(
                     width: 15.0,
-                    height:15.0,
+                    height: 15.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.blueGrey,
@@ -378,10 +414,8 @@ class _MotionState extends State<Motion> {
             //Right Three Circles//
           ],
         ),
-      ]
-      ),
-    )
-    );
+      ]),
+    ));
   }
 }
 

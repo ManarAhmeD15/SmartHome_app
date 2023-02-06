@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:beginning_app/modules/all%20rooms/kitchen/kitchen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,16 +11,14 @@ import 'package:getwidget/size/gf_size.dart';
 import 'package:getwidget/types/gf_loader_type.dart';
 import 'package:getwidget/types/gf_progress_type.dart';
 
-import '../all rooms/bedroom/bedroom.dart';
-
-class Temperature extends StatefulWidget {
-  const Temperature({Key? key}) : super(key: key);
+class Water extends StatefulWidget {
+  const Water({Key? key}) : super(key: key);
 
   @override
-  State<Temperature> createState() => _TemperatureState();
+  State<Water> createState() => _WaterState();
 }
 
-class _TemperatureState extends State<Temperature> {
+class _WaterState extends State<Water> {
   @override
   late final FirebaseApp app;
   final referenceData = FirebaseDatabase.instance.reference();
@@ -27,7 +26,7 @@ class _TemperatureState extends State<Temperature> {
 
   Future showtemp() async {
     final result = await referenceData
-        .child('temperature')
+        .child('Water')
         .once()
         .then((DatabaseEvent databaseEvent) {
       streamController.add(databaseEvent.snapshot.value);
@@ -71,7 +70,8 @@ class _TemperatureState extends State<Temperature> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => bedroom()),
+                          MaterialPageRoute(
+                              builder: (context) => KitchenScreen()),
                         );
                       },
                       icon: Icon(
@@ -82,7 +82,7 @@ class _TemperatureState extends State<Temperature> {
                     ),
                   ),
                   Text(
-                    'Temperature',
+                    'Water Leak',
                     style: TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
@@ -114,11 +114,11 @@ class _TemperatureState extends State<Temperature> {
                     ),
                     Positioned(
                       top: 40.0,
-                      left: 100.0,
+                      left: 120.0,
                       child: Stack(
                         children: [
                           Text(
-                            'Temperature value',
+                            'Water Leak value',
                             maxLines: 1,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -130,12 +130,12 @@ class _TemperatureState extends State<Temperature> {
                       ),
                     ),
                     Positioned(
-                      top: 280.0,
+                      top: 290.0,
                       left: 170.0,
                       child: Stack(
                         children: [
                           Image(
-                            image: AssetImage('assets/hot.png'),
+                            image: AssetImage('assets/leak.png'),
                             width: 50.0,
                             height: 50.0,
                           ),
@@ -166,37 +166,37 @@ class _TemperatureState extends State<Temperature> {
                                     t = 0.4;
                                   } else if (tTemp <= 55 && tTemp > 45) {
                                     t = 0.5;
+                                  } else if (tTemp <= 66) {
+                                    t = 0.6;
+                                  } else if (tTemp <= 77) {
+                                    t = 0.7;
+                                  } else if (tTemp <= 88.01) {
+                                    t = 0.8;
+                                  } else if (tTemp <= 90.01) {
+                                    t = 0.9;
+                                  } else if (tTemp <= 110) {
+                                    t = 0.99;
+                                  } else if (tTemp >= 110) {
+                                    t = 0.99;
+                                    tTemp = 110;
                                   }
-                                  // else if (tTemp <= 66) {
-                                  //   t = 0.6;
-                                  // } else if (tTemp <= 77) {
-                                  //   t = 0.7;
-                                  // } else if (tTemp <= 88.01) {
-                                  //   t = 0.8;
-                                  // } else if (tTemp <= 90.01) {
-                                  //   t = 0.9;
-                                  // } else if (tTemp <= 110) {
-                                  //   t = 0.99;
-                                  // } else if (tTemp >= 110) {
-                                  //   t = 0.99;
-                                  //   tTemp = 110;
-                                  // }
+
                                   return Column(children: [
                                     Padding(
                                       padding: const EdgeInsets.only(
                                           left: 0, top: 0),
                                       child: GFProgressBar(
                                         leading: Text(
-                                          'Temp',
+                                          'Water',
                                           style: TextStyle(
                                             fontSize: 25,
                                             color: Color(hexColor("#264653")),
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        progressBarColor: Colors.red,
+                                        progressBarColor: Colors.blue,
                                         backgroundColor: Colors.blueGrey,
-                                        width: 12, //width of the Progress bar
+                                        width: 10, //width of the Progress bar
                                         mask:
                                             MaskFilter.blur(BlurStyle.solid, 3),
                                         radius: 250, //حجم الدائرة
@@ -207,7 +207,7 @@ class _TemperatureState extends State<Temperature> {
                                         percentage: t, //كام في المية  %%%
                                         trailing: Text('$tTemp C',
                                             style: TextStyle(
-                                                color: Colors.red,
+                                                color: Colors.blue,
                                                 fontSize: 25,
                                                 fontWeight: FontWeight.bold)),
                                         type: GFProgressType.circular,
@@ -224,14 +224,14 @@ class _TemperatureState extends State<Temperature> {
                                           left: 0, top: 0),
                                       child: GFProgressBar(
                                         leading: Text(
-                                          'Temp',
+                                          'Water',
                                           style: TextStyle(
                                             fontSize: 25,
                                             color: Color(hexColor("#264653")),
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        progressBarColor: Colors.red,
+                                        progressBarColor: Colors.blue,
                                         backgroundColor: Colors.blueGrey,
                                         width: 10, //width of the Progress bar
                                         mask: MaskFilter.blur(

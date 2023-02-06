@@ -2,6 +2,8 @@ import 'package:beginning_app/my_flutter_app_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../home/home_screen.dart';
+
 class RemoteScreen extends StatefulWidget {
   const RemoteScreen({Key? key}) : super(key: key);
 
@@ -47,8 +49,8 @@ class _RemoteScreenState extends State<RemoteScreen> {
                   alignment: Alignment.center,
                   children: [
                     Container(
-                      width: 260.0,
-                      height: 140.0,
+                      width: 240.0,
+                      height: 120.0,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
@@ -59,11 +61,14 @@ class _RemoteScreenState extends State<RemoteScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsetsDirectional.only(
-                        end: 300.0,
+                        end: 290.0,
                        // bottom: 40.0,
                       ),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(builder: (context) => const HomeScreen()),);
+
+                        },
                         icon: Icon(
                           Icons.arrow_back_ios,
                           size: 35.0,
@@ -153,11 +158,11 @@ class _RemoteScreenState extends State<RemoteScreen> {
 
                                             Positioned(
                                               top: 2.0,
-                                              child: IconButton(onPressed: (){},
-                                                  icon: Icon(
-                                                    Icons.add,
-                                                    size: 30.0,
-                                                  ),),
+                                              child:IconButton(onPressed: (){},
+                                                icon: Icon(
+                                                  Icons.add,
+                                                  size: 30.0,
+                                                ),),
                                             ),
                                             Positioned(
                                               bottom: 10.0,
@@ -200,20 +205,17 @@ class _RemoteScreenState extends State<RemoteScreen> {
                                       children:[
 
                                         Positioned(
-                                          top: 10.0,
-                                          bottom: 20.0,
-                                          child: IconButton(onPressed: (){},
-                                            icon: Icon(MyFlutterApp.up_open,
-                                              size: 30.0,
-                                            ),),
+                                          top: 7.0,
+                                          child:Image(image:AssetImage("assets/up-arrow.png"),
+                                          width: 30.0,
+                                          height: 30.0,),
+
                                         ),
                                         Positioned(
                                           bottom: 10.0,
-                                          child: IconButton(onPressed: (){},
-                                            icon: Icon(
-                                              MyFlutterApp.down_open,
-                                              size: 30.0,
-                                            ),),
+                                          child:Image(image:AssetImage("assets/arrow-down.png"),
+                                              width: 30.0,
+                                              height: 30.0),
                                         ),
                                       ],
                                     ),
