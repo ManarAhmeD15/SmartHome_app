@@ -1,7 +1,5 @@
-import 'dart:io';
-
-import 'package:image_picker/image_picker.dart';
-class RoomsModel{
+// import 'package:image_picker/image_picker.dart';
+class RoomsModel {
   late String name;
   late String roomImage;
   late String uId;
@@ -12,35 +10,25 @@ class RoomsModel{
     required this.uId,
   });
 
-
-  RoomsModel.fromJson(Map<String, dynamic> json)
-  {
+  RoomsModel.fromJson(Map<String, dynamic> json) {
     roomImage = json['roomImage'];
     name = json['name'];
     uId = json['uId'];
   }
 
-  Map<String, dynamic> toMap()
-  {
+  Map<String, dynamic> toMap() {
     return {
-      'name':name,
-      'roomImage':roomImage,
-      'uId':uId,
+      'name': name,
+      'roomImage': roomImage,
+      'uId': uId,
     };
   }
-
-
 }
 
 void add_room({
   required String name,
   required String uid,
-
-})
-{
-
-}
-
+}) {}
 
 /*
  File profileImage;
