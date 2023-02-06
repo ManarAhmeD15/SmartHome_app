@@ -17,39 +17,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
-        create: (context) => NavigationProvider(),
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
+    create: (context) => NavigationProvider(),
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
 
-          //title: title,
-          //theme: ThemeData(primarySwatch: Colors.deepOrange),
-          home: SignupScreen(),
-        ),
-      );
-}
-
-/*
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) => Scaffold(
-    drawer: NavigationDrawerWidget(),
-
-    appBar: AppBar(
-      backgroundColor: Colors.red,
-      title: Text(MyApp.title),
-      centerTitle: true,
+      //title: title,
+      //theme: ThemeData(primarySwatch: Colors.deepOrange),
+      home: SignupScreen(),
     ),
-
-
   );
-
-
 }
 
-
- */
